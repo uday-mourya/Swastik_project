@@ -14,17 +14,16 @@
             <div class="left-heading">
               <img
                 class="logo"
-                src="https://thehostels.com/uploads/rs/landimages/1/logo2.png"
+                src="logo-img1.png"
               />
             </div>
             <div class="steps-content">
-              <h3>sohan <span class="step-number">1</span></h3>
+              <h3>Stap <span class="step-number">1</span></h3>
               <p class="step-number-content active">
-                Заполните свою личную информацию.
+                Fill in your personal information.
               </p>
               <p class="step-number-content d-none">
-                Введите информацию о вашей организации и ее банковские
-                реквизиты.
+                Enter your personal information.
               </p>
               <p class="step-number-content d-none">
                 Help companies get to know you better by telling then about your
@@ -35,109 +34,72 @@
               </p>
             </div>
             <ul class="progress-bar">
-              <li class="active">Persnal Detail</li>
+              <li class="active">Personal information</li>
               <li>
-                <p>Contact</p>
+                <p>Documantation</p>
               </li>
               <li>
-                <p>Address</p>
+                <p>Image</p>
               </li>
               <li>
-                <p>Подтверждение</p>
+                <p>Varification</p>
               </li>
               <li>
-                <p>Гарантийное письмо</p>
+                <p>Finish</p>
               </li>
             </ul>
           </div>
           <div class="right-side">
             <div class="main active">
               <div class="text">
-                <h2>Persnal Detail</h2>
-                <!-- <p>Пожалуйста, представьтесь. Будем рады знакомству с Вами!</p> -->
-              </div>
-              <div class="input-text">
-                <select required require class="company-type">
-                  <option value="" disabled selected hidden>
-                    Select Titel
-                  </option>
-                  <option value="legal_entity">Mr</option>
-                  <option value="legal_entity">Miss</option>
-                  <option value="sole_entrepreneurship">dvsfb</option>
-                  <option value="individual">Самозанятое лицо</option>
-                </select>
+                <h2>Personal information</h2>
+                <p>It is mandatory to fill all fields</p>
               </div>
               <div class="input-text">
                 <div class="input-div">
                   <input type="text" required require id="user_name" />
-                  <span>First Name</span>
+                  <span>Your name</span>
                 </div>
                 <div class="input-div">
-                  <input type="text" required />
+                  <input type="text" required require />
                   <span>Last Name</span>
                 </div>
               </div>
               <div class="input-text">
                 <div class="input-div">
                   <input type="text" required require id="user_phone" />
-                  <span>Father name</span>
+                  <span>Father's Name</span>
                 </div>
                 <div class="input-div">
                   <input type="text" required require id="user_email" />
-                  <span>Mother Name</span>
+                  <span>Mother's Name</span>
                 </div>
               </div>
               <div class="input-text">
                 <div class="input-div">
-                  <div class="input-div">
-                    <input type="text" required require id="user_email" />
-                    <span>DOB</span>
-                  </div>
+                  <input type="text" required require id="user_email" />
+                  <span>Date Of borth</span>
                 </div>
-                <!-- <div class="input-div">
+                <div class="input-div">
                   <select required require class="company-type">
-                    <option value="" disabled selected hidden></option>
-                    <option value="legal_entity">Юридическое лицо</option>
-                    <option value="sole_entrepreneurship">
-                      Индивидуальный предприниматель
+                    <option value="" disabled selected hidden>
+                      Select Gender
                     </option>
-                    <option value="individual">Самозанятое лицо</option>
+                    <option value="legal_entity">Male</option>
+                    <option value="sole_entrepreneurship">Female</option>
+                    <option value="individual">Other</option>
                   </select>
-                </div> -->
+                </div>
               </div>
               <div class="buttons">
                 <button class="next_button">Next</button>
               </div>
             </div>
             <div class="main active">
-              <!-- ----------DOCUMENT--------------- -->
               <div class="company-form" id="legal_entity">
                 <div class="text">
-                  <h2>Contact</h2>
-                  <!-- <p>
-                    Укажите сведения о представляемом Вами юридическом лице.
-                  </p> -->
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Mobile Number</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>ReEnter Mobile Number</span>
-                  </div>
-                </div>
-
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Gmail</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>ReEnter Gmail</span>
-                  </div>
+                  <h2>Documantation</h2>
+                  <p>Provide information about the legal Documantation.</p>
                 </div>
 
                 <div class="input-text">
@@ -153,145 +115,33 @@
                 <div class="input-text">
                   <div class="input-div">
                     <input type="text" required require />
-                    <span>Раn Number</span>
+                    <span>Pan Number</span>
                   </div>
                   <div class="input-div">
                     <input type="text" required require />
-                    <span>ReEnter Раn Number</span>
+                    <span>ReEnter Pan Number</span>
                   </div>
                 </div>
                 <div class="input-text">
                   <div class="input-div">
                     <input type="text" required require />
-                    <span>Раn Number</span>
+                    <span>Gmail</span>
                   </div>
                   <div class="input-div">
                     <input type="text" required require />
-                    <span>ReEnter Раn Number</span>
+                    <span>ReEnter Gmail</span>
                   </div>
                 </div>
+
                 <div class="buttons button_space">
                   <button class="back_button">Back</button>
                   <button class="next_button">Next</button>
                 </div>
               </div>
-              <!-- ----------DOCUMENT--------------- -->
-
-              <div class="company-form" id="sole_entrepreneurship">
-                <div class="text">
-                  <h2>Documant</h2>
-                  <!-- <p>Укажите сведения об индивидуальном предпринимателе.</p> -->
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Mobile Number</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Name</span>
-                  </div>
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>ИНН</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>ОГРНИП</span>
-                  </div>
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Адрес регистрации</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Почтовый адрес</span>
-                  </div>
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Банк</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>БИК банка</span>
-                  </div>
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Расчетный счет</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Корреспондентский счет</span>
-                  </div>
-                </div>
-                <div class="buttons button_space">
-                  <button class="back_button">Назад</button>
-                  <button class="next_button">Дальше</button>
-                </div>
-              </div>
-
-              <div class="company-form" id="individual">
-                <div class="text">
-                  <h2>Ваша организация</h2>
-                  <p>Укажите сведения о самозанятом лице.</p>
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Фамилия</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Имя</span>
-                  </div>
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Отчество</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Почтовый адрес</span>
-                  </div>
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Банк</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>БИК банка</span>
-                  </div>
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Расчетный счет</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Корреспондентский счет</span>
-                  </div>
-                </div>
-                <div class="buttons button_space">
-                  <button class="back_button">Назад</button>
-                  <button class="next_button">Дальше</button>
-                </div>
-              </div>
             </div>
             <div class="main">
               <div class="text">
-                <h2>Photography</h2>
+                <h2>Photo</h2>
                 <!-- <p>Ваши арендаторы хотят знать, как вы выглядите.</p> -->
               </div>
               <div class="user_card">
@@ -303,13 +153,13 @@
                   /></span>
                 </div>
                 <div class="buttons button_card">
-                  <button>Select file</button>
+                  <button>Select a file</button>
                   <!-- <button>Загрузить</button> -->
                 </div>
               </div>
               <div class="text-description">
                 <p>Acceptable photo formats: PNG, JPG.</p>
-                <p>Maximum file size: 2MB</p>
+                <p>Maximum file size: 2MB.</p>
               </div>
               <div class="text"></div>
               <div class="buttons button_space">
@@ -320,7 +170,7 @@
 
             <div class="main">
               <div class="text">
-                <h2>Подтвердите электронную почту</h2>
+                <h2>Send Otp On Mail</h2>
                 <p>
                   На ваш адрес <span class="shown_email"></span> отправлено
                   сообщение от The Hostels с кодом. Введите его и нажмите
