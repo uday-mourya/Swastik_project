@@ -5,449 +5,406 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="AccountCss.css" />
+    <!-- ------------------CDN---------------- -->
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- ------------------CDN---------------- -->
   </head>
   <body>
-    <div class="container">
-      <div class="card">
-        <div class="form">
-          <div class="left-side">
-            <div class="left-heading">
-              <img
-                class="logo"
-                src="logo-img1.png"
-              />
-            </div>
-            <div class="steps-content">
-              <h3>Stap <span class="step-number">1</span></h3>
-              <p class="step-number-content active">
-                Fill in your personal information.
-              </p>
-              <p class="step-number-content d-none">
-                Enter your personal information.
-              </p>
-              <p class="step-number-content d-none">
-                Help companies get to know you better by telling then about your
-                past experiences.
-              </p>
-              <p class="step-number-content d-none">
-                Add your profile piccture and let companies find youy fast.
-              </p>
-            </div>
-            <ul class="progress-bar">
-              <li class="active">Personal information</li>
-              <li>
-                <p>Documantation</p>
-              </li>
-              <li>
-                <p>Image</p>
-              </li>
-              <li>
-                <p>Varification</p>
-              </li>
-              <li>
-                <p>Finish</p>
-              </li>
-            </ul>
-          </div>
-          <div class="right-side">
-            <div class="main active">
-              <div class="text">
-                <h2>Personal information</h2>
-                <p>It is mandatory to fill all fields</p>
-              </div>
-              <div class="input-text">
-                <div class="input-div">
-                  <input type="text" required require id="user_name" />
-                  <span>Your name</span>
-                </div>
-                <div class="input-div">
-                  <input type="text" required require />
-                  <span>Last Name</span>
-                </div>
-              </div>
-              <div class="input-text">
-                <div class="input-div">
-                  <input type="text" required require id="user_phone" />
-                  <span>Father's Name</span>
-                </div>
-                <div class="input-div">
-                  <input type="text" required require id="user_email" />
-                  <span>Mother's Name</span>
-                </div>
-              </div>
-              <div class="input-text">
-                <div class="input-div">
-                  <input type="text" required require id="user_email" />
-                  <span>Date Of borth</span>
-                </div>
-                <div class="input-div">
-                  <select required require class="company-type">
-                    <option value="" disabled selected hidden>
-                      Select Gender
-                    </option>
-                    <option value="legal_entity">Male</option>
-                    <option value="sole_entrepreneurship">Female</option>
-                    <option value="individual">Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="buttons">
-                <button class="next_button">Next</button>
-              </div>
-            </div>
-            <div class="main active">
-              <div class="company-form" id="legal_entity">
-                <div class="text">
-                  <h2>Documantation</h2>
-                  <p>Provide information about the legal Documantation.</p>
-                </div>
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <p>Persnol Datail</p>
+        </div>
 
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Aadhar Number</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>ReEnter Aadhar Number</span>
-                  </div>
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Pan Number</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>ReEnter Pan Number</span>
-                  </div>
-                </div>
-                <div class="input-text">
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>Gmail</span>
-                  </div>
-                  <div class="input-div">
-                    <input type="text" required require />
-                    <span>ReEnter Gmail</span>
-                  </div>
-                </div>
-
-                <div class="buttons button_space">
-                  <button class="back_button">Back</button>
-                  <button class="next_button">Next</button>
-                </div>
-              </div>
-            </div>
-            <div class="main">
-              <div class="text">
-                <h2>Photo</h2>
-                <!-- <p>Ваши арендаторы хотят знать, как вы выглядите.</p> -->
-              </div>
-              <div class="user_card">
-                <span></span>
-                <div class="circle">
-                  <span
-                    ><img
-                      src="https://wpr-public.s3.amazonaws.com/wprorg/styles/resp_orig_custom_user_wide_1x/s3/s3fs-public/wpr/articles/2013/10/michael%20jackson.jpeg?itok=8AFU-IVK"
-                  /></span>
-                </div>
-                <div class="buttons button_card">
-                  <button>Select a file</button>
-                  <!-- <button>Загрузить</button> -->
-                </div>
-              </div>
-              <div class="text-description">
-                <p>Acceptable photo formats: PNG, JPG.</p>
-                <p>Maximum file size: 2MB.</p>
-              </div>
-              <div class="text"></div>
-              <div class="buttons button_space">
-                <button class="back_button">Back</button>
-                <button class="next_button">Next</button>
-              </div>
-            </div>
-
-            <div class="main">
-              <div class="text">
-                <h2>Send Otp On Mail</h2>
-                <p>
-                  На ваш адрес <span class="shown_email"></span> отправлено
-                  сообщение от The Hostels с кодом. Введите его и нажмите
-                  "Подтвердить".
-                </p>
-              </div>
-              <div class="input-text">
-                <div class="input-div">
-                  <input type="text" required require />
-                  <span>Код подтверждения e-mail</span>
-                </div>
-                <div class="buttons button_inline">
-                  <button class="confirm_email action_button">
-                    Подтвердить
-                  </button>
-                </div>
-              </div>
-              <br />
-              <div class="text">
-                <h2>Подтвердите номер телефона</h2>
-                <p>
-                  Мы отправили SMS на Ваш номер телефона
-                  <span class="shown_phone"></span>. Введите код из сообщения и
-                  нажмите "Подтвердить".
-                </p>
-              </div>
-              <div class="input-text">
-                <div class="input-div">
-                  <input type="text" required require />
-                  <span>Код из SMS сообщения</span>
-                </div>
-                <div class="buttons button_inline">
-                  <button class="confirm_phone action_button">
-                    Подтвердить
-                  </button>
-                </div>
-              </div>
-              <br />
-              <div class="text">
-                <h2>Не пришел код?</h2>
-                <p><a href="">Нажмите здесь</a>, чтобы отправить коды снова.</p>
-              </div>
-              <br />
-              <div class="buttons button_space">
-                <button class="back_button">Назад</button>
-                <button class="next_button">Дальше</button>
-              </div>
-            </div>
-
-            <div class="main">
-              <div class="text">
-                <h2>Гарантийное письмо</h2>
-                <p>
-                  Мы отправим Вам бланк гарантийного письма. Пожалуйста,
-                  распечатайте его, подпишите и отправьте нам обратно
-                  отсканированную копию.
-                </p>
-              </div>
-              <br />
-              <div class="buttons button_inline">
-                <button class="confirm_company action_button">
-                  Получить бланк письма
-                </button>
-              </div>
-              <br />
-              <br />
-              <div class="text">
-                <h2>Проверьте реквизиты</h2>
-                <p>
-                  Когда мы получим от Вас гарантийное письмо с банковскими
-                  реквизитами, мы отправим на них небольшую сумму денег.
-                  Реквизиты считаются проверенными в том случае, если Вы
-                  обнаружите наш денежный перевод. Поэтому пожалуйста,
-                  внимательно проверьте Ваши реквизиты и если все хорошо, то
-                  нажмите "Завершить".
-                </p>
-              </div>
-              <br />
-              <div class="buttons button_space">
-                <button class="back_button">Назад</button>
-                <button class="submit_button">Завершить</button>
-              </div>
-            </div>
-
-            <div class="main" id="congrats-form">
-              <svg
-                class="checkmark"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 52 52"
-              >
-                <circle
-                  class="checkmark__circle"
-                  cx="26"
-                  cy="26"
-                  r="25"
-                  fill="none"
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>First Name *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your First Name"
+                  id="firstName"
+                  value=""
                 />
-                <path
-                  class="checkmark__check"
-                  fill="none"
-                  d="M14.1 27.2l7.1 7.2 16.7-16.8"
+                <span class="error" id="firstNameError"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Last Name *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Last Name"
+                  id="lastName"
+                  value=""
                 />
-              </svg>
-
-              <div class="text congrats">
-                <h2>Все готово!</h2>
-                <p>
-                  Спасибо, <span class="shown_name"></span>! Ваша информация
-                  передана администрации The Hostels. Статус верификации
-                  обновится в ближайшее время.
-                </p>
+                <span class="error" id="lastNameError"></span>
               </div>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Father Name *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Father Name"
+                  id="firstName"
+                  value=""
+                />
+                <span class="error" id="firstNameError"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Mother Name *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Mother Name"
+                  id="lastName"
+                  value=""
+                />
+                <span class="error" id="lastNameError"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-">
+              <div class="form-group">
+                <span>Gender * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+                <input type="radio" id="male" name="gender" value="male" />
+                <label for="male"
+                  >Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+                >
+
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female"
+                  >Female &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+                >
+
+                <input type="radio" id="other" name="gender" value="other" />
+                <label for="other"
+                  >Other &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+                >
+
+                <span class="error" id="genderError"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-">
+              <div class="form-group">
+                <span>Uplod Photo * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+                <input type="file" />
+
+                <span class="error" id="FileError"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Mobile Number *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Phone Number *"
+                  id="phoneNumber"
+                  value=""
+                />
+                <span class="error" id="phoneError"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Confirm Mobile Number *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Phone Number *"
+                  id="phoneNumber"
+                  value=""
+                />
+                <span class="error" id="phoneError"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Gmail *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Gmail "
+                  id="phoneNumber"
+                  value=""
+                />
+                <span class="error" id="phoneError"></span>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Confirm Gmail *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Gmail"
+                  id="phoneNumber"
+                  value=""
+                />
+                <span class="error" id="phoneError"></span>
+              </div>
+            </div>
+          </div>
+          <div class="note">
+            <p>Document Datail</p>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Aadhar Number *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Aadhar Number"
+                  id="phoneNumber"
+                  value=""
+                />
+                <span class="error" id="phoneError"></span>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Confirm Aadhar Number *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Aadhar Number"
+                  id="phoneNumber"
+                  value=""
+                />
+                <span class="error" id="phoneError"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Pan Number *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Pan Number"
+                  id="phoneNumber"
+                  value=""
+                />
+                <span class="error" id="phoneError"></span>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Confirm Pan Number *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Pan Number"
+                  id="phoneNumber"
+                  value=""
+                />
+                <span class="error" id="phoneError"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Your Password *</span>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Your Password *"
+                  id="password"
+                  value=""
+                />
+                <span class="error" id="passwordError"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Confirm Password *</span>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Confirm Password *"
+                  id="confirmPassword"
+                  value=""
+                />
+                <span class="error" id="confirmPasswordError"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="note">
+            <p>Address Datail</p>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <span>Address *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Street"
+                  id="phoneNumber"
+                  value=""
+                />
+                <span class="error" id="phoneError"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>State *</span>
+                <select class="form-control" id="state">
+                  <option value="">Select State</option>
+                  <option value="state1">State 1</option>
+                  <option value="state2">State 2</option>
+                  <!-- Add more state options here -->
+                </select>
+                <span class="error" id="stateError"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>City *</span>
+                <select class="form-control" id="city">
+                  <option value="">Select City</option>
+                  <option value="city1">City 1</option>
+                  <option value="city2">City 2</option>
+                  <!-- Add more city options here -->
+                </select>
+                <span class="error" id="cityError"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>LandMark *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="LandMark"
+                  id="phoneNumber"
+                  value=""
+                />
+
+                <span class="error" id="stateError"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Zip *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Zip"
+                  id="phoneNumber"
+                  value=""
+                />
+
+                <span class="error" id="cityError"></span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btnSubmit" id="submit">Submit</button>
         </div>
       </div>
     </div>
+
     <script>
-      var next_click = document.querySelectorAll(".next_button");
-      var main_form = document.querySelectorAll(".main");
-      var step_list = document.querySelectorAll(".progress-bar li");
-      var num = document.querySelector(".step-number");
-      var company_form = document.querySelectorAll(".company-form");
-      let formnumber = 0;
+      document.getElementById("submit").addEventListener("click", function () {
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var phoneNumber = document.getElementById("phoneNumber").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
 
-      var action_click = document.querySelectorAll(".action_button");
-      action_click.forEach(function (action_form) {
-        action_form.addEventListener("click", function () {
-          if (!validateform()) {
-            return false;
-          }
-          this.classList.add("inactive");
-        });
+        var firstNameError = document.getElementById("firstNameError");
+        var lastNameError = document.getElementById("lastNameError");
+        var phoneError = document.getElementById("phoneError");
+        var passwordError = document.getElementById("passwordError");
+        var confirmPasswordError = document.getElementById(
+          "confirmPasswordError"
+        );
+
+        // Reset error messages
+        firstNameError.textContent = "";
+        lastNameError.textContent = "";
+        phoneError.textContent = "";
+        passwordError.textContent = "";
+        confirmPasswordError.textContent = "";
+
+        var isValid = true;
+
+        if (firstName.trim() === "") {
+          firstNameError.textContent = "First Name is required.";
+          isValid = false;
+        }
+
+        if (lastName.trim() === "") {
+          lastNameError.textContent = "Last Name is required.";
+          isValid = false;
+        }
+
+        if (phoneNumber.trim() === "") {
+          phoneError.textContent = "Phone Number is required.";
+          isValid = false;
+        }
+
+        if (password.trim() === "") {
+          passwordError.textContent = "Password is required.";
+          isValid = false;
+        }
+
+        if (confirmPassword.trim() === "") {
+          confirmPasswordError.textContent = "Confirm Password is required.";
+          isValid = false;
+        }
+
+        if (password !== confirmPassword) {
+          confirmPasswordError.textContent = "Passwords do not match.";
+          isValid = false;
+        }
+
+        if (isValid) {
+          // Form is valid, you can submit it or perform your desired actions.
+          alert("Form submitted successfully!");
+        }
       });
-
-      next_click.forEach(function (next_click_form) {
-        next_click_form.addEventListener("click", function () {
-          if (!validateform()) {
-            return false;
-          }
-          shownemail.innerHTML = email.value;
-          shownphone.innerHTML = phone.value;
-          formnumber++;
-          updateform();
-          progress_forward();
-          contentchange();
-        });
-      });
-
-      var back_click = document.querySelectorAll(".back_button");
-      back_click.forEach(function (back_click_form) {
-        back_click_form.addEventListener("click", function () {
-          formnumber--;
-          updateform();
-          progress_backward();
-          contentchange();
-        });
-      });
-
-      var username = document.querySelector("#user_name");
-      var email = document.querySelector("#user_email");
-      var phone = document.querySelector("#user_phone");
-
-      var shownname = document.querySelector(".shown_name");
-      var shownemail = document.querySelector(".shown_email");
-      var shownphone = document.querySelector(".shown_phone");
-
-      var submit_click = document.querySelectorAll(".submit_button");
-      submit_click.forEach(function (submit_click_form) {
-        submit_click_form.addEventListener("click", function () {
-          shownname.innerHTML = username.value;
-          formnumber++;
-          updateform();
-        });
-      });
-
-      var heart = document.querySelector(".fa-heart");
-      heart.addEventListener("click", function () {
-        heart.classList.toggle("heart");
-      });
-
-      var share = document.querySelector(".fa-share-alt");
-      share.addEventListener("click", function () {
-        share.classList.toggle("share");
-      });
-
-      function updateform() {
-        var test = document.querySelector("h3");
-
-        main_form.forEach(function (mainform_number) {
-          mainform_number.classList.remove("active");
-        });
-        main_form[formnumber].classList.add("active");
-
-        company_form.forEach(function (content) {
-          content.classList.remove("active");
-          var companyType = document.querySelector(".company-type");
-          switch (companyType.value) {
-            case "legal_entity":
-              var obj = document.querySelector("#legal_entity");
-              obj.classList.add("active");
-              break;
-
-            case "sole_entrepreneurship":
-              var obj = document.querySelector("#sole_entrepreneurship");
-              obj.classList.add("active");
-              break;
-
-            case "individual":
-              var obj = document.querySelector("#individual");
-              obj.classList.add("active");
-              break;
-          }
-        });
-      }
-
-      function progress_forward() {
-        // step_list.forEach(list => {
-
-        //     list.classList.remove('active');
-
-        // });
-
-        num.innerHTML = formnumber + 1;
-        step_list[formnumber].classList.add("active");
-      }
-
-      function progress_backward() {
-        var form_num = formnumber + 1;
-        step_list[form_num].classList.remove("active");
-        num.innerHTML = form_num;
-      }
-
-      var step_num_content = document.querySelectorAll(".step-number-content");
-
-      function contentchange() {
-        step_num_content.forEach(function (content) {
-          content.classList.remove("active");
-          content.classList.add("d-none");
-        });
-        step_num_content[formnumber].classList.add("active");
-      }
-
-      function validateform() {
-        var validate = true;
-        var validate_inputs = document.querySelectorAll(".main.active input");
-        validate_inputs.forEach(function (validate_input) {
-          validate_input.classList.remove("warning");
-          if (
-            validate_input.hasAttribute("require") &&
-            (validate_input.offsetWidth !== 0 ||
-              validate_input.offsetHeight !== 0)
-          ) {
-            if (validate_input.value.length == 0) {
-              validate = false;
-              validate_input.classList.add("warning");
-            }
-          }
-        });
-
-        var validate_selects = document.querySelectorAll(".main.active select");
-        validate_selects.forEach(function (validate_select) {
-          validate_select.classList.remove("warning");
-          if (
-            validate_select.hasAttribute("require") &&
-            (validate_select.offsetWidth !== 0 ||
-              validate_select.offsetHeight !== 0)
-          ) {
-            if (validate_select.value == "") {
-              validate = false;
-              validate_select.classList.add("warning");
-            }
-          }
-        });
-
-        return validate;
-      }
     </script>
   </body>
 </html>
