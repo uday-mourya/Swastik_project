@@ -14,8 +14,20 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- ------------------CDN---------------- -->
+    <!-- --------------------font-awesome---------------------- -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- --------------------font-awesome---------------------- -->
   </head>
   <body>
+    <div class="note">
+      <p>Form P-13-7</p>
+    </div>
     <div class="container register-form">
       <div class="form">
         <div class="note">
@@ -81,7 +93,18 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-">
+            <div class="col-md-12">
+              <div class="form-group">
+                <span>Date of Borth * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+                <input type="date" id="male" name="gender" value="male" />
+
+                <span class="error" id="DobError"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
               <div class="form-group">
                 <span>Gender * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -103,9 +126,8 @@
                 <span class="error" id="genderError"></span>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-">
+
+            <div class="col-md-6">
               <div class="form-group">
                 <span>Uplod Photo * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -115,7 +137,32 @@
               </div>
             </div>
           </div>
-
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Occupation *</span>
+                <select class="form-control" id="state">
+                  <option value="">Select Occupation</option>
+                  <option value="state1">Occupation 1</option>
+                  <option value="state2">Occupation 2</option>
+                  <!-- Add more state options here -->
+                </select>
+                <span class="error" id="stateError"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Maritail Status *</span>
+                <select class="form-control" id="city">
+                  <option value="">Select Maritail</option>
+                  <option value="city1">Maritail 1</option>
+                  <option value="city2">Maritail 2</option>
+                  <!-- Add more city options here -->
+                </select>
+                <span class="error" id="cityError"></span>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -123,7 +170,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Phone Number *"
+                  placeholder="Phone Number"
                   id="phoneNumber"
                   value=""
                 />
@@ -136,7 +183,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Phone Number *"
+                  placeholder="Phone Number"
                   id="phoneNumber"
                   value=""
                 />
@@ -173,6 +220,7 @@
               </div>
             </div>
           </div>
+          <br /><br />
           <div class="note">
             <p>Document Datail</p>
           </div>
@@ -236,35 +284,7 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <span>Your Password *</span>
-                <input
-                  type="password"
-                  class="form-control"
-                  placeholder="Your Password *"
-                  id="password"
-                  value=""
-                />
-                <span class="error" id="passwordError"></span>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <span>Confirm Password *</span>
-                <input
-                  type="password"
-                  class="form-control"
-                  placeholder="Confirm Password *"
-                  id="confirmPassword"
-                  value=""
-                />
-                <span class="error" id="confirmPasswordError"></span>
-              </div>
-            </div>
-          </div>
-
+          <br /><br />
           <div class="note">
             <p>Address Datail</p>
           </div>
@@ -288,24 +308,28 @@
             <div class="col-md-6">
               <div class="form-group">
                 <span>State *</span>
-                <select class="form-control" id="state">
-                  <option value="">Select State</option>
-                  <option value="state1">State 1</option>
-                  <option value="state2">State 2</option>
-                  <!-- Add more state options here -->
-                </select>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="State"
+                  id="phoneNumber"
+                  value=""
+                />
+
                 <span class="error" id="stateError"></span>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <span>City *</span>
-                <select class="form-control" id="city">
-                  <option value="">Select City</option>
-                  <option value="city1">City 1</option>
-                  <option value="city2">City 2</option>
-                  <!-- Add more city options here -->
-                </select>
+                <span>Distric *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Distric"
+                  id="phoneNumber"
+                  value=""
+                />
+
                 <span class="error" id="cityError"></span>
               </div>
             </div>
@@ -313,11 +337,11 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <span>LandMark *</span>
+                <span>City *</span>
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="LandMark"
+                  placeholder="City"
                   id="phoneNumber"
                   value=""
                 />
@@ -340,11 +364,102 @@
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Your Password *</span>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Your Password "
+                  id="password"
+                  value=""
+                />
+                <span class="error" id="passwordError"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Confirm Password *</span>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Confirm Password "
+                  id="confirmPassword"
+                  value=""
+                />
+                <span class="error" id="confirmPasswordError"></span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btnSubmit" id="submit">Send OTP</button>
+
           <button type="button" class="btnSubmit" id="submit">Submit</button>
         </div>
       </div>
     </div>
+    <!-- --------------------Footer---------------------- -->
+    <footer class="text-center text-white" style="background-color: #f1f1f1">
+      <!-- Grid container -->
+      <div class="container pt-1">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Linkedin -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://www.linkedin.com/in/sohan-un-6b3795282/"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <!-- Github -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://www.linkedin.com/SohanMaali"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-github"></i
+          ></a>
+          <!-- Instagram -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://instagram.com/sohan_maali1"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <!-- Twitter -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://twitter.com/sohanmaali7"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-twitter"></i
+          ></a>
 
+          <!-- Facebook -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center text-dark p-3"
+        style="background-color: rgba(0, 0, 0, 0.2)"
+      >
+        © 2023 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/">SohanMaali</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
     <script>
       document.getElementById("submit").addEventListener("click", function () {
         var firstName = document.getElementById("firstName").value;

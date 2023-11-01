@@ -1,10 +1,9 @@
 .note {
   text-align: center;
   height: 40px;
-  background: -webkit-linear-gradient(left, #0072ff, #8811c5);
-  color: #fff;
+  background-color: whitesmoke;
   font-weight: bold;
-  /* line-height: 80px; */
+  color: black;
 }
 .form-content {
   padding: 5%;

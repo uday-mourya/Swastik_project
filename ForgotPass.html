@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change Password</title>
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Add custom CSS for styling (you can create your CSS file) -->
+    <style>
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h2 class="mb-4">Change Password</h2>
+        <form id="changePasswordForm" onsubmit="return validateForm()">
+          <!-- Old Password input -->
+          <div class="form-group">
+            <label for="oldPassword">Enter Your customr id</label>
+            <input
+              type="password"
+              class="form-control"
+              id="oldPassword"
+              name="oldPassword"
+              required
+            />
+          </div>
+
+          <!-- New Password input -->
+          <div class="form-group">
+            <label for="newPassword">New Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="newPassword"
+              name="newPassword"
+              required
+            />
+            <div class="error-message" id="newPasswordError"></div>
+          </div>
+
+          <!-- Confirm Password input -->
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="confirmPassword"
+              name="confirmPassword"
+              required
+            />
+            <div class="error-message" id="confirmPasswordError"></div>
+          </div>
+
+          <!-- Send OTP button (optional) -->
+          <button type="button" class="btn btn-primary mb-3" id="sendOTP">
+            Send OTP
+          </button>
+
+          <!-- OTP input (optional) -->
+          <div class="form-group">
+            <label for="otp">OTP</label>
+            <input type="text" class="form-control" id="otp" name="otp" />
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function validateForm() {
+        // Get the values entered by the user
+        const newPassword = document.getElementById("newPassword").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+        const newPasswordError = document.getElementById("newPasswordError");
+        const confirmPasswordError = document.getElementById(
+          "confirmPasswordError"
+        );
+
+        // Clear previous error messages
+        newPasswordError.textContent = "";
+        confirmPasswordError.textContent = "";
+
+        // Perform validation checks
+        if (newPassword !== confirmPassword) {
+          confirmPasswordError.textContent =
+            "New Password and Confirm Password do not match.";
+          return false; // Prevent form submission
+        }
+
+        if (newPassword.length < 8) {
+          newPasswordError.textContent =
+            "New Password must be at least 8 characters long.";
+          return false; // Prevent form submission
+        }
+
+        // You can add more validation checks and error messages as needed
+
+        return true; // Allow form submission if all checks pass
+      }
+    </script>
+  </body>
+</html>
