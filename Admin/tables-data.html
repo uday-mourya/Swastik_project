@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Admin - Dashboard</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
 
-  <title>Admin - Dashboard</title>
-  <meta content="" name="description" />
-  <meta content="" name="keywords" />
+    <!-- Favicons -->
+    <link href="assets/img/logo.png" rel="icon" />
+    <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" /> -->
 
-  <!-- Favicons -->
-  <link href="assets/img/logo.png" rel="icon" />
-  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" /> -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet"
-  />
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-  <!-- Vendor CSS Files -->
-  <link
-    href="assets/vendor/bootstrap/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link
-    href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-    rel="stylesheet"
-  />
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet" />
-</head>
-
-
-<body>
-
-     <!-- ======= Header ======= -->
-     <header id="header" class="header fixed-top d-flex align-items-center">
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="" />
@@ -310,153 +307,136 @@
     </aside>
     <!-- End Sidebar-->
 
-  <main id="main" class="main">
+    <main id="main" class="main">
+      <div class="pagetitle">
+        <h1>Employee Data Table</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">Tables</li>
+            <li class="breadcrumb-item active">Data</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
 
-    <div class="pagetitle">
-      <h1>Data Tables</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">Data</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
+      <section class="section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Employee</h5>
 
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Datatables</h5>
-              <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
-
-              <!-- Table with stripped rows -->
-              <table class="table align-middle mb-0 bg-white">
-                <thead class="bg-light">
-                  <tr>
-                    <th>Name</th>
-                    <th>Title</th>
-                    <th>Status</th>
-                    <th>Position</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <img
-                          src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                          alt=""
-                          style="width: 45px; height: 45px"
-                          class="rounded-circle"
-                        />
-                        <div class="ms-3">
-                          <p class="fw-bold mb-1">John Doe</p>
-                          <p class="text-muted mb-0">john.doe@gmail.com</p>
+                <!-- Table with stripped rows -->
+                <table class="table align-middle mb-0 bg-white">
+                  <thead class="bg-light">
+                    <tr>
+                      <th>Name</th>
+                      <th>Employee Pocition</th>
+                      <!-- <th>Amount</th> -->
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                            alt=""
+                            style="width: 45px; height: 45px"
+                            class="rounded-circle"
+                          />
+                          <div class="ms-3">
+                            <p class="fw-bold mb-1">name</p>
+                            <p class="text-muted mb-0">name@gmail.com</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="fw-normal mb-1">Software engineer</p>
-                      <p class="text-muted mb-0">IT department</p>
-                    </td>
-                    <td>
-                      <span class="badge badge-success rounded-pill d-inline"
-                        >Active</span
-                      >
-                    </td>
-                    <td>Senior</td>
-                    <td>
-                      <button type="button" class="btn btn-link btn-sm btn-rounded">
-                        Edit
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <img
-                          src="https://mdbootstrap.com/img/new/avatars/6.jpg"
-                          class="rounded-circle"
-                          alt=""
-                          style="width: 45px; height: 45px"
-                        />
-                        <div class="ms-3">
-                          <p class="fw-bold mb-1">Alex Ray</p>
-                          <p class="text-muted mb-0">alex.ray@gmail.com</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="fw-normal mb-1">Consultant</p>
-                      <p class="text-muted mb-0">Finance</p>
-                    </td>
-                    <td>
-                      <span class="badge badge-primary rounded-pill d-inline"
-                        >Onboarding</span
-                      >
-                    </td>
-                    <td>Junior</td>
-                    <td>
-                      <button
-                        type="button"
-                        class="btn btn-link btn-rounded btn-sm fw-bold"
-                        data-mdb-ripple-color="dark"
-                      >
-                        Edit
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <img
-                          src="https://mdbootstrap.com/img/new/avatars/7.jpg"
-                          class="rounded-circle"
-                          alt=""
-                          style="width: 45px; height: 45px"
-                        />
-                        <div class="ms-3">
-                          <p class="fw-bold mb-1">Kate Hunington</p>
-                          <p class="text-muted mb-0">kate.hunington@gmail.com</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="fw-normal mb-1">Designer</p>
-                      <p class="text-muted mb-0">UI/UX</p>
-                    </td>
-                    <td>
-                      <span class="badge badge-warning rounded-pill d-inline"
-                        >Awaiting</span
-                      >
-                    </td>
-                    <td>Senior</td>
-                    <td>
-                      <button
-                        type="button"
-                        class="btn btn-link btn-rounded btn-sm fw-bold"
-                        data-mdb-ripple-color="dark"
-                      >
-                        Edit
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- End Table with stripped rows -->
+                      </td>
+                      <td>
+                        <p class="fw-normal mb-1">Accountent</p>
+                      </td>
 
+                      <!-- <td>5000.00</td> -->
+                      <td>
+                        <button
+                          type="button"
+                          class="btn btn-link btn-sm btn-rounded"
+                        >
+                          Edit
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                            class="rounded-circle"
+                            alt=""
+                            style="width: 45px; height: 45px"
+                          />
+                          <div class="ms-3">
+                            <p class="fw-bold mb-1">name</p>
+                            <p class="text-muted mb-0">name@gmail.com</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="fw-normal mb-1">Accountent</p>
+                      </td>
+
+                      <!-- <td>5200.00</td> -->
+                      <td>
+                        <button
+                          type="button"
+                          class="btn btn-link btn-rounded btn-sm fw-bold"
+                          data-mdb-ripple-color="dark"
+                        >
+                          Edit
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                            class="rounded-circle"
+                            alt=""
+                            style="width: 45px; height: 45px"
+                          />
+                          <div class="ms-3">
+                            <p class="fw-bold mb-1">name</p>
+                            <p class="text-muted mb-0">name@gmail.com</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="fw-normal mb-1">Accountent</p>
+                      </td>
+
+                      <!-- <td>00.00</td> -->
+                      <td>
+                        <button
+                          type="button"
+                          class="btn btn-link btn-rounded btn-sm fw-bold"
+                          data-mdb-ripple-color="dark"
+                        >
+                          Edit
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+              </div>
             </div>
           </div>
-
         </div>
-      </div>
-    </section>
-
-  </main><!-- End #main -->
+      </section>
+    </main>
+    <!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
@@ -479,6 +459,5 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-</body>
-
+  </body>
 </html>
