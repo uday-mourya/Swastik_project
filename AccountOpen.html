@@ -392,9 +392,29 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btnSubmit" id="submit">Send OTP</button>
-
-          <button type="button" class="btnSubmit" id="submit">Submit</button>
+          <div class="row">
+            <div class="col-md-6">
+              <button type="button" class="btn btn-primary" id="OtpSend">
+                Send Otp
+              </button>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <span>Fill OTP *</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter OTP "
+                  id="confirmotp"
+                  value=""
+                />
+                <span class="error" id="confirmPasswordError"></span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" id="submit">
+            Submit
+          </button>
         </div>
       </div>
     </div>
