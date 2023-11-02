@@ -2,10 +2,16 @@
     background-color: #81d4fa;
     position: sticky;
 }
+.navbar{
+    background-color: #FF9933;
+}
 .navbar .nav-item:hover{
     background-color:rgba(255,255,255,0.4) ;
     color: black;
     border-radius: 15px;
+}
+.btn{
+    background-color: #FF9933;
 }
  .back-img{
     /* background-image: url('https://sultanchandfoundation.org/wp-content/uploads/2021/04/book.jpg'); */
@@ -18,7 +24,7 @@
     font-size: 20px;
 }
 #icon{
-    color:blue;
+    color:#FF9933;
    font-size: 25px;
     
     margin-left: 30px;
