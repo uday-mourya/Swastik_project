@@ -1,17 +1,24 @@
-.bg-custom{
-    background-color: #81d4fa;
-    position: sticky;
+#ba{
+    background-color: #fff0e6;
 }
-.navbar{
-    background-color: #FF9933;
-}
-.navbar .nav-item:hover{
-    background-color:rgba(255,255,255,0.4) ;
+#top-nav{
+    font-size: 20px;
     color: black;
-    border-radius: 15px;
 }
-.btn{
-    background-color: #FF9933;
+#top-nav:hover{
+   color: #0d6efd;
+}
+h2{
+    font-size: 25px;
+}
+h3{
+    font-size: 20px;
+}
+h4{
+    font-size: 17px;
+}
+#carouselExampleCaptions{
+    margin-top: 90px;
 }
  .back-img{
     /* background-image: url('https://sultanchandfoundation.org/wp-content/uploads/2021/04/book.jpg'); */
@@ -25,8 +32,7 @@
 }
 #icon{
     color:#FF9933;
-   font-size: 25px;
-    
+   font-size: 25px;    
     margin-left: 30px;
 }
 .img-fluid{
@@ -36,10 +42,19 @@
 
 #navbarDropdownMenuLink{
     font-size: 20px;
-    margin-left: 40px;
-
+    /* margin-left: -1px; */
 }
 #footer{
     display: flex;
     justify-content: space-around;
+}
+#save{
+  margin-top: 100px;
+ 
+}
+.background{
+    background-color: #fff0e6;;
+}
+#fix{
+    margin-top: 100px;
 }
