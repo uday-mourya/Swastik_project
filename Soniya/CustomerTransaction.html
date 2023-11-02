@@ -7,7 +7,7 @@
     <title>Dashboard - NiceAdmin Bootstrap Template</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -74,6 +74,7 @@
           
 
     <!-- ======= Sidebar ======= -->
+
     <aside id="sidebar" class="sidebar " style="padding-top: 20px;">
       <ul class="sidebar-nav" id="sidebar-nav "style="padding-top: 20px;>
         <li class="nav-item">
@@ -130,13 +131,13 @@
             data-bs-parent="#sidebar-nav"
           >
             <li>
-              <a href="forms-elements.html">
-                <i class="bi bi-circle"></i><span>Loan Request</span>
+              <a href="UpdationRecord.html">
+                <i class="bi bi-circle"></i><span>Updation Request</span>
               </a>
             </li>
             <li>
               <a href="forms-elements.html">
-                <i class="bi bi-circle"></i><span>Probleam Report</span>
+                <i class="bi bi-circle"></i><span>AActivation Report</span>
               </a>
             </li>
           </ul>
@@ -255,7 +256,9 @@
       </ul>
     </aside> --> 
     <!-- End Sidebar-->
-
+  </ul>
+</nav>
+</header>
     
 
     <!-- Vendor JS Files -->
@@ -276,14 +279,14 @@
 
     <script src="script.js"></script>
     <td>
-    <div class="row border p-4" style=" width: 60rem;"id="first">
+    <div class="row border p-4" style=" width: 60rem; margin-top: 90px; margin-left:310px;"id="first">
         <div class="col-md-5">
             <p class="6">Customer id:</p>
             <input type="text" >
             <pre>
 
             </pre>
-          <input type="date" class="form-control" placeholder="First name" aria-label="First name">
+          <input type="text" class="form-control" placeholder="starting date" aria-label="First name">
         </div>
         <div class="col-md-5">
             <p class="6">Account no:</p>
@@ -291,7 +294,7 @@
             <pre>
    
             </pre>
-          <input type="date" class="form-control" placeholder="Last name" aria-label="Last name">
+          <input type="text" class="form-control" placeholder="current date" aria-label="Last name">
         </div>
       </div>
 
@@ -302,13 +305,27 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body> -->
-    <div class="search-container mt-6 ml-10" id="search">
-        <input type="text" id="search-bar" placeholder="Search...">
-        <button id="search-button ">Search</button>
+    <!-- <div class="search-container mt-6 ml-10" id="search">
+        <span><input type="text" id="search-bar" placeholder="Search..."></span>
+       <span> <button id="search-button " style=" margin-top: -50px;">Search</button></span>
+    </div> -->
+    <div class="container"style="margin-top: 20px;">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-12">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search...">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 <!-- </body>
 </html> -->
-    <div class="container-fluid border"id="search">
+    <div class="container-fluid border"id="search" style="margin-top: 20px;margin-left:30px; width:80rem;">
         <h5>Customer Transaction</h5>
         <table class="table">
             <thead>

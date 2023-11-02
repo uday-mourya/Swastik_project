@@ -92,7 +92,7 @@
             data-bs-toggle="collapse"
             href="#"
           >
-            <i class="bi bi-menu-button-wide"></i><span>Costomer List</span
+            <i class="bi bi-menu-button-wide"></i><span>Costomer </span
             ><i class="bi bi-chevron-down ms-auto"></i>
           </a>
           <ul
@@ -131,13 +131,13 @@
             data-bs-parent="#sidebar-nav"
           >
             <li>
-              <a href="UpdationRecord.html">
+              <a href="UpdationTable.html">
                 <i class="bi bi-circle"></i><span>Updation Request</span>
               </a>
             </li>
             <li>
-              <a href="forms-elements.html">
-                <i class="bi bi-circle"></i><span>Activation Request</span>
+              <a href="ActivationTable.html">
+                <i class="bi bi-circle"></i><span>Activation Report</span>
               </a>
             </li>
           </ul>
@@ -161,7 +161,7 @@
             data-bs-parent="#sidebar-nav"
           >
             <li>
-              <a href="CustmerTransaction.html">
+              <a href="CustomerTransaction.html">
                 <i class="bi bi-circle"></i><span>Customer Transaction</span>
               </a>
             </li>
@@ -278,141 +278,137 @@
 
 
     <script src="script.js"></script>
-    <td>
-    <div class="row border p-4" style=" width: 60rem; margin-top: 90px; margin-left:310px;"id="first">
-        <div class="col-md-5">
-            <p class="6">Customer id:</p>
-            <input type="text" >
-            <pre>
 
-            </pre>
-          <input type="text" class="form-control" placeholder="starting date" aria-label="First name">
-        </div>
-        <div class="col-md-5">
-            <p class="6">Account no:</p>
-            <input type="text" >
-            <pre>
-   
-            </pre>
-          <input type="text" class="form-control" placeholder="current date" aria-label="Last name">
-        </div>
+    <section class="section" style="margin-top: 200px; width:60rem; margin-left: 20rem;">
+        <table class="table table-striped table-hover">
+          <thead class="bg-light">
+            <tr>
+                <h4><center><b>Customer Updation</b></center></h4>
+              <th>Name</th>
+              <th>Account no.</th>
+              <th>Customer id</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img
+                    src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                    alt=""
+                    style="width: 45px; height: 45px"
+                    class="rounded-circle"
+                  />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">name</p>
+                    <p class="text-muted mb-0">name</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">*******6475</p>
+              </td>
 
-        
-      </div>
+              <td>****4739</td>
+              <!-- <td>Update</td> -->
+            <td>  <a href="UpdationRecord.html">Update</a></td>
+              <td>
+                <button type="button" class="btn btn-link btn-sm btn-rounded">
+                <a href="Profile.html">delete</a>
+                </button>
+              </td>
+            </tr>
 
-      
+            <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img
+                      src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                      alt=""
+                      style="width: 45px; height: 45px"
+                      class="rounded-circle"
+                    />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1">name</p>
+                      <p class="text-muted mb-0">name</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p class="fw-normal mb-1">*****97377</p>
+                </td>
+  
+                <td>***9378</td>
+                <!-- <td>Update</td> -->
+                <td>  <a href="UpdationRecord.html">Update</a></td>
+                <td>
+                  <button type="button" class="btn btn-link btn-sm btn-rounded">
+                    <a href="Profile.html">Delete</a>
+                  </button>
+                </td>
+              </tr>
+          </thead>
+          <tr>
+            <td>
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                  alt=""
+                  style="width: 45px; height: 45px"
+                  class="rounded-circle"
+                />
+                <div class="ms-3">
+                  <p class="fw-bold mb-1">name</p>
+                  <p class="text-muted mb-0">name</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p class="fw-normal mb-1">*****97377</p>
+            </td>
 
-<!-- 
-      <!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body> -->
-    <!-- <div class="search-container mt-6 ml-10" id="search">
-        <span><input type="text" id="search-bar" placeholder="Search..."></span>
-       <span> <button id="search-button " style=" margin-top: -50px;">Search</button></span>
-    </div> -->
-    <div class="container"style="margin-top: 20px;">
-      <div class="row justify-content-center">
-        <div class="col-lg-3 col-md-8 col-6">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search...">
-            <div class="input-group-append">
-              <button class="btn btn-primary" type="button">
-                <i class="fas fa-search"></i>
+            <td>***9378</td>
+            <!-- <td>Update</td> -->
+            <td>  <a href="UpdationRecord.html">Update</a></td>
+            <td>
+              <button type="button" class="btn btn-link btn-sm btn-rounded">
+                <a href="UpdationRecord.html">Delete</a>
               </button>
+            </td>
+          </tr>
+      </thead>
+      <tr>
+        <td>
+          <div class="d-flex align-items-center">
+            <img
+              src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />
+            <div class="ms-3">
+              <p class="fw-bold mb-1">name</p>
+              <p class="text-muted mb-0">name</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-<!-- </body>
-</html> -->
-    <div class="container-fluid border"id="search" style="margin-top: 20px;margin-left:20rem; width:60rem;">
-        <h5>Daily Legdger</h5>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Trans.Date</th>
-                <th scope="col">Customer-id</th>
-                <th scope="col">Services</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Staus</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"></th>
-                <td>03/05/2023</td>
-                <td>****4848</td>
-                <td>Acivation</td>
-                <td>Debit</td>
-                <td>Active</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td>03/05/2023</td>
-                <td>****4848</td>
-                <td>Acivation</td>
-                <td>Debit</td>
-                <td>Active</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td>03/05/2023</td>
-                <td>****4848</td>
-                <td>Acivation</td>
-                <td>Debit</td>
-                <td>Active</td>
-                </tr>
-              <tr>
-                <th scope="row"></th>
-                <td>03/05/2023</td>
-                <td>****4848</td>
-                <td>Acivation</td>
-                <td>Debit</td>
-                <td>Active</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td>03/05/2023</td>
-                <td>****4848</td>
-                <td>Acivation</td>
-                <td>Debit</td>
-                <td>Active</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td>03/05/2023</td>
-                <td>****4848</td>
-                <td>Acivation</td>
-                <td>Debit</td>
-                <td>Active</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td>03/05/2023</td>
-                <td>****4848</td>
-                <td>Acivation</td>
-                <td>Debit</td>
-                <td>Active</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td>03/05/2023</td>
-                <td>****4848</td>
-                <td>Acivation</td>
-                <td>Debit</td>
-                <td>Active</td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
+        </td>
+        <td>
+          <p class="fw-normal mb-1">*****97377</p>
+        </td>
 
-    </td>
-    </tr>
-    </table>
-</body>
+        <td>***9378</td>
+        <a href="UpdationRecord.html">Update</a>
+        <!-- <td>Update</td> -->
+        <td>
+          <button type="button" class="btn btn-link btn-sm btn-rounded">
+            <a href="UpdationRecord.html">Delete</a>
+          </button>
+        </td>
+      </tr>
+  </thead>
 
-</html>
+
+        </thead>
+
+        </table>
+      </section>
