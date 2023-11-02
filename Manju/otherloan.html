@@ -5,200 +5,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-   
-    <title>Document</title>
     <style>
-        .bg-custom{
-    background-color: #81d4fa;
-    position: sticky;
+      .bg-custom{
+  background-color: #81d4fa;
+  position: sticky;
 }
 .navbar .nav-item1:hover{
-    
-    background-color:rgba(255,255,255,0.4) ;
-    color: black;
-    border-radius: 15px;
+  
+  background-color:rgba(255,255,255,0.4) ;
+  color: black;
+  border-radius: 15px;
 }
- .back-img{
-    /* background-image: url('https://sultanchandfoundation.org/wp-content/uploads/2021/04/book.jpg'); */
-    height: 80vh;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
+.back-img{
+  /* background-image: url('https://sultanchandfoundation.org/wp-content/uploads/2021/04/book.jpg'); */
+  height: 80vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .lead{
-    font-size: 20px;
+  font-size: 20px;
 }
 #icon{
-    color:blue;
-   font-size: 25px;    
-    margin-left: 30px;
+  color:blue;
+ font-size: 25px;    
+  margin-left: 30px;
+}
+#top-nav{
+  font-size: 20px;
+  color: black;
+}
+#top-nav:hover{
+ color: #0d6efd;
 }
 .img-fluid{
-    height: 250px;
-    width: 400px;
+  height: 250px;
+  width: 400px;
 }
 #nnn{
-    height: 500px;
-    width: 350px;
+  height: 500px;
+  width: 350px;
 }
 li {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 #sec{
-    margin-left: -120px;
-    margin-left: 1px;
-    height: 400px;
-    width: 400px;
-    /* background-color: #f8f8f8; */
-    background-color: whitesmoke;
+  margin-left: -120px;
+  margin-left: 1px;
+  height: 400px;
+  width: 400px;
+  /* background-color: #f8f8f8; */
+  background-color: whitesmoke;
 }
 #navbarDropdownMenuLink{
-    font-size: 20px;
-    margin-left: 40px;
+  font-size: 20px;
+  margin-left: 40px;
 
 }
 #ss{
-    height: 600px;
-    margin: auto;
-    /* background-color: #f8f8f8; */
+  margin-top: 100px;
+  height: 600px;
+  /* margin: auto; */
+  /* background-color: #f8f8f8; */
 }
 #third-row{
-    width: 240px;
+width: 300px;
+  background-color: #f8f9fa;
 }
 #footer{
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
-    </style>
+  </style>
+    
+    <title>Swastik Bank</title>
 </head>
 <body>
-    <!-- <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4  ">
-              <img src="img/logo.png" alt="" width="200">
-            </div>
-            <div class="col-lg-5 col-md-12  ">
-             <h2 class="text-primary mt-3"> WELCOME TO SWASTIK</h2>
-              
-            </div>
-            
-            <div class="col-lg-3 mt-2">
-              <a href="Login.jsp" class="btn btn-primary">Login</a>
-              <i class="bi bi-bell" id="icon"></i>
-          </div>
-        </div> -->
-        
-        <div class="container-fliud">
-          <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <div class="container-fluid">
-             
-              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="container-fluid">
+      <div class="shadow bg-white  rounded  fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid ">
+              <a class="navbar-brand" href="#"><img src="img/logo.png" height="60px" width="190px" alt=""></a>  
+              <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav text-center">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white px-5" href="index.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Home
-                    </a>                   
-                  </li>
-                  <ul class="navbar-nav text-center">
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-toggle text-white px-5" href="About.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        About Us
-                      </a>
+              </button>                
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0  ms-auto">
+                    <li class="nav-item  ms-4">
+                        <a class="nav-link active" id="top-nav" href="index.html">Home</a>
                     </li>
-        
-                </ul>
-                <ul class="navbar-nav text-center">
-                  <li class="nav-item ">
-                    <a class="nav-link dropdown-toggle text-white px-5" href="Account.html" id="navbarDropdownMenuLink" aria-expanded="false">
-                      Account
-                    </a>                   
+                  <li class="nav-item  ms-4">
+                        <a class="nav-link active" id="top-nav" href="About.html">About Us</a>
                   </li>
-        
-              </ul>
-              <ul class="navbar-nav text-center">
-                <li class="nav-item">
-                  <a class="nav-link dropdown-toggle text-white px-5" href="Loan.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Loans
-                  </a>                  
-                </li>        
-            </ul>
-            <ul class="navbar-nav text-center">
-              <li class="nav-item">
-                <a class="nav-link dropdown-toggle text-white px-5" href="Cards.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Cards
-                </a>                
-              </li>        
-          </ul>
-          <ul class="navbar-nav text-center">
-            <li class="nav-item ">
-              <a class="nav-link dropdown-toggle text-white px-4" href="Offer.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Offers
-              </a>              
-            </li>        
-        </ul>
+                  <li class="nav-item ms-4">
+                    <a class="nav-link active" id="top-nav" href="Accountd.html">Account</a>
+                  </li>
+                  <li class="nav-item ms-4">
+                    <a class="nav-link active" id="top-nav" href="Loan.html">Loans</a>
+                  </li>
+                  <li class="nav-item ms-4">
+                    <a class="nav-link active" id="top-nav" href="Cards.html">Cards</a>
+                </li>
+                <li class="nav-item  ms-4">
+                    <a class="nav-link active" id="top-nav" href="Offers.html">Offers</a>
+                </li>
+                </ul>              
+                 <button class="btn btn-primary" type="submit">Login</button>                    
               </div>
             </div>
           </nav>
-        </div>
-  </div>
-         <!---------------------------------------------------3rd row------------------------------------------>
-         
-         <div class="container-fliud">
-            <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1" id="ss">
-              <div class="col bg-white" id="third-row">
-                <ul class="nav flex-column">
-                  <li class="nav-item1 ms-2 mt-5">
-                    <a class="nav-link active text-dark" aria-current="page" href="Loan.html">POPULAR LOANS<i class="bi bi-caret-right-fill" id="arrow
-                      "></i></a>
-                   
-                  </li>
-                  <li class="nav-item1 ms-2 mt-3">
-                    <a class="nav-link  active text-dark" href="Agri.html">AGRI AND RURAL FINANCE <i class="bi bi-caret-right-fill"></i></a>
-                  </li>
-                  <li class="nav-item1 ms-2 mt-3">
-                    <a class="nav-link  active text-dark" href="commercial.html">COMMERCIAL BUSINESS LOANS <i class="bi bi-caret-right-fill "></i></a>
-                  </li>
-                  <li class="nav-item1 ms- mt-3">
-                    <a class="nav-link  active text-dark" href="otherloan.html">OHTER OFFERS AND CHARGES<i class="bi bi-caret-right-fill"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col w-75">
+    </div>
 
-                <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 mt-3" >
-                  <div class="col">
-                    <div class="card  bg-LIGHT pb-2 ms-3" >
-                      <div class="card-body">                                      
-                      
-                       <ul >
-                        <a href="" class=" nav-link text-dark">APPLICABLE FEES & CHARGES</a>
-                        Fees and charges for retail borrowers
-                        
-                       </ul>
-                      </div>
-                  </div>
-                  </div>
+    <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1" id="ss">
+      <div class="col " id="third-row">
+        <ul class="nav flex-column">
+          <li class="nav-item1 ms-2 mt-5">
+            <a class="nav-link active text-dark" aria-current="page" href="Loan.html">POPULAR LOANS  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<i class="bi bi-caret-right-fill" id="arrow
+              "></i></a>
+           
+          </li>
+          <li class="nav-item1 ms-2 mt-3">
+            <a class="nav-link  active text-dark" href="Agri.html">AGRI AND RURAL FINANCE &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; <i class="bi bi-caret-right-fill"></i></a>
+          </li>
+          <li class="nav-item1 ms-2 mt-3">
+            <a class="nav-link  active text-dark" href="commercial.html">COMMERCIAL BUSINESS LOANS&nbsp; &nbsp; <i class="bi bi-caret-right-fill "></i></a>
+          </li>
+          <li class="nav-item1 ms-2 mt-3">
+            <a class="nav-link  active text-dark" href="otherloan.html">OHTER OFFERS AND CHARGES &nbsp; &nbsp;&nbsp;  <i class="bi bi-caret-right-fill"></i></a>
+          </li>
+        </ul>
+      </div>
+        <div class="col w-75">
+
+          <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 mt-3" >
+            <div class="col">
+              <div class="card  bg-LIGHT pb-2 ms-3" >
+                <div class="card-body">                                      
+                
+                 <ul >
+                  <a href="" class=" nav-link text-dark">APPLICABLE FEES & CHARGES</a>
+                  Fees and charges for retail borrowers
                   
-                      </div>
-                  </div>
-                 
-                  
-                 
-                  </div>
-                  </div>
-                  
-                  
+                 </ul>
                 </div>
-              </div>
-
             </div>
-         </div>
-  </div>
-    
+            </div>
+            
+                </div>
+            </div>
+           
+            
+           
+            </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
