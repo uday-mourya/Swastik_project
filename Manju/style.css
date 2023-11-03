@@ -11,6 +11,9 @@
 h2{
     font-size: 25px;
 }
+.btn{
+    background-color: #194086;
+}
 h3{
     font-size: 20px;
 }
@@ -19,6 +22,9 @@ h4{
 }
 #carouselExampleCaptions{
     margin-top: 90px;
+}
+#internet{
+    margin-top: -90px;
 }
  .back-img{
     /* background-image: url('https://sultanchandfoundation.org/wp-content/uploads/2021/04/book.jpg'); */
