@@ -10,79 +10,53 @@
     <title>Swastik Bank</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4  ">
-              <img src="img/logo.png" alt="" width="200">
-            </div>
-            <div class="col-lg-5 col-md-12  ">
-             <h2 class="text-warning mt-3"> WELCOME TO SWASTIK</h2>
-              
-            </div>
-            <div class="col-lg-3 mt-2">
-              <a href="Login.html" class=" btn btn ">Login</a>
-              <i class="bi bi-bell" id="icon"></i>
-          </div>
-          </div>
-          <div class="container-fliud">
-          <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="container-fluid">
-             
-              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="shadow bg-white  rounded  fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid ">
+              <a class="navbar-brand" href="#"><img src="img/logo.png" height="60px" width="190px" alt=""></a>  
+              <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav text-center">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white px-5" href="index.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Home
-                    </a>                   
-                  </li>
-                  <ul class="navbar-nav text-center">
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-toggle text-white px-5" href="About.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        About Us
-                      </a>
+              </button>                
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0  ms-auto">
+                    <li class="nav-item  ms-4">
+                        <a class="nav-link active" id="top-nav" href="index.html">Home</a>
                     </li>
-        
-                </ul>
-                <ul class="navbar-nav text-center">
-                  <li class="nav-item ">
-                    <a class="nav-link dropdown-toggle text-white px-5" href="Accountd.html" id="navbarDropdownMenuLink" aria-expanded="false">
-                      Account
-                    </a>                   
+                  <li class="nav-item  ms-4">
+                        <a class="nav-link active" id="top-nav" href="About.html">About Us</a>
                   </li>
-        
-              </ul>
-              <ul class="navbar-nav text-center">
-                <li class="nav-item ">
-                  <a class="nav-link dropdown-toggle text-white px-5" href="Loan.html" id="navbarDropdownMenuLink" aria-expanded="false">
-                    Loans
-                  </a>                   
+                  <li class="nav-item ms-4">
+                    <a class="nav-link active" id="top-nav" href="Accountd.html">Account</a>
+                  </li>
+                  <li class="nav-item ms-4">
+                    <a class="nav-link active" id="top-nav" href="Loan.html">Loans</a>
+                  </li>
+                  <li class="nav-item ms-4">
+                    <a class="nav-link active" id="top-nav" href="Cards.html">Cards</a>
                 </li>
-      
-            </ul>
-            <ul class="navbar-nav text-center">
-                <li class="nav-item ">
-                  <a class="nav-link dropdown-toggle text-white px-5" href="Cards.html" id="navbarDropdownMenuLink" aria-expanded="false">
-                    Cards
-                  </a>                   
+                <li class="nav-item  ms-4">
+                    <a class="nav-link active" id="top-nav" href="Offers.html">Offers</a>
                 </li>
-      
-            </ul>
-            <ul class="navbar-nav text-center">
-                <li class="nav-item ">
-                  <a class="nav-link dropdown-toggle text-white px-5" href="Offers.html" id="navbarDropdownMenuLink" aria-expanded="false">
-                    Offers
-                  </a>                   
-                </li>
-      
-            </ul>
+                <li class="nav-item dropdown ml-5 text-dark">
+                    <a class="nav-link dropdown-toggle ms-5 text-dark" style="font-size: 20px;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Login
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="Login.html">Customer</a></li>
+                        <li><a class="dropdown-item" href="#">Employee</a></li>
+                      <li><a class="dropdown-item" href="#">Admin</a></li>
+                      <!-- <li><hr class="dropdown-divider"></li> -->
+                      <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                    </ul>
+                  </li>    
+                </ul>              
+                 <!-- <a href="Login.html" class="btn btn-primary">Login</a> -->
+                              
               </div>
             </div>
           </nav>
-        </div>
-  </div>
+    </div>
+ 
     
 
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -132,7 +106,7 @@
                     <div class="about-text">
                         <h2 class="text-center">BANK MARKETING</h2>
                         <p>By not using SMS text messaging for marketing, you are missing a channel with a 98% open rate and a rapid response rate. Consumers love the convenience and are open to receiving personalized and relevant texts from their bank and credit union. Naturally there are some caveats to be aware of. Here are seven pointers.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <a href="#" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -157,9 +131,9 @@
                     <div class="card  bg-LIGHT pb-2">
                         <div class="card-body">
                             
-                            <h3 class="text-center">OFFERS</h3>
+                            <h3 class="text-center">Offers</h3>
                             <p>Get exclusive deals and discounts on thousands of brands</p>
-                            <button class="btn ">Read More</button>
+                            <button class="btn btn-primary ">Read More</button>
                         </div>
                     </div>
                 </div>
@@ -171,7 +145,7 @@
                             <h3 class="text-center">PERSONALISED PRODUCT OFFERS
                             </h3>
                             <p>Authenticate yourself to view and apply for your personalised product offers</p>
-                            <button class="btn ">Read More</button>
+                            <button class="btn btn-primary ">Read More</button>
                         </div>
                     </div>
                 </div>
@@ -180,9 +154,9 @@
                     <div class="card bg-LIGHT pb-2">
                         <div class="card-body">                          
                             <h3  class="text-center"> OFFERS NEAR YOU  </h3>
-                            <p >Get discounts on dining, shopping, travel, etc. at places near you
-
-                            <button class="btn ">Read More</button>
+                            <p >Get discounts on dining, shopping, travel, etc. at places near you</p>
+                              
+                            <button class="btn btn-primary ">Read More</button>
                         </div>
                     </div>
                 </div>
@@ -352,7 +326,7 @@
                                     <input type="text" class="form-control " required placeholder="Your full name" ><br>
                                     <input type="text" class="form-control" required placeholder="Your Email Here"><br>
                                     <textarea name="" rows="3" required class="form-control" placeholder="Your Query Here"></textarea><br><br>
-                                    <button class="btn btn-lg btn-block mt-3 ml-5">Send Now</button>
+                                    <button class="btn btn-primary lg btn-block mt-3 ml-5">Send Now</button>
                                 </div>
                             </div>                            
                         </div>
@@ -397,13 +371,14 @@
                 </div>
                 <div class="card text-white bg-dark pb-2" id="foot"><br>
                     <h4>RATES AND CHARGES</h4>
-                    <h5>Interest Rates <br>
-                        Service Charges and Fees</h5>
+                    <h6>Interest Rates <br>
+                        Service Charges and Fees</h6>
                 </div>
                
             </div>
             <p class="text-white text-center mt-5">All Right Reserved @Swastik Bank</p>
       </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
