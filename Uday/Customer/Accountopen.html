@@ -9,7 +9,7 @@
     <meta content="" name="keywords" />
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/logo.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
@@ -31,14 +31,44 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
+
+    <!-- fafa icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
+
+  <!-- responsive link -->
+
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
+  <!-- form link -->
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  />
+
+  <!-- css code -->
+  <style>
+    .box-custom {
+      background-color: white;
+      height: 150px;
+      width: 120px;
+      text-align: center;
+      padding: 17px;
+      margin-left: 15px;
+    }
+  </style>
 
   <body>
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
-          <link href="assets/img/logo.png" rel="icon" />
+          <img src="assets/img/logo.png" alt="" />
           <span class="d-none d-lg-block">Swastik</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -73,177 +103,7 @@
           </li>
           <!-- End Search Icon-->
 
-          <li class="nav-item dropdown">
-            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-              <i class="bi bi-bell"></i>
-              <span class="badge bg-primary badge-number">4</span> </a
-            ><!-- End Notification Icon -->
-
-            <ul
-              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications"
-            >
-              <li class="dropdown-header">
-                You have 4 new notifications
-                <a href="#"
-                  ><span class="badge rounded-pill bg-primary p-2 ms-2"
-                    >View all</span
-                  ></a
-                >
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li class="notification-item">
-                <i class="bi bi-exclamation-circle text-warning"></i>
-                <div>
-                  <h4>Lorem Ipsum</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>30 min. ago</p>
-                </div>
-              </li>
-
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li class="notification-item">
-                <i class="bi bi-x-circle text-danger"></i>
-                <div>
-                  <h4>Atque rerum nesciunt</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>1 hr. ago</p>
-                </div>
-              </li>
-
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li class="notification-item">
-                <i class="bi bi-check-circle text-success"></i>
-                <div>
-                  <h4>Sit rerum fuga</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>2 hrs. ago</p>
-                </div>
-              </li>
-
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li class="notification-item">
-                <i class="bi bi-info-circle text-primary"></i>
-                <div>
-                  <h4>Dicta reprehenderit</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>4 hrs. ago</p>
-                </div>
-              </li>
-
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li class="dropdown-footer">
-                <a href="#">Show all notifications</a>
-              </li>
-            </ul>
-            <!-- End Notification Dropdown Items -->
-          </li>
           <!-- End Notification Nav -->
-
-          <li class="nav-item dropdown">
-            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-              <i class="bi bi-chat-left-text"></i>
-              <span class="badge bg-success badge-number">3</span> </a
-            ><!-- End Messages Icon -->
-
-            <ul
-              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages"
-            >
-              <li class="dropdown-header">
-                You have 3 new messages
-                <a href="#"
-                  ><span class="badge rounded-pill bg-primary p-2 ms-2"
-                    >View all</span
-                  ></a
-                >
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li class="message-item">
-                <a href="#">
-                  <img
-                    src="assets/img/messages-1.jpg"
-                    alt=""
-                    class="rounded-circle"
-                  />
-                  <div>
-                    <h4>Maria Hudson</h4>
-                    <p>
-                      Velit asperiores et ducimus soluta repudiandae labore
-                      officia est ut...
-                    </p>
-                    <p>4 hrs. ago</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li class="message-item">
-                <a href="#">
-                  <img
-                    src="assets/img/messages-2.jpg"
-                    alt=""
-                    class="rounded-circle"
-                  />
-                  <div>
-                    <h4>Anna Nelson</h4>
-                    <p>
-                      Velit asperiores et ducimus soluta repudiandae labore
-                      officia est ut...
-                    </p>
-                    <p>6 hrs. ago</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li class="message-item">
-                <a href="#">
-                  <img
-                    src="assets/img/messages-3.jpg"
-                    alt=""
-                    class="rounded-circle"
-                  />
-                  <div>
-                    <h4>David Muldon</h4>
-                    <p>
-                      Velit asperiores et ducimus soluta repudiandae labore
-                      officia est ut...
-                    </p>
-                    <p>8 hrs. ago</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li class="dropdown-footer">
-                <a href="#">Show all messages</a>
-              </li>
-            </ul>
-            <!-- End Messages Dropdown Items -->
-          </li>
-          <!-- End Messages Nav -->
 
           <li class="nav-item dropdown pe-3">
             <a
@@ -257,7 +117,7 @@
                 class="rounded-circle"
               />
               <span class="d-none d-md-block dropdown-toggle ps-2"
-                >K. Anderson</span
+                >SK Maali</span
               > </a
             ><!-- End Profile Iamge Icon -->
 
@@ -265,8 +125,8 @@
               class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
             >
               <li class="dropdown-header">
-                <h6>Kevin Anderson</h6>
-                <span>Web Designer</span>
+                <h6>Sohan Maali</h6>
+                <span>Manager</span>
               </li>
               <li>
                 <hr class="dropdown-divider" />
@@ -285,28 +145,6 @@
                 <hr class="dropdown-divider" />
               </li>
 
-              <li>
-                <a
-                  class="dropdown-item d-flex align-items-center"
-                  href="users-profile.html"
-                >
-                  <i class="bi bi-gear"></i>
-                  <span>Account Settings</span>
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li>
-                <a
-                  class="dropdown-item d-flex align-items-center"
-                  href="pages-faq.html"
-                >
-                  <i class="bi bi-question-circle"></i>
-                  <span>Need Help?</span>
-                </a>
-              </li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
@@ -345,7 +183,7 @@
             data-bs-toggle="collapse"
             href="#"
           >
-            <i class="bi bi-menu-button-wide"></i><span>Components</span
+            <i class="bi bi-menu-button-wide"></i><span>Transfer Money</span
             ><i class="bi bi-chevron-down ms-auto"></i>
           </a>
           <ul
@@ -355,7 +193,8 @@
           >
             <li>
               <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Customer List</span>
+                <i class="bi bi-circle"></i
+                ><span>Transfer Money From Account Number </span>
               </a>
             </li>
             <li>
@@ -384,16 +223,55 @@
           >
             <li>
               <a href="forms-elements.html">
-                <i class="bi bi-circle"></i><span>Loan Request</span>
+                <i class="bi bi-circle"></i><span>Document Update Request</span>
               </a>
             </li>
             <li>
               <a href="forms-elements.html">
-                <i class="bi bi-circle"></i><span>Probleam Report</span>
+                <i class="bi bi-circle"></i><span>Loan Apply Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="forms-elements.html">
+                <i class="bi bi-circle"></i><span>Block/Unblock Account</span>
               </a>
             </li>
           </ul>
         </li>
+        <!-- utility -->
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            data-bs-target="#forms-nav"
+            data-bs-toggle="collapse"
+            href="#"
+          >
+            <i class="bi bi-journal-text"></i><span>Utility Service</span
+            ><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul
+            id="forms-nav"
+            class="nav-content collapse"
+            data-bs-parent="#sidebar-nav"
+          >
+            <li>
+              <a href="forms-elements.html">
+                <i class="bi bi-circle"></i><span>Recharge</span>
+              </a>
+            </li>
+            <li>
+              <a href="forms-elements.html">
+                <i class="bi bi-circle"></i><span>Bill & Payment</span>
+              </a>
+            </li>
+            <li>
+              <a href="forms-elements.html">
+                <i class="bi bi-circle"></i><span>EMI Payment</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
         <!-- End Forms Nav -->
 
         <li class="nav-item">
@@ -414,12 +292,14 @@
           >
             <li>
               <a href="tables-general.html">
-                <i class="bi bi-circle"></i><span>Customer Civil</span>
+                <i class="bi bi-circle"></i><span>Civil Report</span>
               </a>
             </li>
 
             <li>
-              <a href="#"> <i class="bi bi-circle"></i><span>Report</span> </a>
+              <a href="TransactionHistory.html">
+                <i class="bi bi-circle"></i><span>Transaction History</span>
+              </a>
             </li>
           </ul>
         </li>
@@ -431,8 +311,7 @@
             href="#"
           >
             <i class="bi bi-layout-text-window-reverse"></i
-            ><span> Add Employee</span
-            ><i class="bi bi-chevron-down ms-auto"></i>
+            ><span> Feedback</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
           <ul
             id="tables-nav"
@@ -450,7 +329,9 @@
               </a>
             </li>
             <li>
-              <a href="#"> <i class="bi bi-circle"></i><span>Report</span> </a>
+              <a href="report.html">
+                <i class="bi bi-circle"></i><span>Report</span>
+              </a>
             </li>
           </ul>
         </li>
@@ -468,7 +349,7 @@
         <li class="nav-item">
           <a class="nav-link collapsed" href="pages-faq.html">
             <i class="bi bi-question-circle"></i>
-            <span>Reaview</span>
+            <span>Review</span>
           </a>
         </li>
         <!-- End F.A.Q Page Nav -->
@@ -501,25 +382,131 @@
 
     <main id="main" class="main">
       <div class="pagetitle">
-        <h1>Form Elements</h1>
+        <h1>Dashboard</h1>
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item">Forms</li>
-            <li class="breadcrumb-item active">Elements</li>
+            <li class="breadcrumb-item active">Dashboard</li>
           </ol>
         </nav>
       </div>
       <!-- End Page Title -->
 
-      code likhan he
+      <!-- E-governance -->
+      <section class="section dashboard my-5 ml-3">
+        <h2 class="text-center">Open an Account</h2>
+        <form class="form-horizontal">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="control-label col-sm-4">Full Name</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-4">Legal Name</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="control-label col-sm-4">Email Address</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-4">Mobile Number</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label class="control-label col-sm-2">Address</label>
+              <div class="col-sm-10">
+                <textarea type="text" class="form-control" rows="2"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Date of Birth</label>
+              <div class="col-sm-8">
+                <input
+                  type="text"
+                  class="date-of-birth ml-5 form-control datepicker"
+                  placeholder="Date of Birth"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">ID Number</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label"
+                >Initial Deposit Amount</label
+              >
+              <div class="col-sm-8">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Account Type</label>
+              <div class="col-sm-8">
+                <select class="form-control">
+                  <option value="checking">Checking</option>
+                  <option value="savings">Savings</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button
+              class="btn btn-primary waves-effect waves-light"
+              id="btn-submit"
+            >
+              Open Account
+            </button>
+          </div>
+          <input
+            type="hidden"
+            name="action"
+            id="action"
+            value="event_dialog_open_newaccount"
+          />
+        </form>
+      </section>
+
+      <!-- shhshend -->
     </main>
     <!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
       <div class="copyright">
-        &copy; Copyright <strong><span>NiceAdmin</span></strong
+        &copy; Copyright <strong><span>SwastikBank</span></strong
         >. All Rights Reserved
       </div>
       <div class="credits">
@@ -527,7 +514,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="index.html">Tech Nerds</a>
       </div>
     </footer>
     <!-- End Footer -->
