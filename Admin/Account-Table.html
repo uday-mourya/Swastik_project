@@ -51,7 +51,7 @@
           method="POST"
           action="#"
         >
-          <input
+          <!-- <input
             type="text"
             name="query"
             placeholder="Search"
@@ -59,7 +59,7 @@
           />
           <button type="submit" title="Search">
             <i class="bi bi-search"></i>
-          </button>
+          </button> -->
         </form>
       </div>
       <!-- End Search Bar -->
@@ -266,60 +266,69 @@
         <li class="nav-item">
           <a class="nav-link collapsed" href="Review-And-Rating.html">
             <i class="bi bi-question-circle"></i>
-            <span>Reaview</span>
+            <span>Review</span>
           </a>
         </li>
       </ul>
     </aside>
     <!-- End Sidebar-->
+
     <main id="main" class="main">
       <div class="pagetitle">
-        <h1>Customer</h1>
+        <h1>Account Data Table</h1>
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item">Components</li>
-            <li class="breadcrumb-item active">Customer</li>
+            <li class="breadcrumb-item">Department</li>
+            <li class="breadcrumb-item active">Account</li>
           </ol>
         </nav>
       </div>
       <!-- End Page Title -->
 
       <section class="section">
-        <table class="table table-striped table-hover">
-          <thead class="bg-light">
-            <tr>
-              <th>Name</th>
-              <th>Account Status</th>
-              <th>Amount</th>
-              <th>Actions</th>
-            </tr>
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img
-                    src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                    alt=""
-                    style="width: 45px; height: 45px"
-                    class="rounded-circle"
-                  />
-                  <div class="ms-3">
-                    <p class="fw-bold mb-1">name</p>
-                    <p class="text-muted mb-0">12345678</p>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <p class="fw-normal mb-1">Active</p>
-              </td>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Loan Table</h5>
 
-              <td>5000.00</td>
-              <td>
-                <a href="Footer.html" class="btn btn-primary">Active</a>
-              </td>
-            </tr>
-          </thead>
-        </table>
+                <!-- Table with stripped rows -->
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th>S. N.</th>
+                      <th>Account type</th>
+                      <th>Minimum Balance</th>
+                      <th>Interest Rate</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>Saving</td>
+                      <td>100.00</td>
+                      <td>1.5%</td>
+                      <td><a href="#" class="edit-btn btn btn-primary">Edit</a></td>
+                    </tr>
+                    <tr>
+                      <td>1.</td>
+                      <td>Current Account</td>
+                      <td>5000.00</td>
+                      <td>1.5%</td>
+                      <td><a href="#" class="edit-btn btn btn-primary">Edit</a></td>
+                    </tr>
+                    <!-- Add more rows here -->
+                  </tbody>
+                </table>
+                
+
+                <!-- End Table with stripped rows -->
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <!-- End #main -->
@@ -345,5 +354,38 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // When the "Edit" button is clicked
+    $('.edit-btn').click(function () {
+      var row = $(this).closest('tr');
+      var minimumBalanceCell = row.find('td:nth-child(3)'); // Select the 3rd column (Minimum Balance)
+      var interestRateCell = row.find('td:nth-child(4)'); // Select the 4th column (Interest Rate)
+
+      if ($(this).text() === 'Edit') {
+        $(this).text('Save');
+
+        var minimumBalanceText = minimumBalanceCell.text();
+        var interestRateText = interestRateCell.text();
+
+        minimumBalanceCell.html('<input type="text" value="' + minimumBalanceText + '">');
+        interestRateCell.html('<input type="text" value="' + interestRateText + '">');
+      } else if ($(this).text() === 'Save') {
+        $(this).text('Edit');
+
+        var minimumBalanceInput = minimumBalanceCell.find('input');
+        var interestRateInput = interestRateCell.find('input');
+
+        var minimumBalanceText = minimumBalanceInput.val();
+        var interestRateText = interestRateInput.val();
+
+        minimumBalanceCell.text(minimumBalanceText);
+        interestRateCell.text(interestRateText);
+      }
+    });
+  });
+</script>
+
   </body>
 </html>
