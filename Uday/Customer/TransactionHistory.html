@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>User Dashboard</title>
+    <title>User-Dashboard</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
     <!-- Favicons -->
-    <link href="assets/img/logo-img11.png" rel="icon" />
+    <link href="assets/img/logo.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
@@ -120,13 +120,19 @@ label {
           </li>
           <!-- End Search Icon-->
 
-          <li class="nav-item dropdown">
+
+
+
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
               <i class="bi bi-bell"></i>
               <span class="badge bg-primary badge-number">4</span> </a
-            ><!-- End Notification Icon -->
+            > -->
+            
+            
+            <!-- End Notification Icon -->
 
-            <ul
+            <!-- <ul
               class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications"
             >
               <li class="dropdown-header">
@@ -196,16 +202,15 @@ label {
                 <a href="#">Show all notifications</a>
               </li>
             </ul>
-            <!-- End Notification Dropdown Items -->
+           
           </li>
-          <!-- End Notification Nav -->
+        
 
           <li class="nav-item dropdown">
             <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
               <i class="bi bi-chat-left-text"></i>
               <span class="badge bg-success badge-number">3</span> </a
-            ><!-- End Messages Icon -->
-
+            >
             <ul
               class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages"
             >
@@ -288,8 +293,12 @@ label {
                 <a href="#">Show all messages</a>
               </li>
             </ul>
-            <!-- End Messages Dropdown Items -->
+           
           </li>
+ -->
+
+
+
           <!-- End Messages Nav -->
 
           <li class="nav-item dropdown pe-3">
@@ -299,21 +308,21 @@ label {
               data-bs-toggle="dropdown"
             >
               <img
-                src="assets/img/profile-img.jpg"
+                src="assets/img/messages-3.jpg"
                 alt="Profile"
                 class="rounded-circle"
               />
               <span class="d-none d-md-block dropdown-toggle ps-2"
-                >K. Anderson</span
+                >Mourya</span
               > </a
-            ><!-- End Profile Iamge Icon -->
+            >
 
             <ul
               class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
             >
               <li class="dropdown-header">
-                <h6>Kevin Anderson</h6>
-                <span>Web Designer</span>
+                <h6>Uday Mourya</h6>
+                
               </li>
               <li>
                 <hr class="dropdown-divider" />
@@ -325,7 +334,7 @@ label {
                   href="users-profile.html"
                 >
                   <i class="bi bi-person"></i>
-                  <span>My Profile</span>
+                  <span>Change Password</span>
                 </a>
               </li>
               <li>
@@ -333,27 +342,9 @@ label {
               </li>
 
               <li>
-                <a
-                  class="dropdown-item d-flex align-items-center"
-                  href="users-profile.html"
-                >
-                  <i class="bi bi-gear"></i>
-                  <span>Account Settings</span>
-                </a>
-              </li>
-              <li>
                 <hr class="dropdown-divider" />
               </li>
 
-              <li>
-                <a
-                  class="dropdown-item d-flex align-items-center"
-                  href="pages-faq.html"
-                >
-                  <i class="bi bi-question-circle"></i>
-                  <span>Need Help?</span>
-                </a>
-              </li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
@@ -365,7 +356,7 @@ label {
                 </a>
               </li>
             </ul>
-            <!-- End Profile Dropdown Items -->
+            
           </li>
           <!-- End Profile Nav -->
         </ul>
@@ -374,8 +365,8 @@ label {
     </header>
     <!-- End Header -->
 
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
+     <!-- ======= Sidebar ======= -->
+     <aside id="sidebar" class="sidebar">
       <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
           <a class="nav-link" href="index.html">
@@ -400,16 +391,21 @@ label {
             class="nav-content collapse"
             data-bs-parent="#sidebar-nav"
           >
+          <li>
+            <a href="Addbeneficiary.html">
+              <i class="bi bi-circle"></i><span>Add Beneficiary</span>
+            </a>
+          </li>
             <li>
               <a href="Transfermoney.html">
                 <i class="bi bi-circle"></i><span>Transfer Money From Account Number </span>
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="components-alerts.html">
                 <i class="bi bi-circle"></i><span>---</span>
               </a>
-            </li>
+            </li> -->
           </ul>
         </li>
         <!-- End Components Nav -->
@@ -430,7 +426,7 @@ label {
             data-bs-parent="#sidebar-nav"
           >
             <li>
-              <a href="#">
+              <a href="documentrequest.html">
                 <i class="bi bi-circle"></i><span>Document Update Request</span>
               </a>
             </li>
@@ -440,8 +436,8 @@ label {
               </a>
             </li>
             <li>
-              <a href="forms-elements.html">
-                <i class="bi bi-circle"></i><span>Block/Unblock Account</span>
+              <a href="#">
+                <i class="bi bi-circle"></i><span>Unblock Account</span>
               </a>
             </li>
           </ul>
@@ -450,7 +446,7 @@ label {
         <li class="nav-item">
           <a
             class="nav-link collapsed"
-            data-bs-target="#forms-nav"
+            data-bs-target="#utility-nav"
             data-bs-toggle="collapse"
             href="#"
           >
@@ -458,7 +454,7 @@ label {
             ><i class="bi bi-chevron-down ms-auto"></i>
           </a>
           <ul
-            id="forms-nav"
+            id="utility-nav"
             class="nav-content collapse"
             data-bs-parent="#sidebar-nav"
           >
@@ -473,7 +469,7 @@ label {
               </a>
             </li>
             <li>
-              <a href="forms-elements.html">
+              <a href="#">
                 <i class="bi bi-circle"></i><span>EMI Payment</span>
               </a>
             </li>
@@ -500,7 +496,7 @@ label {
             data-bs-parent="#sidebar-nav"
           >
             <li>
-              <a href="tables-general.html">
+              <a href="#">
                 <i class="bi bi-circle"></i><span>Civil Report</span>
               </a>
             </li>
@@ -513,7 +509,7 @@ label {
         <li class="nav-item">
           <a
             class="nav-link collapsed"
-            data-bs-target="#tables-nav"
+            data-bs-target="#feedback-nav"
             data-bs-toggle="collapse"
             href="#"
           >
@@ -522,17 +518,17 @@ label {
             ><i class="bi bi-chevron-down ms-auto"></i>
           </a>
           <ul
-            id="tables-nav"
+            id="feedback-nav"
             class="nav-content collapse"
             data-bs-parent="#sidebar-nav"
           >
             <li>
-              <a href="tables-general.html">
+              <a href="#">
                 <i class="bi bi-circle"></i><span>General Tables</span>
               </a>
             </li>
             <li>
-              <a href="tables-data.html">
+              <a href="#">
                 <i class="bi bi-circle"></i><span>Employee List</span>
               </a>
             </li>
@@ -544,20 +540,25 @@ label {
 
         <li class="nav-heading">Pages</li>
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link collapsed" href="users-profile.html">
             <i class="bi bi-person"></i>
             <span>Profile</span>
           </a>
-        </li>
+        </li> -->
+
+
         <!-- End Profile Page Nav -->
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link collapsed" href="pages-faq.html">
             <i class="bi bi-question-circle"></i>
             <span>Review</span>
           </a>
-        </li>
+        </li> -->
+
+
+
         <!-- End F.A.Q Page Nav -->
 
         <li class="nav-item">
@@ -568,21 +569,27 @@ label {
         </li>
         <!-- End Contact Page Nav -->
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link collapsed" href="pages-register.html">
             <i class="bi bi-card-list"></i>
             <span>Register</span>
           </a>
-        </li>
+        </li> -->
+
+
+
         <!-- End Register Page Nav -->
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link collapsed" href="pages-login.html">
             <i class="bi bi-box-arrow-in-right"></i>
             <span>Login</span>
           </a>
         </li>
-      </ul>
+      </ul> -->
+
+
+
     </aside>
     <!-- End Sidebar-->
 
@@ -604,12 +611,13 @@ label {
         <table class="table table-striped table-hover">
           <thead class="bg-light">
             <tr>
-              <th>Name</th>
-              <th>Account Status</th>
-              <th>Amount</th>
-              <th>Actions</th>
+              <th>Transaction Date</th>
+              <th>Transaction ID</th>
+              <th>Service</th>
+              <th>Ammount</th>
+              <th>Status</th>
             </tr>
-            <tr>
+            <!-- <tr>
               <td>
                 <div class="d-flex align-items-center">
                   <img
@@ -634,6 +642,34 @@ label {
                   Edit
                 </button>
               </td>
+            </tr> -->
+            <tr>
+              <td>13/10/2022</td>
+              <td>#47747</td>
+              <td>Neft/Rtgs</td>
+              <td>2000 RS</td>
+              <td>Done</td>
+            </tr>
+            <tr>
+              <td>13/10/2022</td>
+              <td>#47747</td>
+              <td>Neft/Rtgs</td>
+              <td>2000 RS</td>
+              <td>Done</td>
+            </tr>
+            <tr>
+              <td>13/10/2022</td>
+              <td>#47747</td>
+              <td>Neft/Rtgs</td>
+              <td>2000 RS</td>
+              <td>Done</td>
+            </tr>
+            <tr>
+              <td>13/10/2022</td>
+              <td>#47747</td>
+              <td>Neft/Rtgs</td>
+              <td>2000 RS</td>
+              <td>Done</td>
             </tr>
           </thead>
         </table>
@@ -644,10 +680,9 @@ label {
     </main>
     <!-- End #main -->
 
-    <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
       <div class="copyright">
-        &copy; Copyright <strong><span>NiceAdmin</span></strong
+        &copy; Copyright <strong><span>SwastikBank</span></strong
         >. All Rights Reserved
       </div>
       <div class="credits">
@@ -655,11 +690,12 @@ label {
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="index.html">Tech Nerds</a>
       </div>
     </footer>
     <!-- End Footer -->
 
+    
     <a
       href="#"
       class="back-to-top d-flex align-items-center justify-content-center"
