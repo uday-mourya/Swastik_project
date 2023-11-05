@@ -1,12 +1,20 @@
-
 package com.swastik.dao;
 
 import java.io.Serializable;
 
+public class AccountInformationDao implements Serializable {
 
-public class AccountInformationDao implements Serializable{
-    private int AccountNumber,customerId;
-    private String accountType,accountOpenDate,branchId,accountStatus;
+    private int AccountNumber, customerId;
+    private String accountType, accountOpenDate, branchId, accountStatus;
+    private float currentBalance;
+
+    public float getCurrentBalance() {
+        return currentBalance;
+    }
+
+    public void setCurrentBalance(float currentBalance) {
+        this.currentBalance = currentBalance;
+    }
 
     public int getAccountNumber() {
         return AccountNumber;
