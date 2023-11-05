@@ -1,116 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- --------------------CDN--sohan-------msdkdk------------- -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css"
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
-
-    <!-- --------------------CDN---------------------- -->
-    <!-- --------------------font-awesome---------------------- -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
-    <!-- --------------------font-awesome---------------------- -->
+    <title>Account Opening Form</title>
+    <style>
+      body {
+        color: black;
+        font-weight: bolder;
+        background-color: lightblue;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+
+    <script>
+              function validateName() {
+                  var firstNameInput = document.getElementById("form3Example1mS").value;
+                  var nameDisplay = document.getElementById("firstNameDisplay");
+
+                           if (firstNameInput.trim() === "") {
+                      nameDisplay.innerHTML = ${fieldName} is required.;
+                      nameDisplay.style.color = "red";
+                      return false;
+                  } else if (!/^[A-Za-z]+$/.test(firstNameInput)) {
+                      nameDisplay.innerHTML = Only letters are allowed in ${fieldName}.;
+                      nameDisplay.style.color = "red";
+                      return false;
+                  } else {
+                      nameDisplay.innerHTML = "";
+                      return true;
+                  }
+              }
+
+              function validateForm() {
+
+                          var firstNameDisplay = validateName();
+
+                          var lastNameInput = document.getElementById("form3Example1n");
+                          var lastNameDisplay = document.getElementById("lastNameDisplay");
+
+                          var motherNameInput = document.getElementById("form3Example1m1");
+                          var motherNameDisplay = document.getElementById("motherNameDisplay");
+
+                          var fatherNameInput = document.getElementById("form3Example1n1");
+                          var fatherNameDisplay = document.getElementById("fatherNameDisplay");
+
+                          var firstNameValid = validateName();
+                              // var lastNameValid = validateName(lastNameInput, lastNameDisplay, "Last Name");
+                              // var motherNameValid = validateName(motherNameInput, motherNameDisplay, "Mother's Name");
+                              // var fatherNameValid = validateName(fatherNameInput, fatherNameDisplay, "Father's Name");
+                          var valid = validatePAN();
+
+                          // Add more form field validations here if needed
+
+                          if (firstNameDisplay && lastNameValid && motherNameValid && fatherNameValid && valid && valid) {
+                              // If all fields pass validation, you can submit the form or perform further actions.
+                              alert("Form submitted successfully!");
+                              // Here, you can add code to submit the form or perform other actions.
+                          }
+                      }
+          function validatePAN() {
+              var b = false;
+              var panInput = document.getElementById("pan").value;
+              var confirmPANInput = document.getElementById("confirmPAN").value;
+              var confirmPANDisplay = document.getElementById("confirmPANDisplay");
+
+
+
+                  if (panInput.trim() === "") {
+                      confirmPANDisplay.innerHTML = "PAN Card Number is required.";
+                      confirmPANDisplay.style.color = "red";
+
+                  } else if (confirmPANInput.trim() === "") {
+                      confirmPANDisplay.innerHTML = "Please confirm PAN Card Number.";
+                      confirmPANDisplay.style.color = "red";
+
+                  } else if (panInput!==confirmPANInput) {
+                      confirmPANDisplay.innerHTML = "PAN Card Numbers do not match.";
+                      confirmPANDisplay.style.color = "red";
+
+                  } else {
+                      confirmPANDisplay.innerHTML = "";
+                      b = true;
+                  }
+                  return b;
+          }
+
+          function validateAadhaar() {
+              var b = false;
+              var aadhaarInput = document.getElementById("aadhaar").value;
+              var confirmAadhaarInput = document.getElementById("confirmAadhaar").value;
+              var confirmAADHAARDisplay = document.getElementById("confirmAadhaarDisplay");
+
+
+
+                  if (aadhaarInput.trim() === "") {
+                      confirmAADHAARDisplay.innerHTML = "Aadhaar Number is required.";
+                      confirmAADHAARDisplay.style.color = "red";
+
+                  } else if (confirmAadhaarInput.trim() === "") {
+                      confirmAADHAARDisplay.innerHTML = "Please confirm Aadhaar Number.";
+                      confirmAADHAARDisplay.style.color = "red";
+
+                  } else if (aadhaarInput!==confirmAadhaarInput) {
+                      confirmAADHAARDisplay.innerHTML = "Aadhaar Numbers do not match.";
+                      confirmAADHAARDisplay.style.color = "red";
+
+                  } else {
+                      confirmAADHAARDisplay.innerHTML = "";
+                      b = true;
+                  }
+                  return b;
+          }
+          function validateEmail() {
+              var b = false;
+              var email = document.getElementById("email").value;
+              var confirmEmail = document.getElementById("confirmEmail").value;
+              var confirmEmailDisplay = document.getElementById("confirmEmailDisplay");
+
+
+
+                  if (email.trim() === "") {
+                      confirmEmailDisplay.innerHTML = "Email is required.";
+                      confirmEmailDisplay.style.color = "red";
+
+                  } else if (confirmEmail.trim() === "") {
+                      confirmEmailDisplay.innerHTML = "Please confirm Email";
+                      confirmEmailDisplay.style.color = "red";
+
+                  } else if (email!==confirmEmail) {
+                      confirmEmailDisplay.innerHTML = "Email do not match.";
+                      confirmEmailDisplay.style.color = "red";
+
+                  } else {
+                      confirmEmailDisplay.innerHTML = "";
+                      b = true;
+                  }
+                  return b;
+          }
+
+          Var = string_count = 4;
+      var random_string_code = randomString(string_count);
+      console.log(random_string_code);
+      function randomString(count) {
+      var length = count;
+      var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      //Important Section
+      var result = '';
+      for (var i = length; i > 0; --i)
+      result += chars[Math.round(Math.random() * (chars.length - 1))];
+      return result;
+      }
+
+
+      // background: #0e4bf1;
+      // }
+      // Third, paste the following codes into your script.js file.
+
+       const inputs = document.querySelectorAll("input"),
+        button = document.querySelector("button");
+      // iterate over all inputs
+      inputs.forEach((input, index1) => {
+        input.addEventListener("keyup", (e) => {
+          // This code gets the current input element and stores it in the currentInput variable
+          // This code gets the next sibling element of the current input element and stores it in the nextInput variable
+          // This code gets the previous sibling element of the current input element and stores it in the prevInput variable
+          const currentInput = input,
+            nextInput = input.nextElementSibling,
+            prevInput = input.previousElementSibling;
+          // if the value has more than one character then clear it
+          if (currentInput.value.length > 1) {
+            currentInput.value = "";
+            return;
+          }
+          // if the next input is disabled and the current value is not empty
+          //  enable the next input and focus on it
+          if (nextInput && nextInput.hasAttribute("disabled") && currentInput.value !== "") {
+            nextInput.removeAttribute("disabled");
+            nextInput.focus();
+          }
+          // if the backspace key is pressed
+          if (e.key === "Backspace") {
+            // iterate over all inputs again
+            inputs.forEach((input, index2) => {
+              // if the index1 of the current input is less than or equal to the index2 of the input in the outer loop
+              // and the previous element exists, set the disabled attribute on the input and focus on the previous element
+              if (index1 <= index2 && prevInput) {
+                input.setAttribute("disabled", true);
+                input.value = "";
+                prevInput.focus();
+              }
+            });
+          }
+          //if the fourth input( which index number is 3) is not empty and has not disable attribute then
+          //add active class if not then remove the active class.
+          if (!inputs[3].disabled && inputs[3].value !== "") {
+            button.classList.add("active");
+            return;
+          }
+          button.classList.remove("active");
+        });
+      });
+      //focus the first input which index is 0 on window load
+      window.addEventListener("load", () => inputs[0].focus());
+    </script>
   </head>
   <body>
-    <section class="h-100 h-custom gradient-custom-2">
+    <section>
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-12">
-            <div
-              class="card card-registration card-registration-2"
-              style="border-radius: 15px"
-            >
-              <div class="card-body p-0">
-                <div class="row g-0">
-                  <div class="col-lg-6">
-                    <div class="p-5">
-                      <h3 class="fw-normal mb-5" style="color: #4835d4">
-                        Persnal Infomation
-                      </h3>
-
-                      <div class="mb-4 pb-2">
-                        <select class="select">
-                          <option value="1">Title</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                          <option value="4">Four</option>
-                        </select>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-6 mb-4 pb-2">
-                          <div class="form-outline">
-                            <input
-                              type="text"
-                              id="form3Examplev2"
-                              class="form-control form-control-lg"
-                            />
-                            <label class="form-label" for="form3Examplev2"
-                              >First name</label
-                            >
-                          </div>
-                        </div>
-                        <div class="col-md-6 mb-4 pb-2">
-                          <div class="form-outline">
-                            <input
-                              type="text"
-                              id="form3Examplev3"
-                              class="form-control form-control-lg"
-                            />
-                            <label class="form-label" for="form3Examplev3"
-                              >Last name</label
-                            >
-                          </div>
+          <div class="col">
+            <div class="card card-registration my-4">
+              <div class="row g-0">
+                <div class="col-xl-6 d-none d-xl-block"></div>
+                <div class="col-xl-6">
+                  <div class="card-body p-md-5 text-black">
+                    <h3 class="mb-5 text-uppercase">Account Opening form</h3>
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input
+                            type="text"
+                            id="form3Example1m"
+                            class="form-control form-control-lg"
+                            onkeyup="validateName()"
+                          />
+                          <label class="form-label" for="form3Example1m">
+                            First name
+                          </label>
+                          <span id="firstNameDisplay" class="error"></span>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-6 mb-4 pb-2">
-                          <div class="form-outline">
-                            <input
-                              type="text"
-                              id="form3Examplev2"
-                              class="form-control form-control-lg"
-                            />
-                            <label class="form-label" for="form3Examplev2"
-                              >Father name</label
-                            >
-                          </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input
+                            type="text"
+                            id="form3Example1n"
+                            class="form-control form-control-lg"
+                            onkeyup="validateName()"
+                          />
+                          <label class="form-label" for="form3Example1n">
+                            Last name
+                          </label>
+                          <span id="lastNameDisplay" class="error"></span>
                         </div>
-                        <div class="col-md-6 mb-4 pb-2">
-                          <div class="form-outline">
-                            <input
-                              type="text"
-                              id="form3Examplev3"
-                              class="form-control form-control-lg"
-                            />
-                            <label class="form-label" for="form3Examplev3"
-                              >Mother name</label
-                            >
-                          </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input
+                            type="text"
+                            id="form3Example1m1"
+                            class="form-control form-control-lg"
+                            onkeyup="validateName()"
+                          />
+                          <label class="form-label" for="form3Example1m1">
+                            Mother's name
+                          </label>
+                          <span id="motherNameDisplay" class="error"></span>
                         </div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input
+                            type="text"
+                            id="form3Example1n1"
+                            class="form-control form-control-lg"
+                            onkeyup="validateName()"
+                          />
+                          <label class="form-label" for="form3Example1n1">
+                            Father's name
+                          </label>
+                          <span id="fatherNameDisplay" class="error"></span>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="form-outline mb-4">
+                          <label
+                            for="DOB"
+                            class="form-label"
+                            for="form3Example9"
+                            >DOB:</label
+                          >
+                          <input type="date" id="DOB" name="DOB"
+                        </div>
+                      </div>
+                      <div class="form-outline mb-4">
+                        <label> Phone : </label>
+                        <input
+                          type="text"
+                          name="country code"
+                          value="+91"
+                          size="2"
+                        />
+                        <input type="text" name="phone" size="10" /> <br />
+                        <br />
                       </div>
 
                       <div
                         class="d-md-flex justify-content-start align-items-center mb-4 py-2"
                       >
-                        <h6 class="mb-0 me-4">
-                          Gender: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </h6>
-
+                        <h6 class="mb-0 me-4">Gender:</h6>
                         <div class="form-check form-check-inline mb-0 me-4">
                           <input
                             class="form-check-input"
@@ -119,11 +322,10 @@
                             id="femaleGender"
                             value="option1"
                           />
-                          <label class="form-check-label" for="femaleGender"
-                            >Female</label
-                          >
+                          <label class="form-check-label" for="femaleGender">
+                            Female
+                          </label>
                         </div>
-
                         <div class="form-check form-check-inline mb-0 me-4">
                           <input
                             class="form-check-input"
@@ -132,11 +334,10 @@
                             id="maleGender"
                             value="option2"
                           />
-                          <label class="form-check-label" for="maleGender"
-                            >Male</label
-                          >
+                          <label class="form-check-label" for="maleGender">
+                            Male
+                          </label>
                         </div>
-
                         <div class="form-check form-check-inline mb-0">
                           <input
                             class="form-check-input"
@@ -145,179 +346,204 @@
                             id="otherGender"
                             value="option3"
                           />
-                          <label class="form-check-label" for="otherGender"
-                            >Other</label
-                          >
-                        </div>
-                      </div>
-
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline">
-                          <input
-                            type="date"
-                            id="form3Examplev4"
-                            class="form-control form-control-lg"
-                          />
-                          <label class="form-label" for="form3Examplev4"
-                            >DOB</label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 bg-indigo text-white">
-                    <div class="p-5">
-                      <h3 class="fw-normal mb-5">Contact Details</h3>
-                      <div class="row">
-                        <div class="col-md-6 mb-4 pb-2">
-                          <div class="form-outline">
-                            <input
-                              type="text"
-                              id="form3Examplev2"
-                              class="form-control form-control-lg"
-                            />
-                            <label class="form-label" for="form3Examplev2"
-                              >Mobile Number</label
-                            >
-                          </div>
-                        </div>
-                        <div class="col-md-6 mb-4 pb-2">
-                          <div class="form-outline">
-                            <input
-                              type="text"
-                              id="form3Examplev3"
-                              class="form-control form-control-lg"
-                            />
-                            <label class="form-label" for="form3Examplev3"
-                              >ReEnter Mobile Number</label
-                            >
-                          </div>
-                        </div>
-                      </div>
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline">
-                          <input
-                            type="email"
-                            id="form3Examplev4"
-                            class="form-control form-control-lg"
-                          />
-                          <label class="form-label" for="form3Examplev4"
-                            >Email</label
-                          >
-                        </div>
-                      </div>
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline">
-                          <input
-                            type="email"
-                            id="form3Examplev4"
-                            class="form-control form-control-lg"
-                          />
-                          <label class="form-label" for="form3Examplev4"
-                            >ReEnter Email</label
-                          >
-                        </div>
-                      </div>
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
-                          <input
-                            type="text"
-                            id="form3Examplea2"
-                            class="form-control form-control-lg"
-                          />
-                          <label class="form-label" for="form3Examplea2"
-                            >Street + Nr</label
-                          >
-                        </div>
-                      </div>
-
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
-                          <input
-                            type="text"
-                            id="form3Examplea3"
-                            class="form-control form-control-lg"
-                          />
-                          <label class="form-label" for="form3Examplea3"
-                            >Additional Information</label
-                          >
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-5 mb-4 pb-2">
-                          <div class="form-outline form-white">
-                            <input
-                              type="text"
-                              id="form3Examplea4"
-                              class="form-control form-control-lg"
-                            />
-                            <label class="form-label" for="form3Examplea4"
-                              >Zip Code</label
-                            >
-                          </div>
-                        </div>
-                        <div class="col-md-7 mb-4 pb-2">
-                          <div class="form-outline form-white">
-                            <input
-                              type="text"
-                              id="form3Examplea5"
-                              class="form-control form-control-lg"
-                            />
-                            <label class="form-label" for="form3Examplea5"
-                              >Place</label
-                            >
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
-                          <input
-                            type="text"
-                            id="form3Examplea6"
-                            class="form-control form-control-lg"
-                          />
-                          <label class="form-label" for="form3Examplea6"
-                            >Country</label
-                          >
+                          <label class="form-check-label" for="otherGender">
+                            Other
+                          </label>
                         </div>
                       </div>
 
                       <div
-                        class="form-check d-flex justify-content-start mb-4 pb-3"
+                        class="d-md-flex justify-content-start align-items-center mb-4 py-2"
                       >
-                        <input
-                          class="form-check-input me-3"
-                          type="checkbox"
-                          value=""
-                          id="form2Example3c"
-                        />
-                        <label
-                          class="form-check-label text-white"
-                          for="form2Example3"
-                        >
-                          I do accept the
-                          <a href="#!" class="text-white"
-                            ><u>Terms and Conditions</u></a
-                          >
-                          of your site.
-                        </label>
+                        <h6 class="mb-0 me-4">Occupation:</h6>
+                        <div class="form-check form-check-inline mb-0 me-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="femaleGender"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="femaleGender">
+                            Student
+                          </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-0 me-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="maleGender"
+                            value="option2"
+                          />
+                          <label class="form-check-label" for="maleGender">
+                            Business
+                          </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-0">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="otherGender"
+                            value="option3"
+                          />
+                          <label class="form-check-label" for="otherGender">
+                            Service
+                          </label>
+                        </div>
                       </div>
 
-                      <button
-                        type="button"
-                        class="btn btn-light btn-lg"
-                        data-mdb-ripple-color="dark"
+                      <div
+                        class="d-md-flex justify-content-start align-items-center mb-4 py-2"
                       >
-                        Clear
+                        <h6 class="mb-0 me-4">Marital Status:</h6>
+                        <div class="form-check form-check-inline mb-0 me-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="femaleGender"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="femaleGender">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-0 me-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="maleGender"
+                            value="option2"
+                          />
+                          <label class="form-check-label" for="maleGender">
+                            No
+                          </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-0"></div>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input
+                        type="text"
+                        id="pan"
+                        class="form-control form-control-lg"
+                        onkeyup="validatePAN()"
+                      />
+                      <label class="form-label" for="pan"
+                        >PAN Card Number</label
+                      >
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input
+                        type="text"
+                        id="confirmPAN"
+                        class="form-control form-control-lg"
+                        onkeyup="validatePAN()"
+                      />
+                      <label class="form-label" for="confirmPAN"
+                        >Confirm PAN Card Number</label
+                      >
+                      <span id="confirmPANDisplay" class="error"></span>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input
+                        type="text"
+                        id="aadhaar"
+                        class="form-control form-control-lg"
+                        onkeyup="validateAadhaar()"
+                      />
+                      <label class="form-label" for="pan">Aadhaar Number</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input
+                        type="text"
+                        id="confirmAadhaar"
+                        class="form-control form-control-lg"
+                        onkeyup="validateAadhaar()"
+                      />
+                      <label class="form-label" for="confirmPAN"
+                        >Confirm Aadhaar Number</label
+                      >
+                      <span id="confirmAadhaarDisplay" class="error"></span>
+                    </div>
+                    <!-- Other form fields -->
+                    <div class="form-outline mb-4">
+                      <input
+                        type="text"
+                        id="email"
+                        class="form-control form-control-lg"
+                        onkeyup="validateEmail()"
+                      />
+                      <label class="form-label" for="email">Email </label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input
+                        type="text"
+                        id="confirmEmail"
+                        class="form-control form-control-lg"
+                        onkeyup="validateEmail()"
+                      />
+                      <label class="form-label" for="confirmEmail"
+                        >Confirm Email</label
+                      >
+                      <span id="confirmEmailDisplay" class="error"></span>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input
+                        type="text"
+                        id="form3Example8"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="form3Example8"
+                        >Permanant Address
+                      </label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input
+                        type="text"
+                        id="form3Example8"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="form3Example8"
+                        >Local Address
+                      </label>
+                    </div>
+
+                    <div class="container">
+                      <header>
+                        <i class="bx bxs-check-shield"></i>
+                      </header>
+                      <h4>Enter OTP Code</h4>
+                      <form action="#">
+                        <div class="input-field">
+                          <input type="number" />
+                          <input type="number" disabled />
+                          <input type="number" disabled />
+                          <input type="number" disabled />
+                        </div>
+                        <button>Verify OTP</button>
+                      </form>
+                    </div>
+
+                    <div class="d-flex justify-content-end pt-3">
+                      <button type="button" class="btn btn-light btn-lg">
+                        Reset all
                       </button>
                       <button
                         type="button"
-                        class="btn btn-light btn-lg"
-                        data-mdb-ripple-color="dark"
+                        class="btn btn-warning btn-lg ms-2"
+                        onclick="validateForm()"
                       >
-                        Next
+                        Submit form
                       </button>
                     </div>
                   </div>
