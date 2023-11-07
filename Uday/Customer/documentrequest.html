@@ -403,46 +403,75 @@
 <!-- E-governance -->
 <section class="section dashboard my-3 ml-3">
   <div class="container border p-20 " >
-    <h4 class="text-center my-3 mb-4">Profile</h4>
-<form class="row g-3 mb-3">
-    <div class="col-md-4">
+    <h4 class="text-center my-3 mb-4">Details Update</h4>
+<fieldset>   
+<form class="row g-3 border mb-5">
+  <h4 class="my-3 mb-4">Identity Details</h4>
+    <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Name</label>
       <input type="email" class="form-control" id="inputEmail4">
     </div>
-    <div class="col-md-4">
-      <label for="inputPassword4" class="form-label">Father Names</label>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Father Name</label>
       <input type="password" class="form-control" id="inputPassword4">
     </div>
-    <div class="col-md-4">
+    <!-- <div class="col-md-4">
         <label for="inputPassword4" class="form-label">Mother Name</label>
         <input type="password" class="form-control" id="inputPassword4">
-      </div>
+      </div> -->
+    
+    <div class="col-md-4">
+      <label for="inputAddress2" class="form-label">  Gender</label><br>
+      Male     <input type="radio">
+     Female    <input type="radio" >
+    </div>
     <div class=" col-md-4">
       <label for="inputAddress" class="form-label">Dateof Birth</label>
       <input type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
     </div>
     <div class="col-md-4">
-      <label for="inputAddress2" class="form-label">  Gender</label><br>
-      Male     <input type="checkbox">
-     Female    <input type="checkbox" >
-    </div>
-    <div class="col-md-4">
-      <label for="inputCity" class="form-label">Mobile Number</label>
-      <input type="text" class="form-control" id="inputCity">
-      
-    </div>
-    <div class="col-md-4">
-        <label for="inputCity" class="form-label">Email-id</label>
-        <input type="text" class="form-control" id="inputCity">
-        
+      <label for="inputState" class="form-label">Marital-Status</label>
+      <select id="inputState" class="form-select">
+        <option selected>Choose...</option>
+        <option>Single</option>
+        <option>Married</option>
+      </select>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">Aadhar.no</label>
+        <input type="text" class="form-control" id="inputCity">
+        
+</div>
+
+<div class="col-md-6 mb-3">
+<label for="inputCity" class="form-label">Confirm Aadhar Number</label>
+<input type="text" class="form-control" id="inputCity">
+
+</div>
+<div class="col-md-6">
+  <label for="inputCity" class="form-label">Pan Number</label>
+  <input type="text" class="form-control" id="inputCity">
+  
+</div>
+
+<div class="col-md-6 mb-3">
+<label for="inputCity" class="form-label">Confirm Pan Number</label>
+<input type="text" class="form-control" id="inputCity">
+
+</div>
+
+</form>
+</fieldset> 
+
+<form class="row g-3 border">
+  <h4 class="my-3 mb-4">Address Details</h4>
+      <div class="col-md-6">
         <label for="inputCity" class="form-label">Street HomeNumber</label>
         <input type="text" class="form-control" id="inputCity">
         </div>
         
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <label for="inputCity" class="form-label">City </label>
                 <input type="text" class="form-control" id="inputCity">
               
@@ -454,64 +483,103 @@
               
          -->
      
-    <div class="col-md-4">
+    <div class="col-md-6">
       <label for="inputState" class="form-label">State</label>
       <select id="inputState" class="form-select">
         <option selected>Choose...</option>
         <option>...</option>
       </select>
     </div>
-     <div class="col-md-4">
+     <div class="col-md-6">
         <label for="inputState" class="form-label">Country</label>
         <select id="inputState" class="form-select">
           <option selected>Choose...</option>
           <option>...</option>
         </select>
       </div>
-      
       <div class="col-md-4">
-        <label for="inputCity" class="form-label">Adhar.no</label>
+        <label for="inputCity" class="form-label">Mobile Number</label>
         <input type="text" class="form-control" id="inputCity">
         
-</div>
-
-<div class="col-md-4">
-<label for="inputCity" class="form-label">PanCard.no</label>
-<input type="text" class="form-control" id="inputCity">
-
-</div>
+      </div>
+      <div class="col-md-4">
+          <label for="inputCity" class="form-label">Email-id</label>
+          <input type="text" class="form-control" id="inputCity">
+          
+        </div>
 
 <div class="col-md-4">
 <label for="inputCity" class="form-label">Ocupation</label>
 <input type="text" class="form-control" id="inputCity">
 
 </div>
-<div class="col-md-4">
-<label for="inputState" class="form-label">Marital-Status</label>
-<select id="inputState" class="form-select">
-  <option selected>Choose...</option>
-  <option>...</option>
-</select>
-</div>
 
-<div class="col-md-4">
+
+<div class="col-md-6">
 <label for="inputCity" class="form-label">Nominee name</label>
 <input type="text" class="form-control" id="inputCity">
 
 </div>
-
-<div class="col-md-4">
+<div class="col-md-6 ">
+  <label for="inputCity" class="form-label">Nominee Address</label>
+  <input type="text" class="form-control" id="inputCity">
+  
+  </div>
+<div class="col-md-6">
 <label for="inputCity" class="form-label">Nominee Adhar no.</label>
 <input type="text" class="form-control" id="inputCity">
 
 </div>
-<div class="col-md-4">
-<label for="inputCity" class="form-label">Nominee Address</label>
+<div class="col-md-6 mb-3">
+<label for="inputCity" class="form-label">Confirm Nominee Aadhar no.</label>
 <input type="text" class="form-control" id="inputCity">
 
 </div>
  
   </form>
+  <form class="row g-3 border mb-5">
+    <h4 class="my-3 mb-4"> Permanent Address Details</h4>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">Street HomeNumber</label>
+          <input type="text" class="form-control" id="inputCity">
+          </div>
+          
+              <div class="col-md-6">
+                  <label for="inputCity" class="form-label">City </label>
+                  <input type="text" class="form-control" id="inputCity">
+                
+              
+          </div>
+              <!-- <--  <div class="col-md-4">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                
+           -->
+       
+      <div class="col-md-6">
+        <label for="inputState" class="form-label">State</label>
+        <select id="inputState" class="form-select">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+       <div class="col-md-6 mb-3">
+          <label for="inputState" class="form-label">Country</label>
+          <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+        </div>
+        
+    </form>
+    <div class="text-center mb-3">
+      <button
+        class="btn btn-primary waves-effect waves-light"
+        id="btn-submit"
+      >
+        Submit
+      </button>
+    </div>
 </div>
 </section>
   <!-- shhshend -->

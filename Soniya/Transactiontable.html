@@ -11,8 +11,9 @@
     <!-- Favicons -->
     <link href="assets/img/logo.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-    <link href="CustomerTransaction.css">
+    
     <!-- Google Fonts -->
+    
     <link href="https://fonts.gstatic.com" rel="preconnect" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -31,15 +32,24 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
+    <style>
+      .box{
+        width: 60rem;
+         margin-top: 90px; 
+         margin-left:310px; 
+         height: 25vh;
+      }
+      
+    </style>
   </head>
 
   <body>
     <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
+    <header id="header" class="header fixed-top d-flex align-items-center"   style="background-color: #f4c430">
       <div class="d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <img src="assets/img/logo.png" alt="" />
-          <span class="d-none d-lg-block">Swastik</span>
+        <a href="Home.html" class="logo d-flex align-items-center">
+          <img src="assets/img/log.png" alt="" />
+          <!-- <span class="d-none d-lg-block">Swastik</span> -->
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
       </div>
@@ -71,39 +81,97 @@
               <i class="bi bi-search"></i>
             </a>
           </li>
+          <!-- </ul>
+          </nav> -->
           
+          <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img
+                src="assets/img/messages-2.jpg"
+                alt="Profile"
+                class="rounded-circle"
+              />
+              <span class="d-none d-md-block dropdown-toggle ps-2"
+                >Soniya Kardam</span
+              > </a
+            ><!-- End Profile Iamge Icon -->
 
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
+            >
+              <li class="dropdown-header">
+                <h6>Soniya Kardam</h6>
+                <span>Employee</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="users-profile.html"
+                >
+                  <i class="bi bi-person"></i>
+                  <span>Change Password</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+          
     <!-- ======= Sidebar ======= -->
-
-    <aside id="sidebar" class="sidebar " style="padding-top: 20px;">
-      <ul class="sidebar-nav" id="sidebar-nav "style="padding-top: 20px;>
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="Home.html">
             <i class="bi bi-grid"></i>
             <span>Dashboard</span>
           </a>
         </li>
         <!-- End Dashboard Nav -->
 
-        <li class="nav-item" >
+        <li class="nav-item">
           <a
             class="nav-link collapsed"
             data-bs-target="#components-nav"
             data-bs-toggle="collapse"
             href="#"
           >
-            <i class="bi bi-menu-button-wide"></i><span>Costomer </span
+            <i class="bi bi-menu-button-wide"></i><span>Customer</span
             ><i class="bi bi-chevron-down ms-auto"></i>
           </a>
           <ul
             id="components-nav"
             class="nav-content collapse"
             data-bs-parent="#sidebar-nav"
-          
           >
             <li>
               <a href="CustumerTable.html">
-                <i class="bi bi-circle"></i><span>Customer </span>
+                <i class="bi bi-circle"></i><span>Customer</span>
               </a>
             </li>
             <li>
@@ -115,35 +183,7 @@
         </li>
         <!-- End Components Nav -->
 
-        <li class="nav-item">
-          <a
-            class="nav-link collapsed"
-            data-bs-target="#forms-nav"
-            data-bs-toggle="collapse"
-            href="#"
-          >
-            <i class="bi bi-journal-text"></i><span>Request</span
-            ><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul
-            id="forms-nav"
-            class="nav-content collapse"
-            data-bs-parent="#sidebar-nav"
-          >
-            <li>
-              <a href="UpdationTable.html">
-                <i class="bi bi-circle"></i><span>Updation Request</span>
-              </a>
-            </li>
-            <li>
-              <a href="forms-elements.html">
-                <i class="bi bi-circle"></i><span>Activation Report</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <!-- End Forms Nav -->
-
+        <!-- --------Customer Start----------- -->
         <li class="nav-item">
           <a
             class="nav-link collapsed"
@@ -151,12 +191,41 @@
             data-bs-toggle="collapse"
             href="#"
           >
-            <i class="bi bi-layout-text-window-reverse"></i
-            ><span> Reports</span
+            <i class="fa-solid fa-user-group"></i><span>Request</span
             ><i class="bi bi-chevron-down ms-auto"></i>
           </a>
           <ul
             id="tables-nav"
+            class="nav-content collapse"
+            data-bs-parent="#sidebar-nav"
+          >
+            <li>
+              <a href="UpdateRecord.html">
+                <i class="bi bi-circle"></i><span> Updation Request</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="ActivationTable.html">
+                <i class="bi bi-circle"></i><span>Activation Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!-- --------Customer End----------- -->
+        <!-- --------Employee Start----------- -->
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            data-bs-target="#icons-nav"
+            data-bs-toggle="collapse"
+            href="#"
+          >
+            <i class="fa-solid fa-users"></i><span>Reports</span
+            ><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul
+            id="icons-nav"
             class="nav-content collapse"
             data-bs-parent="#sidebar-nav"
           >
@@ -165,42 +234,21 @@
                 <i class="bi bi-circle"></i><span>Customer Transaction</span>
               </a>
             </li>
-
             <li>
-              <a href="DailyLedger.html"> <i class="bi bi-circle"></i><span>Daily Ledger</span> </a>
-            </li>
-            
-            <li>
-              <a href="#"> <i class="bi bi-circle"></i><span>Civil Records</span> </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link collapsed"
-            data-bs-target="#tables-nav"
-            data-bs-toggle="collapse"
-            href="#"
-          >
-            <i class="bi bi-layout-text-window-reverse"></i
-            ><span> Support</span
-            ><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul
-            id="tables-nav"
-            class="nav-content collapse"
-            data-bs-parent="#sidebar-nav"
-          >
-            <li>
-              <a href="MySupport.html">
-                <i class="bi bi-circle"></i><span>Support</span>
+              <a href="DailyLedger.html">
+                <i class="bi bi-circle"></i><span>Daily Ledger</span>
               </a>
             </li>
-            <li>
-              </li>
-              </ul>
-              </li>
-            </aside> 
+          <!-- </ul> -->
+        </li>
+        <li>
+          <a href="#">
+            <i class="bi bi-circle"></i><span>Civil Records</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    </aside>
               
               
               <!-- <a href="tables-data.html">
@@ -256,10 +304,10 @@
       </ul>
     </aside> --> 
     <!-- End Sidebar-->
-  </ul>
+  <!-- </ul>
 </nav>
 </header>
-    
+     -->
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -275,20 +323,39 @@
     <script src="assets/js/main.js"></script>
   <!-- </body>
 </html> -->
+<div class="row border p-4" id="box" style=" width: 60rem; margin-top: 90px; margin-left:310px; height: 25vh;"id="first" >
+  <div class="col-md-5">
+      <p class="6">Customer id:</p>
+      <input type=""  style="margin-top:50px;"></div>
+      <!-- <pre>
 
+      </pre>
+    <input type="date" class="form-control" placeholder="starting date" aria-label="First name">
+  </div> -->
+  <div class="col-md-5">
+      <p class="6">Account no:</p>
+      <input type="" style="margin-top:30px;">
+      <button  id="search" style="background-color: #194086; margin-top:50px; color:white;  ;width:100px; height: 30px;">Search</button>
+    </div>
+      <!-- <pre>
+
+      </pre>
+    <input type="date" class="form-control" placeholder="current date" aria-label="Last name"> -->
+  </div>
+ <button  id="search" style="background-color: #194086; margin-top:50px; color:white;  ;width:100px; height: 30px;">Search</button>
+</div>
 
     <script src="script.js"></script>
 
-    <section class="section" style="margin-top: 200px; width:60rem; margin-left: 20rem;">
+    <section class="section" style="margin-top: 00px; width:60rem; margin-left: 20rem;">
         <table class="table table-striped table-hover">
           <thead class="bg-light">
             <tr>
                 <h4><center><b>Transaction Record</b></center></h4>
               <th>Name</th>
               <th>Account no.</th>
-              <th>Debit.Amount</th>
-              <th>Credit Amount</th>
-              <th>Action</th>
+              <th>Amount</th>
+              <th>Actions</th>
             </tr>
             <tr>
               <td>
@@ -301,7 +368,7 @@
                   />
                   <div class="ms-3">
                     <p class="fw-bold mb-1">name</p>
-                    <p class="text-muted mb-0">name</p>
+                    <p class="text-muted mb-0"></p>
                   </div>
                 </div>
               </td>
@@ -310,14 +377,9 @@
               </td>
 
               <td>5000.00</td>
-              
-                <td>
-                    <p class="fw-normal mb-1">20000</p>
-                  </td>
-              </td>
               <td>
                 <button type="button" class="btn btn-link btn-sm btn-rounded">
-                <a href="UpdateRecord.html">view</a>
+                <a href="TransactionRecord.html">view</a>
                 </button>
               </td>
             </tr>
@@ -333,7 +395,7 @@
                     />
                     <div class="ms-3">
                       <p class="fw-bold mb-1">name</p>
-                      <p class="text-muted mb-0">name</p>
+                      <p class="text-muted mb-0"></p>
                     </div>
                   </div>
                 </td>
@@ -343,12 +405,9 @@
   
                 <td>10000.00</td>
                 <td>
-                    <p class="fw-normal mb-1">20000</p>
-                  </td>
-              </td>
-              <td>
-                <button type="button" class="btn btn-link btn-sm btn-rounded">
-                <a href="UpdateRecord.html">view</a>
+                  <button type="button" class="btn btn-link btn-sm btn-rounded">
+                    <a href="TransactionRecord.html">view</a>
+                  </button>
                 </td>
               </tr>
           </thead>
