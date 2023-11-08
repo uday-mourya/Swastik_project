@@ -1,12 +1,11 @@
-
 package com.swastik.dao;
 
 import java.io.Serializable;
 
+public class UpdationRequestDao implements Serializable {
 
-public class UpdationRequestDao implements Serializable{
-    private int requestId,accountNumber;
-    private String requestType,requestDate,requestStatus;
+    private int requestId, accountNumber;
+    private String requestType, requestDate, requestStatus;
 
     public UpdationRequestDao() {
     }
@@ -50,5 +49,5 @@ public class UpdationRequestDao implements Serializable{
     public void setRequestStatus(String requestStatus) {
         this.requestStatus = requestStatus;
     }
-    
+
 }
