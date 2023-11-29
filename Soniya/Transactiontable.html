@@ -39,19 +39,101 @@
          margin-left:310px; 
          height: 25vh;
       }
+      .section{
+        margin-top: -20px; 
+        width:60rem; 
+        margin-left: 20rem;
+        /* background-color: #194086; */
+      }
+      #box1{
+      width: 60rem; 
+      margin-top: 30px; 
+      margin-left:310px;
+       height: 25vh;
+      }
+      #input1{
+        margin-top:50px;
+      }
+      #input2{
+        margin-top:30px;
+      }
+      #headings{
+        margin-top:100px;
+         margin-left:320px;
+      }
+      #search{
+          background-color: #194086;
+      }
+        .btn1{
+            background-color: #194086;
+            color: white;
+        }
+        #tr{
+          width:500px;
+          margin-top: 40px;
+          margin-left: 30px;
+        }
+        @media only screen and (max-width: 360px) {
+          .box{
+        width: 60rem;
+         margin-top: 90px; 
+         margin-left:310px; 
+         height: 30vh;
+      }
+      .section{
+        margin-top: -20px; 
+        width:6rem; 
+        margin-left: 00rem;
+        /* background-color:#194086; */
+
+      }
+      #search{
+          background-color: #194086;
+          margin-top: 10px;
+          margin-left:50px;
+          color:white;
+      }
+      #box1{
+      width: 18rem; 
+      margin-top: 30px; 
+      margin-left:20px;
+       height: 35vh;
+      }
+      #input1{
+        margin-top:00px;
+      }
+      #input2{
+        margin-top:00px;
+      }
       
+        #btn1{
+            background-color: #194086;
+            color: white;
+            margin-top:-200px;
+        }
+        #headings{
+        margin-top:100px;
+         margin-left:25px;
+         width:300px;
+      }
+      #tr{
+          width:500px;
+          margin-top:50px;
+          margin-left: -80px;
+        }
+        }
     </style>
   </head>
 
   <body>
     <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center"   style="background-color: #f4c430">
+    <header id="header" class="header fixed-top d-flex align-items-center"  style=" background-color: #9F1945">
       <div class="d-flex align-items-center justify-content-between">
         <a href="Home.html" class="logo d-flex align-items-center">
-          <img src="assets/img/log.png" alt="" />
+          <img src="assets/img/Logo_New-3.png" alt="" />
           <!-- <span class="d-none d-lg-block">Swastik</span> -->
         </a>
-        <i class="bi bi-list toggle-sidebar-btn"></i>
+        <i class="bi bi-list toggle-sidebar-btn" style="color: white;"></i>
       </div>
       <!-- End Logo -->
 
@@ -95,7 +177,7 @@
                 alt="Profile"
                 class="rounded-circle"
               />
-              <span class="d-none d-md-block dropdown-toggle ps-2"
+              <span class="d-none d-md-block dropdown-toggle ps-2" style="color: white;"
                 >Soniya Kardam</span
               > </a
             ><!-- End Profile Iamge Icon -->
@@ -105,7 +187,8 @@
             >
               <li class="dropdown-header">
                 <h6>Soniya Kardam</h6>
-                <span>Employee</span>
+                <!-- <span>Employee</span> -->
+                <span><b>id </b>:***83648</span>
               </li>
               <li>
                 <hr class="dropdown-divider" />
@@ -242,7 +325,7 @@
           <!-- </ul> -->
         </li>
         <li>
-          <a href="#">
+          <a href="CivilReportTable.html">
             <i class="bi bi-circle"></i><span>Civil Records</span>
           </a>
         </li>
@@ -321,12 +404,15 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <div id="headings">
+      <span>Dashboard / Customer / Tracsaction Record</span>
+    </div>
   <!-- </body>
 </html> -->
-<div class="row border p-4" id="box" style=" width: 60rem; margin-top: 90px; margin-left:310px; height: 25vh;"id="first" >
+<div class="row border p-4" id="box1" >
   <div class="col-md-5">
       <p class="6">Customer id:</p>
-      <input type=""  style="margin-top:50px;"></div>
+      <input type=""  id="input1"></div>
       <!-- <pre>
 
       </pre>
@@ -334,24 +420,24 @@
   </div> -->
   <div class="col-md-5">
       <p class="6">Account no:</p>
-      <input type="" style="margin-top:30px;">
-      <button  id="search" style="background-color: #194086; margin-top:50px; color:white;  ;width:100px; height: 30px;">Search</button>
+      <input type="" id="input2">
+      <button  id="search">Search</button>
     </div>
       <!-- <pre>
 
       </pre>
     <input type="date" class="form-control" placeholder="current date" aria-label="Last name"> -->
   </div>
- <button  id="search" style="background-color: #194086; margin-top:50px; color:white;  ;width:100px; height: 30px;">Search</button>
+ <!-- <button  id="search" style="background-color: #194086; margin-top:50px; color:white;  ;width:100px; height: 30px;">Search</button> -->
 </div>
 
     <script src="script.js"></script>
 
-    <section class="section" style="margin-top: 00px; width:60rem; margin-left: 20rem;">
+    <section class="section">
         <table class="table table-striped table-hover">
           <thead class="bg-light">
             <tr>
-                <h4><center><b>Transaction Record</b></center></h4>
+                <h4  id="tr"><center><b>Transaction Record</b></center></h4>
               <th>Name</th>
               <th>Account no.</th>
               <th>Amount</th>
@@ -379,7 +465,7 @@
               <td>5000.00</td>
               <td>
                 <button type="button" class="btn btn-link btn-sm btn-rounded">
-                <a href="TransactionRecord.html">view</a>
+                <a href="TransactionRecord.html"><button class="btn1">view</button></a>
                 </button>
               </td>
             </tr>
@@ -406,7 +492,7 @@
                 <td>10000.00</td>
                 <td>
                   <button type="button" class="btn btn-link btn-sm btn-rounded">
-                    <a href="TransactionRecord.html">view</a>
+                    <a href="TransactionRecord.html"><button class="btn1">view</button></a>
                   </button>
                 </td>
               </tr>
