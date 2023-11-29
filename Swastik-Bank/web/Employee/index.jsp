@@ -1,11 +1,17 @@
 <%-- 
     Document   : index
+<<<<<<< HEAD:Swastik-Bank/web/Employee/index.jsp
     Created on : 15-Nov-2023, 11:19:20 pm
     Author     : Hp
+=======
+    Created on : 28-Nov-2023, 4:50:29 pm
+    Author     : Sohan_Maali
+>>>>>>> 28f20cb16c9fe53405f102aeabed87b260f6cd7e:Swastik-Bank/build/web/index.jsp
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<<<<<<< HEAD:Swastik-Bank/web/Employee/index.jsp
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -290,3 +296,14 @@
 
 </body>
 </html>
+=======
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+    </body>
+</html>
+>>>>>>> 28f20cb16c9fe53405f102aeabed87b260f6cd7e:Swastik-Bank/build/web/index.jsp
