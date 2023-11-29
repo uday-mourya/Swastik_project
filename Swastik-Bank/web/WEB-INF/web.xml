@@ -12,6 +12,14 @@
         <servlet-name>test</servlet-name>
         <servlet-class>com.swastik.controlar.test</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddBeneficiary</servlet-name>
+        <servlet-class>com.swastik.controlar.AddBeneficiary</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteBeneficiary</servlet-name>
+        <servlet-class>com.swastik.controlar.DeleteBeneficiary</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CustomerLogin</servlet-name>
         <url-pattern>/CustomerLogin</url-pattern>
@@ -23,5 +31,13 @@
     <servlet-mapping>
         <servlet-name>test</servlet-name>
         <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddBeneficiary</servlet-name>
+        <url-pattern>/AddBeneficiary</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteBeneficiary</servlet-name>
+        <url-pattern>/DeleteBeneficiary</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -160,3 +160,15 @@ CREATE TABLE `Report` (
   KEY `customerid_idx` (`customerid`),
   CONSTRAINT `customerid` FOREIGN KEY (`customerid`) REFERENCES `customer` (`customerid`)
   ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+  CREATE TABLE `Beneficiary` (
+  `Beneficiary_Id` int NOT NULL AUTO_INCREMENT,
+  `Beneficiary_Name` varchar(25),
+  `Bank` varchar(30),
+  `ifsc` varchar(10),
+  `Account_Num` varchar(10),
+  `Limit` varchar(10),
+   PRIMARY KEY (`Beneficiary_Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
