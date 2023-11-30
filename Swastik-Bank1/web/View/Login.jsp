@@ -136,9 +136,9 @@ h4{
                         <label for="exampleInputPassword1">Enter OTP</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter OTP" >
                       </div><BR>
-                    <button type="submit" class="btn text-white">Send OTP</button>
+                    <button type="submit" class="btn btn-primary">Send OTP</button>
                     
-                      <button type="submit" class="btn text-white ">Login</button><br><br>
+                      <button type="submit" class="btn btn-primary ">Login</button><br><br>
                   <a href="">Forget Pin</a>
                   </div>
                     <%--<%@include file="Components/alert_message.jsp" %>--%>
