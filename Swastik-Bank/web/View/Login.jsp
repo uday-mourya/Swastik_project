@@ -121,14 +121,14 @@ h4{
         <div class="card">
             <div class="card-body">
                 <h4 class="text-center">Login</h4><br>
-                <form>
+                <form action="../CustomerLogin" method="post">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Customer Id</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Customer Id" >
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Gmail Id"  name ="gmail">
                    </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Pin</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1"  placeholder="Enter your PIN" >
+                    <input type="password" class="form-control" id="exampleInputPassword1"  placeholder="Enter your PIN" name ="password" >
                   </div>
                   
                   <div class=""><br>

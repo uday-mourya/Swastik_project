@@ -12,7 +12,7 @@ public class CustomerLogin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-
+            System.out.println("sohan");
         } catch (Exception e) {
             System.out.println(e);
         }
