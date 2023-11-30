@@ -36,7 +36,7 @@
           <div class="row">
             <div class="col-xl-3 col-lg-4 col-md-6 ">
               <div>
-                <h3><img src="AllComponent/img/Logo_New-3.png" alt="" width="200px" /></h3>
+                <h3><img src="View/AllComponent/img/Logo_New-3.png" alt="" width="200px" /></h3>
                 <p class="footer-desc">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
                   soluta facilis eos quia optio iusto odit atque eum tempore,
