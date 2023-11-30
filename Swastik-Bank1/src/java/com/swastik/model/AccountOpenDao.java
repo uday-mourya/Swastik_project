@@ -3,7 +3,7 @@ package com.swastik.model;
 import java.io.Serializable;
 import java.security.Timestamp;
 
-public class CustomerOpenDao implements Serializable {
+public class AccountOpenDao implements Serializable {
 
     private int customerId;
     private String password;
@@ -23,6 +23,24 @@ public class CustomerOpenDao implements Serializable {
     private String city;
     private String pincode;
     private String state;
+    private String distric;
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getDistric() {
+        return distric;
+    }
+
+    public void setDistric(String dictric) {
+        this.distric = dictric;
+    }
 
     public Timestamp getRegiDate() {
         return dateTime;
@@ -164,7 +182,7 @@ public class CustomerOpenDao implements Serializable {
         return pan;
     }
 
-    public CustomerOpenDao(String password, String name, String father, String mother, String gender, String dob, String mobile, String email, String adhar, String maritail, String occupation, String address, String city, String pincode, String state, String pan) {
+    public AccountOpenDao(String password, String name, String father, String mother, String gender, String dob, String mobile, String email, String adhar, String maritail, String occupation, String address, String city, String pincode, String state, String pan) {
         this.password = password;
         this.name = name;
         this.father = father;
@@ -187,6 +205,7 @@ public class CustomerOpenDao implements Serializable {
         this.pan = pan;
     }
 
-    public CustomerOpenDao() {
+    public AccountOpenDao() {
     }
+
 }

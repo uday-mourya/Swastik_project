@@ -10,14 +10,32 @@ import java.sql.SQLException;
  *
  * @author Sohan_Maali
  */
-public class CustomerOpenDto {
+public class AccountOpenDto {
 
-    public boolean accountOpean(CustomerOpenDao cdao) {
+    public boolean accountOpean(AccountOpenDao cdao) {
         boolean flag = false;
         Connection con = GetConnection.getConnectin();
+        //               ---------------------------------------------------------
+                System.out.println(cdao.getPassword());
+                System.out.println(cdao.getName());
+                System.out.println(cdao.getFather());
+                System.out.println(cdao.getMother());
+                System.out.println(cdao.getGender());
+                System.out.println(cdao.getDob());
+                System.out.println(cdao.getMobile());
+                System.out.println(cdao.getEmail());
+                System.out.println(cdao.getAdhar());
+                System.out.println(cdao.getPan());
+                System.out.println(cdao.getMaritail());
+                System.out.println(cdao.getOccupation());
+                System.out.println(cdao.getAddress());
+                System.out.println(cdao.getCity());
+                System.out.println(cdao.getPincode());
+                System.out.println(cdao.getState());
+                System.out.println(cdao.getState());
         if (con != null) {
             try {
-                String query = "insert into customer(password, name, father, mother, gender, dob, phone, email, adhar, pan, maritail, occupation, address, city, pincode, state) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                String query = "insert into customer(password, name, father, mother, gender, dob, phone, email, adhar, pan, maritail, occupation, address, city, pincode, state, distric) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setString(1, cdao.getPassword());
                 psmt.setString(2, cdao.getName());
@@ -35,6 +53,8 @@ public class CustomerOpenDto {
                 psmt.setString(14, cdao.getCity());
                 psmt.setString(15, cdao.getPincode());
                 psmt.setString(16, cdao.getState());
+                psmt.setString(17, cdao.getState());
+                
 
                 psmt.executeUpdate();
                 flag = true;
@@ -46,7 +66,7 @@ public class CustomerOpenDto {
         return flag;
     }
 
-    public boolean customerLogin(CustomerOpenDao cdao) {
+    public boolean customerLogin(AccountOpenDao cdao) {
 
         Connection con = GetConnection.getConnectin();
         boolean flag = false;
