@@ -18,17 +18,17 @@ public class AddBeneficiary extends HttpServlet {
         BeneficiaryDto bDto = new BeneficiaryDto();
         bDao.setName(request.getParameter("bName"));
         System.out.println(request.getParameter("bName"));
-        
+
         bDao.setIfsc(request.getParameter("ifscCode"));
-         System.out.println(request.getParameter("ifscCode"));
-         
+        System.out.println(request.getParameter("ifscCode"));
+
         bDao.setAccNum(request.getParameter("accNum"));
         bDao.setAccNum(request.getParameter("accNum"));
-        
+
         bDao.setBank(request.getParameter("bank"));
-         System.out.println(request.getParameter("bank"));
+        System.out.println(request.getParameter("bank"));
         bDao.setLimit(request.getParameter("limit"));
-         System.out.println(request.getParameter("limit"));
+        System.out.println(request.getParameter("limit"));
         if (bDto.addBeneficiary(bDao)) {
             System.out.println("ADDsuccsess");
             Message message = new Message("Beneficiary Added Successful !!", "success", "alert-success");
@@ -52,9 +52,5 @@ public class AddBeneficiary extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }
-
-    private boolean addBeneficiary(BeneficiaryDao bDao) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

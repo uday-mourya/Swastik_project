@@ -16,7 +16,7 @@ public class BeneficiaryDto {
         Connection con = GetConnection.getConnectin();
         if (con != null) {
             try {
-                String query = "insert into Beneficiary(Beneficiary_Name, Bank, ifsc, Account_Num, Limit) values(?, ?, ?, ?, ?,)";
+                String query = "insert into Beneficiary(Beneficiary_Name, Bank, ifsc, Account_Num, Limit) values(?, ?, ?, ?, ?)";
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setString(1, bDao.getName());
                 psmt.setString(2, bDao.getBank());
@@ -29,6 +29,7 @@ public class BeneficiaryDto {
                 System.out.println(e);
             }
         }
+        System.out.println(flag+"--------beni");
         return flag;
     }
 

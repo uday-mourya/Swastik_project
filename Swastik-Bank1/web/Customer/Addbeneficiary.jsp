@@ -87,7 +87,7 @@
             <section class="section dashboard my-3 ml-3 ">
                 <div class="container border p-20 mb-4" >
                     <h4 class="text-center my-3 mb-4">Add Beneficiary</h4>
-                    <form class="row g-3 mb-3" action="../AddBeneficiary" method = "post">
+                    <form class="row g-3 mb-3" action="../AddBeneficiary">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="control-label col-sm-2">Beneficiary Name</label>
