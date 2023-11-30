@@ -34,7 +34,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <a class="navbar-brand " href="#"
-            ><img src="ManjuStaticPages/AllComponent/img/Logo_New-3.png" height="40px" width="140px" alt=""
+            ><img src="View/AllComponent/img/Logo_New-3.png" height="40px" width="140px" alt=""
           /></a>
           <button
             class="navbar-toggler bg-light"
@@ -55,27 +55,27 @@
                 >
               </li>
               <li class="nav-item ms-4">
-                <a class="nav-link active text-white " id="top-nav" href="ManjuStaticPages/About.jsp"
+                <a class="nav-link active text-white " id="top-nav" href="View/About.jsp"
                   >About Us</a
                 >
               </li>
               <li class="nav-item ms-4">
-                <a class="nav-link active text-white" id="top-nav" href="ManjuStaticPages/Accountd.jsp"
+                <a class="nav-link active text-white" id="top-nav" href="View/Accountd.jsp"
                   >Account</a
                 >
               </li>
               <li class="nav-item ms-4">
-                <a class="nav-link active text-white" id="top-nav" href="ManjuStaticPages/Loan.jsp"
+                <a class="nav-link active text-white" id="top-nav" href="View/Loan.jsp"
                   >Loans</a
                 >
               </li>
               <li class="nav-item ms-4">
-                <a class="nav-link active text-white "   id="top-nav" href="ManjuStaticPages/Cards.jsp"
+                <a class="nav-link active text-white "   id="top-nav" href="View/Cards.jsp"
                   >Cards</a
                 >
               </li>
               <li class="nav-item ms-4">
-                <a class="nav-link active text-white " id="top-nav" href="ManjuStaticPages/Offers.jsp"
+                <a class="nav-link active text-white " id="top-nav" href="View/Offers.jsp"
                   >Offers</a
                 >
               </li>
@@ -93,7 +93,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="Login.jsp">Customer</a>
+                    <a class="dropdown-item" href="View/Login.jsp">Customer</a>
                   </li>
                   <li><a class="dropdown-item" href="#">Employee</a></li>
                   <li><a class="dropdown-item" href="#">Admin</a></li>
@@ -190,7 +190,7 @@
           <div class="col-lg-4 col-md-12 col-12">
             <div class="about-img">
               <img
-                src="AllComponent/img/mobile-banking.png"
+                src="View/AllComponent/img/mobile-banking.png"
                 alt=""
                 id="image"
                 class="img-fluid"
@@ -533,6 +533,6 @@
       crossorigin="anonymous"
     ></script>
         
-        <%@include file="ManjuStaticPages/AllComponent/footer.jsp" %>
+        <%@include file="View/AllComponent/footer.jsp" %>
     </body>
 </html>
