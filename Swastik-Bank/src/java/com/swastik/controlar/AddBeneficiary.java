@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.*;
 
 public class AddBeneficiary extends HttpServlet {
 
@@ -17,7 +18,7 @@ public class AddBeneficiary extends HttpServlet {
         try {
             BeneficiaryDao bDao = new BeneficiaryDao();
             BeneficiaryDto bDto = new BeneficiaryDto();
-            
+
             bDao.setName(request.getParameter("bName"));
             System.out.println(request.getParameter("bName"));
 
