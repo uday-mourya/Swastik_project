@@ -17,7 +17,7 @@
         <servlet-class>com.swastik.controlar.CustomerLogin</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>DeleteBeneficiary</servlet-name>
+        <servlet-name>TransferControl</servlet-name>
         <servlet-class>com.swastik.controlar.TransferControl</servlet-class>
     </servlet>
     <servlet>
@@ -49,8 +49,8 @@
         <url-pattern>/CustomerLogin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>DeleteBeneficiary</servlet-name>
-        <url-pattern>/DeleteBeneficiary</url-pattern>
+        <servlet-name>TransferControl</servlet-name>
+        <url-pattern>/TransferControl</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>BranchControlar</servlet-name>

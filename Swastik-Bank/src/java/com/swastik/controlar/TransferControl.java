@@ -17,8 +17,9 @@ public class TransferControl extends HttpServlet {
         BeneficiaryDao bDao = new BeneficiaryDao();
         BeneficiaryDto bDto = new BeneficiaryDto();
 
-        System.out.println(request.getParameter("beneficiaryName") + "-----------");
+        System.out.println(request.getParameter("sohan") + "-----------");
         System.out.println(request.getParameter("beneficiaryBank") + "-----------");
+        System.out.println(request.getParameter("beneficiaryAccNum") + "-----------");
 
 //        bDao.setName(request.getParameter("beneficiaryName"));
 //        bDao.setName(request.getParameter("beneficiaryBank"));
