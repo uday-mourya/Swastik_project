@@ -5,6 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.lang.*"%>
+<%@page import="com.swastik.model.*"%>
+<%
+ArrayList<BranchDao> branchDao  = (ArrayList<BranchDao>)session.getAttribute("BranchDao");
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -175,11 +181,51 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <span>Date of Borth * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
                                     <input type="date" id="dob"   name="dob" />
+
+                                    <span class="error" id="DobError"></span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span>Account Type * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+                                    <select class="form-control" id="accounttype" name="accounttype" >
+                                        <option>Choose</option>
+                                        <option>Saving</option>
+                                        <option>Current</option>
+                                        <option>Salary</option>
+                                    </select>
+
+                                    <span class="error" id="DobError"></span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span>Branch * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+                                    <select class="form-control" id="accounttype" name="branch">
+                                        <option>Select Branch</option>
+                                        <%
+                                        for(BranchDao bdao: branchDao) {
+                                        %>
+                                        <option>
+                                            <%= bdao.getBranchName() 
+                                           %>
+                                        </option>
+                                        <%
+                                        }
+                                        %>
+                                    </select>
 
                                     <span class="error" id="DobError"></span>
 

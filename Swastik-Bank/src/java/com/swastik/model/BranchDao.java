@@ -4,16 +4,16 @@ import java.io.Serializable;
 
 public class BranchDao implements Serializable {
 
-    private String branchId;
+    private int branchId;
     private String ifscCode;
     private String branchName;
     private String branchAddess;
 
-    public String getBranchId() {
+    public int getBranchId() {
         return branchId;
     }
 
-    public void setBranchId(String branchId) {
+    public void setBranchId(int branchId) {
         this.branchId = branchId;
     }
 

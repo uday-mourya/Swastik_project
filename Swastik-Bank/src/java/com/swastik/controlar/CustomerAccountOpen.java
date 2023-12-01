@@ -12,7 +12,7 @@ import java.io.IOException;
 //import java.io.PrintWriter;
 
 public class CustomerAccountOpen extends HttpServlet {
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -37,33 +37,53 @@ public class CustomerAccountOpen extends HttpServlet {
             aoDao.setCity(request.getParameter("city"));
             aoDao.setPincode(request.getParameter("pincode"));
             aoDao.setPassword(request.getParameter("password"));
+            boolean a = aoDto.accountOpean(aoDao);
+            boolean b;
+//          =======================================================================
             HttpSession session = request.getSession();
-            if (aoDto.accountOpean(aoDao)) {
+            if (aoDto.accountOpenProcess(aoDao)) {
+                aoDao.setAccType(request.getParameter("accounttype"));
+                aoDao.setBalance(0.0d);
+                aoDao.setBranchId(701);
+                aoDao.setAccStatus("Active");
+                b = aoDto.accountDetail(aoDao);
+            } else {
+                aoDto.deleteCustomer(aoDao);
+                Message message = new Message("Invalid details! Try again!!", "error", "alert-danger");
+                session.setAttribute("message", message);
+                response.sendRedirect("View/AccountOpen.jsp");
+                return;
+            }
+            System.out.println(request.getParameter("accounttype") + "----------------------");
+
+            if (a && b) {
                 System.out.println("customer login");
                 response.sendRedirect("View/Login.jsp");
 //                HttpSession session = request.getSession();
                 session.setAttribute("AccountOpenDao", aoDao);
             } else {
+                aoDto.deleteCustomer(aoDao);
                 Message message = new Message("Invalid details! Try again!!", "error", "alert-danger");
                 session.setAttribute("message", message);
             }
-            
-        } catch (Exception e) {
+
+        } catch (IOException e) {
+            System.out.println(e);
         }
     }
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
+
     @Override
     public String getServletInfo() {
         return "Short description";

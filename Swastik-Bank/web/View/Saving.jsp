@@ -113,7 +113,7 @@
            </div>
         </div>
 
-        <center><button type="button" class="btn btn-outline-danger text-white mt-5">OPEN SAVINGS ACCOUNT INSTANTLY</button></center>
+        <center><button type="button" class="btn btn-outline-danger text-white mt-5"><a href="../BranchControlar">OPEN SAVINGS ACCOUNT INSTANTLY</a></button></center>
 
 
         <div class=" col- 12 row mt-5">

@@ -18,7 +18,19 @@
     </servlet>
     <servlet>
         <servlet-name>DeleteBeneficiary</servlet-name>
-        <servlet-class>com.swastik.controlar.DeleteBeneficiary</servlet-class>
+        <servlet-class>com.swastik.controlar.TransferControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BranchControlar</servlet-name>
+        <servlet-class>com.swastik.controlar.BranchControlar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogOut</servlet-name>
+        <servlet-class>com.swastik.controlar.LogOut</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TransfermoneyControlar</servlet-name>
+        <servlet-class>com.swastik.controlar.TransfermoneyControlar</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>test</servlet-name>
@@ -39,5 +51,17 @@
     <servlet-mapping>
         <servlet-name>DeleteBeneficiary</servlet-name>
         <url-pattern>/DeleteBeneficiary</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BranchControlar</servlet-name>
+        <url-pattern>/BranchControlar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogOut</servlet-name>
+        <url-pattern>/LogOut</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TransfermoneyControlar</servlet-name>
+        <url-pattern>/TransfermoneyControlar</url-pattern>
     </servlet-mapping>
 </web-app>
