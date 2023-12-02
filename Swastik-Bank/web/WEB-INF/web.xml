@@ -32,6 +32,22 @@
         <servlet-name>TransfermoneyControlar</servlet-name>
         <servlet-class>com.swastik.controlar.TransfermoneyControlar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManagerRegistrationController</servlet-name>
+        <servlet-class>com.swastik.controlar.ManagerRegistrationController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Normal</servlet-name>
+        <servlet-class>com.swastik.controlar.Normal</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManagerLoginController1</servlet-name>
+        <servlet-class>com.swastik.controlar.ManagerLoginController1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EmployeServlet</servlet-name>
+        <servlet-class>com.swastik.controlar.EmployeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>test</servlet-name>
         <url-pattern>/test</url-pattern>
@@ -63,5 +79,21 @@
     <servlet-mapping>
         <servlet-name>TransfermoneyControlar</servlet-name>
         <url-pattern>/TransfermoneyControlar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManagerRegistrationController</servlet-name>
+        <url-pattern>/ManagerRegistrationController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Normal</servlet-name>
+        <url-pattern>/Normal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManagerLoginController1</servlet-name>
+        <url-pattern>/ManagerLoginController1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmployeServlet</servlet-name>
+        <url-pattern>/EmployeServlet</url-pattern>
     </servlet-mapping>
 </web-app>

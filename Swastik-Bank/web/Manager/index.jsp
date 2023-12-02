@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import=" com.swastik.model.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -77,7 +78,11 @@
         </form> -->
       </div>
       <!-- End Search Bar -->
+<%
+    int n = EmployeeInformationDto.getCount();
+%>
 
+      <%= n  +"ggggggggggg" %>
       <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
           <li class="nav-item d-block d-lg-none">
@@ -206,7 +211,7 @@
             data-bs-parent="#sidebar-nav"
           >
             <li>
-              <a href="Customer-List.html">
+              <a href="Customer-List.jsp">
                 <i class="bi bi-circle"></i><span>Customer List</span>
               </a>
             </li>
@@ -236,12 +241,12 @@
             data-bs-parent="#sidebar-nav"
           >
             <li>
-              <a href="Employee-List.html">
+              <a href="Employee-List.jsp">
                 <i class="bi bi-circle"></i><span>Employee List</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="Registration.jsp">
                 <i class="bi bi-circle"></i><span>Add Employee</span>
               </a>
             </li>
@@ -265,12 +270,12 @@
             data-bs-parent="#sidebar-nav"
           >
             <li>
-              <a href="forms-elements.html">
+              <a href="forms-elements.jsp">
                 <i class="bi bi-circle"></i><span>Loan Request</span>
               </a>
             </li>
             <li>
-              <a href="forms-elements.html">
+              <a href="forms-elements.jsp">
                 <i class="bi bi-circle"></i><span>Probleam Report</span>
               </a>
             </li>
@@ -282,7 +287,7 @@
         <!-- End Profile Page Nav -->
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="Review-And-Rating.html">
+          <a class="nav-link collapsed" href="Review-And-Rating.jsp">
             <i class="bi bi-question-circle"></i>
             <span>Review</span>
           </a>
@@ -333,7 +338,7 @@
                     <i class="fa-solid fa-users"></i>
                   </div>
                   <div class="ps-3">
-                    <h6>145</h6>
+                    <h6> <%= n%></h6>
                     <!-- <span class="text-success small pt-1 fw-bold">12%</span>
                     <span class="text-muted small pt-2 ps-1">increase</span> -->
                   </div>
@@ -390,6 +395,7 @@
                 ></a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                   <li class="dropdown-header text-start">
+                      <a href="index.jsp"></a>
                     <h6>Filter</h6>
                   </li>
 
