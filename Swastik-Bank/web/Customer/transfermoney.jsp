@@ -151,7 +151,7 @@ ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.g
                             </td>
                             <td>
                         <center>
-                            <input type="submit" class="btn btn-primary" value="Send">
+                            <input type="submit" class="btn btn-primary" value="Send" name="sendMoney">
                             <!--<input type="submit" class="btn btn-danger" value="delete">-->
                         </center>
                         </td>

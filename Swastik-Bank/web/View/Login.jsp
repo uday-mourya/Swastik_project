@@ -139,10 +139,12 @@
                                 </div><BR>
 
                                 <%@include file="../Components/alert_message.jsp" %>
-                                <button type="submit" class="btn btn-primary">Send OTP</button>
+                                <!--<button type="submit" class="btn btn-primary" name="sendOtpbtn">Send OTP</button>-->
+                                <input type="submit" class="btn btn-primary" name="sendOtpbtn" value="Send OTP">
 
-                                <button type="submit" class="btn btn-primary ">Login</button><br><br>
-                                <a href="">Forget Pin</a>
+                                <!--<button type="submit" class="btn btn-primary" name="loginbtn">Login</button><br><br>-->
+                                <input type="submit" class="btn btn-primary" name="loginbtn" value="Login"><br><br>
+                                <a href="#">Forget Pin</a>
                             </div>
                         </form>
                     </div>

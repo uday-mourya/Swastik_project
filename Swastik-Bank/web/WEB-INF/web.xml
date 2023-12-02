@@ -32,6 +32,10 @@
         <servlet-name>TransfermoneyControlar</servlet-name>
         <servlet-class>com.swastik.controlar.TransfermoneyControlar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MailControlar</servlet-name>
+        <servlet-class>MailControlar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>test</servlet-name>
         <url-pattern>/test</url-pattern>
@@ -63,5 +67,9 @@
     <servlet-mapping>
         <servlet-name>TransfermoneyControlar</servlet-name>
         <url-pattern>/TransfermoneyControlar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MailControlar</servlet-name>
+        <url-pattern>/MailControlar</url-pattern>
     </servlet-mapping>
 </web-app>
