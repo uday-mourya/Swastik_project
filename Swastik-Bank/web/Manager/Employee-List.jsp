@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*" %>
+<%@ page import=" com.swastik.model.*" %>
+<%@ page import="com.swastik.controlar.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,6 +38,10 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     </head>
     <body>
+        <% 
+        List<EmployeeInformationDao> d =EmployeeInformationDto.alldata();
+        
+        %>
        <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
@@ -224,7 +231,7 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="Registration.jsp">
                 <i class="bi bi-circle"></i><span>Add Employee</span>
               </a>
             </li>
@@ -289,19 +296,26 @@
 
       <section class="section">
         <div class="row">
+            
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Employee</h5>
-
+                
                 <!-- Table with stripped rows -->
                 <table class="table align-middle mb-0 bg-white">
                   <thead class="bg-light">
                     <tr>
                       <th>Name</th>
+                      <th>Salary</th>
                       <th>Employee Position</th>
                       <th colspan="2"><center>Actions</center></th>
                     </tr>
+                    <%
+                if(!d.isEmpty()){
+                   for(EmployeeInformationDao p : d){                                
+                
+            %>
                   </thead>
                   <tbody>
                     <tr>
@@ -314,8 +328,9 @@
                             class="rounded-circle"
                           />
                           <div class="ms-3">
-                            <p class="fw-bold mb-1">name</p>
-                            <p class="text-muted mb-0">name@gmail.com</p>
+                              
+                              <p class="fw-bold mb-1"><%=p.getName() %></p>
+                            <p class="text-muted mb-0"><%=p.getEmail() %></p>
                           </div>
                         </div>
                       </td>
@@ -331,60 +346,12 @@
                         <a href="#" class="btn btn-danger">Delete</a>
                       </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="https://mdbootstrap.com/img/new/avatars/6.jpg"
-                            class="rounded-circle"
-                            alt=""
-                            style="width: 45px; height: 45px"
-                          />
-                          <div class="ms-3">
-                            <p class="fw-bold mb-1">name</p>
-                            <p class="text-muted mb-0">name@gmail.com</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="fw-normal mb-1">Accountant</p>
-                      </td>
-                      <td>
-                        <a href="Employee-Profile.html" class="btn btn-primary"
-                          >Edit</a
-                        >
-                      </td>
-                      <td>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="https://mdbootstrap.com/img/new/avatars/7.jpg"
-                            class="rounded-circle"
-                            alt=""
-                            style="width: 45px; height: 45px"
-                          />
-                          <div class="ms-3">
-                            <p class="fw-bold mb-1">name</p>
-                            <p class="text-muted mb-0">name@gmail.com</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="fw-normal mb-1">Accountant</p>
-                      </td>
-                      <td>
-                        <a href="Employee-List.html" class="btn btn-primary"
-                          >Edit</a
-                        >
-                      </td>
-                      <td>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                      </td>
-                    </tr>
+                    <% }
+                        }else{
+                        out.print("kdkkdd");
+                            }
+                        %>   
+                   
                   </tbody>
                 </table>
 
@@ -393,6 +360,7 @@
             </div>
           </div>
         </div>
+                     
       </section>
     </main>
     <!-- End #main -->
