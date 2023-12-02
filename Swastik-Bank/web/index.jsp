@@ -96,7 +96,7 @@
                     <a class="dropdown-item" href="View/Login.jsp">Customer</a>
                   </li>
                   <li><a class="dropdown-item" href="#">Employee</a></li>
-                  <li><a class="dropdown-item" href="#">Admin</a></li>
+                  <li><a class="dropdown-item" href="Manager/Login.jsp">Admin</a></li>
                   <!-- <li><hr class="dropdown-divider"></li> -->
                   <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                 </ul>

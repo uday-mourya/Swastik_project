@@ -1,21 +1,8 @@
-<%-- 
-    Document   : Login
-    Created on : 30-Nov-2023, 4:46:25 pm
-    Author     : abc
---%>
-
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.PreparedStatement" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.sql.SQLException" %>
-<%@ page import="java.sql.DriverManager" %>
-<%@ page import="jakarta.servlet.http.HttpSession" %>
-<%@ page import="java.io.IOException" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
     <head>
+<<<<<<< HEAD
         <meta charset="utf-8">
         <title>Transparent Login Form HTML CSS</title>
         <link rel="stylesheet" href="css/Login.css">
@@ -250,15 +237,50 @@
 
 
                 </form>
+=======
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="assets/css/Registration.css">
+    </head>
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
 
-                <div class="signup">
-                    Don't have account?
-                    <a href="Registration.jsp">Signup Now</a>
+
+    <div class="form-wrapper">
+        <div class="form-side">
+
+            <form action="..//ManagerLoginController1"  class="my-form">
+                <div class="login-welcome-row ">                    
+                    <center><h1>Login </h1></center>
                 </div>
-            </div>
+               
+                 <div class="text-field">
+                    <label for="email">Enter Your Email:
+                        <input type="email" id="email" name="email" autocomplete="off" placeholder="Your Email"
+                               required>
+                        <!-- svg icon -->
+                    </label>
+                </div>
+                
+                 <div class="text-field">
+                    <label for="password">Password:
+                        <input id="password" type="password" name="password" placeholder="Your Password" title="Minimum 6 characters at 
+                               least 1 Alphabet and 1 Number"
+                               required>
+                        <!-- svg icon -->
+                    </label>
+                </div>
+                
+                <button class="my-form__button" type="submit">
+                    Login
+                </button>
+                <div class="my-form__row">
+                    <span>Did you forget your password? <a href="Registration.jsp">Sing Up</a></span>
+                    </div>
+                <!--<a href="Registration.jsp"  style="text-decoration: none;"><button class="my-form__button">Sign up</button></a>-->
+            </form>
         </div>
-
     </div>
+<<<<<<< HEAD
     <footer id="footer">
         <h1><span>OutDoor</span>Adventure</h1>
         <p class="w-50 m-auto">
@@ -283,3 +305,5 @@
     </footer>
 </body>
 </html>
+=======
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6

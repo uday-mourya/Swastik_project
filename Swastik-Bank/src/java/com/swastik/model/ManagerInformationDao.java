@@ -11,6 +11,7 @@ public class ManagerInformationDao implements Serializable {
     private String email;
     private String dob;
     private Timestamp doh;
+    private String salary;
     private String mobile;
 
     public Timestamp getDoh() {
@@ -60,7 +61,13 @@ public class ManagerInformationDao implements Serializable {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
+    public String getSalary() {
+        return salary;
+    }
 
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
     public String getPassword() {
         return password;
     }
