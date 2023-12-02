@@ -1,5 +1,6 @@
 package com.swastik.controlar;
 
+import com.swastik.model.AccountOpenDao;
 import com.swastik.other.Message;
 import com.swastik.model.BeneficiaryDao;
 import com.swastik.model.BeneficiaryDto;
@@ -9,16 +10,19 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.*;
 
 public class AddBeneficiary extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            HttpSession session = request.getSession();
             BeneficiaryDao bDao = new BeneficiaryDao();
             BeneficiaryDto bDto = new BeneficiaryDto();
+            AccountOpenDao clda = (AccountOpenDao) session.getAttribute("activeUser");
 
+            bDao.setCustAccNum(clda.getAccNum());
+            System.out.println(bDao.getCustAccNum() + "+++++++++++++++++++++++++++++");
             bDao.setName(request.getParameter("bName"));
             System.out.println(request.getParameter("bName"));
 
@@ -30,7 +34,6 @@ public class AddBeneficiary extends HttpServlet {
             System.out.println(request.getParameter("bank"));
             bDao.setLimit(request.getParameter("limit"));
             System.out.println(request.getParameter("limit"));
-            HttpSession session = request.getSession();
 
             if (bDto.addBeneficiary(bDao)) {
                 Message message = new Message("Beneficiary Added Successful !!", "success", "alert-success");

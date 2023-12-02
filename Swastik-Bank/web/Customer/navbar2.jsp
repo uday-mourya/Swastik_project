@@ -9,7 +9,7 @@
     <!-- ======= Header ======= -->
     <header style="background-color: #861F41" id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="CustomerDashboard.jsp" class="logo d-flex align-items-center">
           <img src="assets/img/Logo_New-3.png" alt="" />
           <!-- <span class="d-none d-lg-block">Swastik</span> -->
         </a>
@@ -95,7 +95,7 @@
               </li>
 
               <li>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a class="dropdown-item d-flex align-items-center" href="../LogOut">
                   <i class="bi bi-box-arrow-right"></i>
                   <span>Sign Out</span>
                 </a>
@@ -114,7 +114,7 @@
     <aside id="sidebar" class="sidebar">
       <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="index.jsp">
+          <a class="nav-link" href="CustomerDashboard.jsp">
             <i class="bi bi-grid"></i>
             <span>Dashboard</span>
           </a>

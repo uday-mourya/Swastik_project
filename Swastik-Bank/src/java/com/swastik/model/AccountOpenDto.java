@@ -114,7 +114,8 @@ public class AccountOpenDto {
         boolean flag = false;
         if (con != null) {
             try {
-                String query = "select * from customer where email = ? and password = ?";
+//                String query = "select * from customer JOIN customer ON customer.customerid = account.customer_id where email = ? and password = ?";
+                String query = "SELECT * FROM customer AS c JOIN account AS a ON c.customerid = a.customer_id WHERE c.email = ? AND c.password = ?";
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setString(1, cdao.getEmail());
                 psmt.setString(2, cdao.getPassword());
@@ -138,11 +139,16 @@ public class AccountOpenDto {
                     cdao.setPincode(set.getString("pincode"));
                     cdao.setState(set.getString("state"));
 //                    ============================================================
+                    cdao.setAccNum(set.getInt("Account_Num"));
+                    cdao.setAccType(set.getString("Account_Type"));
+                    cdao.setBalance(Double.parseDouble(set.getString("Current_Balance")));
+                    cdao.setBranchId(set.getInt("Branch_id"));
+                    cdao.setAccStatus(set.getString("Account_Status"));
 
                     flag = true;
                 }
             } catch (SQLException e) {
-                System.out.println(e + "-------------");
+                System.out.println(e);
             }
         }
         return flag;
@@ -169,7 +175,7 @@ public class AccountOpenDto {
                     flag = true;
                 }
             } catch (SQLException e) {
-                System.out.println(e );
+                System.out.println(e);
             }
         }
         return flag;

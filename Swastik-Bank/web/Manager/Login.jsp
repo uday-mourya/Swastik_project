@@ -21,9 +21,9 @@
         <link rel="stylesheet" href="css/Login.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <style>
             *{
@@ -39,35 +39,35 @@
                 /* padding: 20px; */
                 /* background: rgb(130, 106, 251); */
             }
-                      #footer{
-    width: 100%;
-    margin-top: 20px;
-    text-align: center;
-    background: #f9f9f9;
-}
-#footer h1{
-    font-weight: 600;
-    padding-top: 10px;
-    color: steelblue;
-}
+            #footer{
+                width: 100%;
+                margin-top: 20px;
+                text-align: center;
+                background: #f9f9f9;
+            }
+            #footer h1{
+                font-weight: 600;
+                padding-top: 10px;
+                color: steelblue;
+            }
 
-#footer h1 span{
-    color: black;
-}
-.social-link i{
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 20px;
-    background: black;
-    color: #f9f9f9;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    transition: 0.5s ease;
-    cursor: pointer;
-}
-.social-link i:hover{
-    background:#ffa500;
-}
+            #footer h1 span{
+                color: black;
+            }
+            .social-link i{
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 20px;
+                background: black;
+                color: #f9f9f9;
+                margin-left: 10px;
+                margin-bottom: 10px;
+                transition: 0.5s ease;
+                cursor: pointer;
+            }
+            .social-link i:hover{
+                background:#ffa500;
+            }
             .bg-img{
                 background: url('https://img.etimg.com/thumb/msid-68748254,width-300,height-225,imgsize-675057,,resizemode-75/bank-1.jpg');
                 height: 100vh;
@@ -94,8 +94,8 @@
                 padding: 60px 32px;
                 width: 370px;
                 transform: translate(-50%,-50%);
-/*                 background: rgba(255,255,255,0.04); 
-                 box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75); */
+                /*                 background: rgba(255,255,255,0.04); 
+                                 box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75); */
             }
             .content header{
                 color: white;
@@ -143,7 +143,7 @@
                 display: block;
             }
             .pass{
-                text-align: left;   
+                text-align: left;
                 margin: 10px 0;
             }
             .pass a{
@@ -201,33 +201,32 @@
         <script>
             function validate()
             {
-            var txt = document.getElementById("em");
-            var displays = document.getElementById("display");
-            if (txt.value.trim() = "")
-            {
-            display.innerHTML = "field Required";
-            display.style.color = "red";
-            return false;
+                var txt = document.getElementById("em");
+                var displays = document.getElementById("display");
+                        if (txt.value.trim() = "")
+                {
+                display.innerHTML = "field Required";
+                        display.style.color = "red";
+                        return false;
+                }
+                else{
+                var reg = /\d/;
+                if (reg.text(txt.value)) {
+                    display.innerHTML = "valid";
+                    display.style.color = "Green";
+                    return false;
+                } else {
+                    display.innerHTML = "Invalid";
+                    display.style.color = "purple";
+                    return false;
+                }
+                }
             }
-            else{
-            var reg = /\d/;
-            if (reg.text(txt.value)){
-            display.innerHTML = "valid";
-            display.style.color = "Green";
-            return false;
-            }
-            else{
-            display.innerHTML = "Invalid";
-            display.style.color = "purple";
-            return false;
-            }
-           }
-          }
-      
+
         </script>
     </head>
     <body>
-      
+
         <div class="bg-img">
             <div class="content">
                 <header>Login Form</header>
@@ -248,8 +247,8 @@
                     <div class="field">
                         <input type="submit" onclick="validate()" value="LOGIN">
                     </div>
-              
-                    
+
+
                 </form>
 
                 <div class="signup">
@@ -260,27 +259,27 @@
         </div>
 
     </div>
-   <footer id="footer">
-    <h1><span>OutDoor</span>Adventure</h1>
-      <p class="w-50 m-auto">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
-        provident, mollitia sequi labore voluptate sit voluptatibus nam esse
-        laboriosam aliquid culpa? Cupiditate ipsa numquam totam pariatur ab
-        itaque iusto suscipit?
-      </p>
-      <div class="social-link">
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-youtube"></i>
-        <i class="fa-brands fa-pinterest-p"></i>
-      </div>
-      <div class="credit">
-        <p>Designed By <a href="a">Tech Nerds</a></p>
-      </div>
-      <div class="copyright">
-        <p>&copy;Copyright.All Rights Reserved</p>
-      </div>
+    <footer id="footer">
+        <h1><span>OutDoor</span>Adventure</h1>
+        <p class="w-50 m-auto">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+            provident, mollitia sequi labore voluptate sit voluptatibus nam esse
+            laboriosam aliquid culpa? Cupiditate ipsa numquam totam pariatur ab
+            itaque iusto suscipit?
+        </p>
+        <div class="social-link">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-pinterest-p"></i>
+        </div>
+        <div class="credit">
+            <p>Designed By <a href="a">Tech Nerds</a></p>
+        </div>
+        <div class="copyright">
+            <p>&copy;Copyright.All Rights Reserved</p>
+        </div>
     </footer>
 </body>
 </html>

@@ -18,13 +18,20 @@ public class BeneficiaryDto {
         Connection con = GetConnection.getConnectin();
         if (con != null) {
             try {
-                String query = "INSERT INTO Beneficiary (Beneficiary_Name, Bank, `ifsc`, Account_Num, `Limit`)VALUES (?, ?, ?, ?, ?)";
+                String query = "INSERT INTO Beneficiary (Acc_num, Beneficiary_Name, Bank, `ifsc`,`Limit`,benefi_Acc_num)VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement psmt = con.prepareStatement(query);
-                psmt.setString(1, bDao.getName());
-                psmt.setString(2, bDao.getBank());
-                psmt.setString(3, bDao.getIfsc());
-                psmt.setString(4, bDao.getAccNum());
+                System.out.println(bDao.getCustAccNum() + "-----------");
+                System.out.println(bDao.getName() + "-----------");
+                System.out.println(bDao.getBank() + "-----------");
+                System.out.println(bDao.getIfsc() + "-----------");
+                System.out.println(bDao.getLimit() + "-----------");
+                System.out.println(bDao.getAccNum() + "-----------");
+                psmt.setInt(1, bDao.getCustAccNum());
+                psmt.setString(2, bDao.getName());
+                psmt.setString(3, bDao.getBank());
+                psmt.setString(4, bDao.getIfsc());
                 psmt.setString(5, bDao.getLimit());
+                psmt.setString(6, bDao.getAccNum());
                 psmt.executeUpdate();
                 flag = true;
             } catch (SQLException e) {
@@ -41,8 +48,9 @@ public class BeneficiaryDto {
 
         if (con != null) {
             try {
-                String query = "select * from Beneficiary";
+                String query = "select * from Beneficiary where Acc_num = ?";
                 PreparedStatement psmt = con.prepareStatement(query);
+                psmt.setInt(1, 12);
                 ResultSet set = psmt.executeQuery();
                 while (set.next()) {
                     BeneficiaryDao bDao = new BeneficiaryDao();
@@ -50,7 +58,7 @@ public class BeneficiaryDto {
                     bDao.setName(set.getString("Beneficiary_Name"));
                     bDao.setBank(set.getString("Bank"));
                     bDao.setIfsc(set.getString("ifsc"));
-                    bDao.setAccNum(set.getString("Account_Num"));
+                    bDao.setAccNum(set.getString("benefi_Acc_num"));
                     bDao.setLimit(set.getString("Limit"));
                     beneficiaryDao.add(bDao);
                     flag = true;

@@ -51,10 +51,10 @@ public class CustomerAccountOpen extends HttpServlet {
                 aoDto.deleteCustomer(aoDao);
                 Message message = new Message("Invalid details! Try again!!", "error", "alert-danger");
                 session.setAttribute("message", message);
-                response.sendRedirect("View/AccountOpen.jsp");
+                response.sendRedirect("View/CAccountOpean.jsp");
                 return;
             }
-            System.out.println(request.getParameter("accounttype") + "----------------------");
+            
 
             if (a && b) {
                 System.out.println("customer login");

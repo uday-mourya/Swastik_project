@@ -1,7 +1,7 @@
 <%-- 
     Document   : CustomerDashboard
     Created on : Nov 24, 2023, 10:06:13 AM
-    Author     : dell
+    Author     : Sohan_Maali
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -336,6 +336,6 @@ if(session.getAttribute("activeUser")!=null){
 <%
     }else
 { 
-response.sendRedirect("index.jsp");
+response.sendRedirect("../index.jsp");
 }
 %>

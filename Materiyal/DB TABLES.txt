@@ -166,10 +166,13 @@ CREATE TABLE `Report` (
 
   CREATE TABLE `Beneficiary` (
   `Beneficiary_Id` int NOT NULL AUTO_INCREMENT,
+    `Acc_num` int NOT NULL,
   `Beneficiary_Name` varchar(25),
   `Bank` varchar(30),
   `ifsc` varchar(10),
   `Account_Num` varchar(10),
   `Limit` varchar(10),
-   PRIMARY KEY (`Beneficiary_Id`)
+   PRIMARY KEY (`Beneficiary_Id`),
+   KEY `Account_num_idx` (`Account_num`),
+  CONSTRAINT `Acc_num` FOREIGN KEY (`Acc_num`) REFERENCES `Account` (`Account_Num`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
