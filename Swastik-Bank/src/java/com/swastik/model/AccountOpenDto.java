@@ -154,35 +154,8 @@ public class AccountOpenDto {
         return flag;
     }
 
-    public boolean customerLoginProcess(AccountOpenDao cdao) {
-        Connection con = GetConnection.getConnectin();
-        boolean flag = false;
-        if (con != null) {
-            try {
-                String query = "select * from account where customer_id = ?";
-                PreparedStatement psmt = con.prepareStatement(query);
-                psmt.setInt(1, cdao.getCustomerId());
-                ResultSet set = psmt.executeQuery();
-                while (set.next()) {
-
-                    cdao.setAccNum(set.getInt("Account_Num"));
-                    cdao.setAccType(set.getString("Account_Type"));
-                    cdao.setBalance(Double.parseDouble(set.getString("Current_Balance")));
-                    cdao.setBranch("");
-                    cdao.setAccStatus(set.getString("Account_Status"));
-//                    ============================================================
-
-                    flag = true;
-                }
-            } catch (SQLException e) {
-                System.out.println(e);
-            }
-        }
-        return flag;
-    }
-
     public boolean deleteCustomer(AccountOpenDao cdao) {
-//         delete from customer where customerid = ?;
+
         Connection con = GetConnection.getConnectin();
         boolean flag = false;
         if (con != null) {
@@ -200,4 +173,35 @@ public class AccountOpenDto {
         }
         return flag;
     }
+    
+    
+    
+    
+//    public boolean customerLoginProcess(AccountOpenDao cdao) {
+//        Connection con = GetConnection.getConnectin();
+//        boolean flag = false;
+//        if (con != null) {
+//            try {
+//                String query = "select * from account where customer_id = ?";
+//                PreparedStatement psmt = con.prepareStatement(query);
+//                psmt.setInt(1, cdao.getCustomerId());
+//                ResultSet set = psmt.executeQuery();
+//                while (set.next()) {
+//
+//                    cdao.setAccNum(set.getInt("Account_Num"));
+//                    cdao.setAccType(set.getString("Account_Type"));
+//                    cdao.setBalance(Double.parseDouble(set.getString("Current_Balance")));
+//                    cdao.setBranch("");
+//                    cdao.setAccStatus(set.getString("Account_Status"));
+////                    ============================================================
+//
+//                    flag = true;
+//                }
+//            } catch (SQLException e) {
+//                System.out.println(e);
+//            }
+//        }
+//        return flag;
+//    }
+
 }

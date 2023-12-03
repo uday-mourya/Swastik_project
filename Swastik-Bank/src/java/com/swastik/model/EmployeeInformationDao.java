@@ -11,7 +11,6 @@ public class EmployeeInformationDao implements Serializable {
     private String email;
     private String dob;
     private Timestamp doh;
-    private String position;
 
     public String getDob() {
         return dob;
@@ -27,13 +26,6 @@ public class EmployeeInformationDao implements Serializable {
 
     public void setSalary(String salary) {
         this.salary = salary;
-    }
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
     }
     private String salary;
     private String mobile;

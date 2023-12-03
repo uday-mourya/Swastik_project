@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Fields Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <label for="firstInput">First Input:</label>
+        <input onkeyup="validateNumberFields()" id="firstInput" type="text" id="firstInput" name="firstInput">
+        <span id="display" style="color:red; font-size: 14px;">*</span>
+
+        <br>
+
+        <label for="secondInput">Second Input:</label>
+        <input onkeyup="validateNumberFields()" id="secondInput" type="text" id="secondInput" name="secondInput">
+        <span id="display2" style="color:red; font-size: 14px;">*</span>
+
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- <div id="display"></div>
+    <div id="display2"></div> -->
+
+    <script>
+        function validateNumberFields() {
+            var firstInput = document.getElementById("firstInput");
+            var secondInput = document.getElementById("secondInput");
+            var display = document.getElementById("display");
+            var display2 = document.getElementById("display2");
+
+            // Check if either input is empty
+            if (firstInput.value.trim() === "") {
+                display.innerHTML = "First field is required";
+                display.style.color = "red";
+                return false;
+            }
+
+            // Check if the first input contains only numbers
+            var reg = /^[0-9]+$/;
+            if (!reg.test(firstInput.value)) {
+                display.innerHTML = "Only numbers are allowed in the first field";
+                display.style.color = "red";
+                return false;
+            }
+            else {
+                // Clear the first field's error message if it's valid
+                display.innerHTML = "";
+            }
+
+            // Check if the second input is empty
+            if (secondInput.value.trim() === "") {
+                display2.innerHTML = "Second field is required";
+                display2.style.color = "red";
+                return false;
+            }
+
+            // Check if both inputs contain only numbers
+            if (reg.test(firstInput.value) && reg.test(secondInput.value)) {
+                // Check if the values are the same
+                if (firstInput.value === secondInput.value) {
+                    display2.innerHTML = "Valid";
+                    display2.style.color = "green";
+                    return true;
+                } else {
+                    display2.innerHTML = "Values do not match";
+                    display2.style.color = "red";
+                    return false;
+                }
+            } else {
+                display2.innerHTML = "Only numbers are allowed in the second field";
+                display2.style.color = "red";
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>

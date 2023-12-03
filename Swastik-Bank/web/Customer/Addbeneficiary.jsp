@@ -42,29 +42,29 @@
 
         <!-- fafa icons -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+        <!-- responsive link -->
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <!-- form link -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+
+
+        <!-- css code -->
+        <style>
+            .box-custom {
+                background-color: white;
+                height: 150px;
+                width: 120px;
+                text-align: center;
+                padding: 17px;
+                margin-left: 15px;
+            }
+
+        </style>
     </head>
-
-    <!-- responsive link -->
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- form link -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-
-
-
-    <!-- css code -->
-    <style>
-        .box-custom {
-            background-color: white;
-            height: 150px;
-            width: 120px;
-            text-align: center;
-            padding: 17px;
-            margin-left: 15px;
-        }
-
-    </style>
-
     <body>
         <!-- ======= Header ======= -->
         <%@include file="navbar2.jsp" %>

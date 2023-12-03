@@ -33,25 +33,12 @@
         <servlet-class>com.swastik.controlar.TransfermoneyControlar</servlet-class>
     </servlet>
     <servlet>
-<<<<<<< HEAD
-        <servlet-name>ManagerRegistrationController</servlet-name>
-        <servlet-class>com.swastik.controlar.ManagerRegistrationController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Normal</servlet-name>
-        <servlet-class>com.swastik.controlar.Normal</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ManagerLoginController1</servlet-name>
-        <servlet-class>com.swastik.controlar.ManagerLoginController1</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>EmployeServlet</servlet-name>
-        <servlet-class>com.swastik.controlar.EmployeServlet</servlet-class>
-=======
         <servlet-name>MailControlar</servlet-name>
         <servlet-class>MailControlar</servlet-class>
->>>>>>> bb50c11551a5193305354cff63dcfa07f0017af6
+    </servlet>
+    <servlet>
+        <servlet-name>ChangePassWord</servlet-name>
+        <servlet-class>com.swastik.controlar.ChangePassWord</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>test</servlet-name>
@@ -86,24 +73,11 @@
         <url-pattern>/TransfermoneyControlar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< HEAD
-        <servlet-name>ManagerRegistrationController</servlet-name>
-        <url-pattern>/ManagerRegistrationController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Normal</servlet-name>
-        <url-pattern>/Normal</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ManagerLoginController1</servlet-name>
-        <url-pattern>/ManagerLoginController1</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EmployeServlet</servlet-name>
-        <url-pattern>/EmployeServlet</url-pattern>
-=======
         <servlet-name>MailControlar</servlet-name>
         <url-pattern>/MailControlar</url-pattern>
->>>>>>> bb50c11551a5193305354cff63dcfa07f0017af6
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangePassWord</servlet-name>
+        <url-pattern>/ChangePassWord</url-pattern>
     </servlet-mapping>
 </web-app>

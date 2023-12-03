@@ -20,12 +20,6 @@ public class BeneficiaryDto {
             try {
                 String query = "INSERT INTO Beneficiary (Acc_num, Beneficiary_Name, Bank, `ifsc`,`Limit`,benefi_Acc_num)VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement psmt = con.prepareStatement(query);
-                System.out.println(bDao.getCustAccNum() + "-----------");
-                System.out.println(bDao.getName() + "-----------");
-                System.out.println(bDao.getBank() + "-----------");
-                System.out.println(bDao.getIfsc() + "-----------");
-                System.out.println(bDao.getLimit() + "-----------");
-                System.out.println(bDao.getAccNum() + "-----------");
                 psmt.setInt(1, bDao.getCustAccNum());
                 psmt.setString(2, bDao.getName());
                 psmt.setString(3, bDao.getBank());
@@ -38,7 +32,6 @@ public class BeneficiaryDto {
                 System.out.println(e);
             }
         }
-        System.out.println(flag + "--------beni");
         return flag;
     }
 
@@ -51,6 +44,8 @@ public class BeneficiaryDto {
                 String query = "select * from Beneficiary where Acc_num = ?";
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setInt(1, 12);
+//                psmt.setInt(1, setCustAccNum());
+
                 ResultSet set = psmt.executeQuery();
                 while (set.next()) {
                     BeneficiaryDao bDao = new BeneficiaryDao();
@@ -71,7 +66,6 @@ public class BeneficiaryDto {
     }
 
     public boolean deleteBeneficiary(BeneficiaryDao bDao) {
-        //Wrong
         boolean flag = false;
         Connection con = GetConnection.getConnectin();
         if (con != null) {
