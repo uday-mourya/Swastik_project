@@ -18,7 +18,7 @@ public class AccountOpenDto {
 
         if (con != null) {
             try {
-                String query = "insert into customer(password, name, father, mother, gender, dob, phone, email, adhar, pan, maritail, occupation, address, city, pincode, state, distric) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                String query = "insert into customer(password, name, father, mother, gender, dob, phone, email, adhar, pan, maritail, occupation, address, city, distric, pincode, state) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setString(1, cdao.getPassword());
                 psmt.setString(2, cdao.getName());
@@ -173,10 +173,27 @@ public class AccountOpenDto {
         }
         return flag;
     }
-    
-    
-    
-    
+
+    public boolean changePassword(AccountOpenDao cdao) {
+        //Not Working
+        boolean flag = false;
+        Connection con = GetConnection.getConnectin();
+
+        if (con != null) {
+            try {
+                String query = "UPDATE customer SET password = ? WHERE password = ? AND email = ?";
+                PreparedStatement psmt = con.prepareStatement(query);
+                psmt.setString(1, cdao.getPassword());
+                psmt.setString(2, cdao.getPassword());
+                psmt.setString(3, cdao.getEmail());
+                flag = true;
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return flag;
+    }
+
 //    public boolean customerLoginProcess(AccountOpenDao cdao) {
 //        Connection con = GetConnection.getConnectin();
 //        boolean flag = false;
@@ -203,5 +220,4 @@ public class AccountOpenDto {
 //        }
 //        return flag;
 //    }
-
 }

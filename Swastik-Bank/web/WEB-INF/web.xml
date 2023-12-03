@@ -40,6 +40,10 @@
         <servlet-name>ChangePassWord</servlet-name>
         <servlet-class>com.swastik.controlar.ChangePassWord</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MonyTransfer</servlet-name>
+        <servlet-class>com.swastik.controlar.MonyTransfer</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>test</servlet-name>
         <url-pattern>/test</url-pattern>
@@ -79,5 +83,9 @@
     <servlet-mapping>
         <servlet-name>ChangePassWord</servlet-name>
         <url-pattern>/ChangePassWord</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MonyTransfer</servlet-name>
+        <url-pattern>/MonyTransfer</url-pattern>
     </servlet-mapping>
 </web-app>

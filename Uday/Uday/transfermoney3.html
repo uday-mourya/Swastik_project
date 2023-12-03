@@ -32,39 +32,38 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
 
-
     <!-- fafa icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- form link -->
+    <!-- form link -->
 
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
-
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-
-
-
-  <!-- css code -->
-  <style>
-    .box-custom {
-    background-color: white;
-    height: 150px;
-    width: 120px;
-    text-align: center;
-    padding: 17px;
-    margin-left: 15px;
-}
-body{
-  text-decoration: none;
-}
-
-  </style>
-  
-</head>
+    <!-- css code -->
+    <style>
+      .box-custom {
+        background-color: white;
+        height: 150px;
+        width: 120px;
+        text-align: center;
+        padding: 17px;
+        margin-left: 15px;
+      }
+      body {
+        text-decoration: none;
+      }
+    </style>
+  </head>
   <body>
     <!-- ======= Header ======= -->
-    <header style="background-color: #861F41" id="header" class="header fixed-top d-flex align-items-center">
+    <header
+      style="background-color: #861f41"
+      id="header"
+      class="header fixed-top d-flex align-items-center"
+    >
       <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
           <img src="assets/img/Logo_New-3.png" alt="" />
@@ -124,9 +123,7 @@ body{
               class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
             >
               <li class="dropdown-header">
-
                 <h6>Uday Mourya</h6>
-
 
                 <!-- <span>Manager</span> -->
               </li>
@@ -193,18 +190,17 @@ body{
             class="nav-content collapse"
             data-bs-parent="#sidebar-nav"
           >
-          <li>
-            <a href="Addbeneficiary.html">
-              <i class="bi bi-circle"></i><span>Add Beneficiary</span>
-            </a>
-          </li>
+            <li>
+              <a href="Addbeneficiary.html">
+                <i class="bi bi-circle"></i><span>Add Beneficiary</span>
+              </a>
+            </li>
             <li>
               <a href="Transfermoney.html">
                 <i class="bi bi-circle"></i
                 ><span>Transfer Money From Account Number </span>
               </a>
             </li>
-           
           </ul>
         </li>
         <!-- End Components Nav -->
@@ -331,8 +327,6 @@ body{
                 <i class="bi bi-circle"></i><span>Review & Feedback</span>
               </a>
             </li>
-            
-            
           </ul>
         </li>
 
@@ -346,12 +340,10 @@ body{
             <span>Contact</span>
           </a>
         </li>
-      
-        </li>
       </ul>
     </aside>
     <!-- End Sidebar-->
-    
+
     <main id="main" class="main">
       <div class="pagetitle">
         <h1>Dashboard</h1>
@@ -364,109 +356,79 @@ body{
       </div>
       <!-- End Page Title -->
 
-    
+      <!-- E-governance -->
 
-<!-- E-governance -->
+      <!-- E-governance -->
+      <section class="section dashboard my-5 ml-3">
+        <h2 class="text-center mb-4">Transfer Money</h2>
 
+        <form class="form-horizontal">
+          <div class="row">
+            <div class="col-sm-6 mx-auto">
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Enter Amount</label>
+                <div class="col-sm-8">
+                  <input
+                    onkeyup="amountValidate()"
+                    id="ammount"
+                    type="text"
+                    class="form-control"
+                  />
+                  <span id="display" style="color: red; font-size: 14px"></span>
+                </div>
+              </div>
+            </div>
 
-
-<!-- <section class="section dashboard my-5 ml-3">
-    <h2 class="text-center">Transfer Money</h2>
-    
-    <form class="form-horizontal">
-     
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label class="col-sm-4 control-label">Enter Amount</label>
-          <div class="col-sm-8">
-            <input type="text" class="form-control">
+            <div class="col-sm-6 mx-auto">
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Confirm Amount</label>
+                <div class="col-sm-8">
+                  <input
+                    onkeyup="ammountValidate2()"
+                    id="cammount"
+                    type="text"
+                    class="form-control"
+                  />
+                  <span
+                    id="display2"
+                    style="color: red; font-size: 14px"
+                  ></span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label class="col-sm-4 control-label">Confirm Amount</label>
-          <div class="col-sm-8">
-            <input type="text" class="form-control">
+
+          <div class="row my-5">
+            <div class="col-sm-6 mx-auto">
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Enter PIN</label>
+                <div class="col-sm-8">
+                  <input
+                    onkeyup="pinValidate()"
+                    id="pin"
+                    type="text"
+                    class="form-control"
+                  />
+                  <span
+                    id="errordisplay"
+                    style="color: red; font-size: 14px"
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 mx-auto my-4">
+              <button
+                class="btn btn-danger waves-effect waves-light"
+                id="btn-submit"
+              >
+                Submit
+              </button>
+            </div>
           </div>
-        </div>
-      </div>
-    
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label class="col-sm-4 control-label">Enter Pin</label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control">
-          </div>
-        </div>
-      </div>
-    
-      </div>
-    
-      <div class="text-center">
-        <button class="btn btn-primary waves-effect waves-light " id="btn-submit">Submit</button>
-      </div>
-      <input type="hidden" name="action" id="action" value="event_dialog_add_newpartnerdata" />
-    </form>
-</section> -->
-
-
-  <!-- shhshend -->
-
-  <!-- E-governance -->
-<section class="section dashboard my-5 ml-3">
-  <h2 class="text-center mb-4">Transfer Money</h2>
-  
-  <form class="form-horizontal">
-   
-    <div class="row">
-      <div class="col-sm-6 mx-auto">
-        <div class="form-group">
-          <label class="col-sm-4 control-label">Enter Amount</label>
-          <div class="col-sm-8">
-            <input onkeyup="amountValidate()" id="ammount"  type="text" class="form-control">
-            <span id="display" style="color:red; font-size: 14px;"></span>
-          </div>
-        </div>
-      </div>
-    
-      <div class="col-sm-6 mx-auto">
-        <div class="form-group">
-          <label class="col-sm-4 control-label">Confirm Amount</label>
-          <div class="col-sm-8">
-            <input onkeyup="ammountValidate2()" id="cammount" type="text" class="form-control">
-            <span id="display2" style="color:red; font-size: 14px;"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row my-5">
-      <div class="col-sm-6 mx-auto">
-        <div class="form-group">
-          <label class="col-sm-4 control-label">Enter PIN</label>
-          <div class="col-sm-8">
-            <input onkeyup="pinValidate()" id="pin" type="text" class="form-control">
-            <span id="errordisplay" style="color:red; font-size: 14px;"></span>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-sm-6 mx-auto my-4">
-        <button class="btn btn-danger waves-effect waves-light" id="btn-submit">Submit</button>
-      </div>
-
-
-
-    </div>
-  
-  </form>
-</section>
-<!-- shhshend -->
-
-
+        </form>
+      </section>
+      <!-- shhshend -->
     </main>
     <!-- End #main -->
 
@@ -476,10 +438,7 @@ body{
         &copy; Copyright <strong><span>SwastikBank</span></strong
         >. All Rights Reserved
       </div>
-      <div class="credits">
-       
-        Designed by <a href="index.html">Tech Nerds</a>
-      </div>
+      <div class="credits">Designed by <a href="index.html">Tech Nerds</a></div>
     </footer>
     <!-- End Footer -->
 
@@ -502,79 +461,76 @@ body{
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
-
     <script>
-  function amountValidate() {
-            var inputField = document.getElementById("ammount");
-            var display = document.getElementById("display");
+      function amountValidate() {
+        var inputField = document.getElementById("ammount");
+        var display = document.getElementById("display");
 
-            if (inputField.value.trim() === " ") {
-                display.innerHTML = "Input is required";
-                display.style.color = "red";
-                return false;
-            } else {
-                var reg = /^[0-9]+$/;
-                if (reg.test(inputField.value)) {
-                    display.innerHTML = " ";
-                    display.style.color = "green";
-                    return true;
-                } else {
-                    display.innerHTML = "Only numbers are allowed";
-                    display.style.color = "red";
-                    return false;
-                }
-            }
+        if (inputField.value.trim() === " ") {
+          display.innerHTML = "Input is required";
+          display.style.color = "red";
+          return false;
+        } else {
+          var reg = /^[0-9]+$/;
+          if (reg.test(inputField.value)) {
+            display.innerHTML = " ";
+            display.style.color = "green";
+            return true;
+          } else {
+            display.innerHTML = "Only numbers are allowed";
+            display.style.color = "red";
+            return false;
+          }
         }
-        
-        function ammountValidate2() {
-    var ammount = document.getElementById("ammount");
-    var cammount = document.getElementById("cammount");
-    var pdisplay = document.getElementById("display2");
+      }
 
-    if (ammount.value.trim() === " " || cammount.value.trim() === " ") {
-        pdisplay.innerHTML = "Amount Required";
-        pdisplay.style.color = "red";
-        return false;
-    } 
-    else if (ammount.value !== cammount.value) {
-        pdisplay.innerHTML = "Amounts do not match";
-        pdisplay.style.color = "red";
-        return false;
-    }
-     else {
-        var reg = /^[0-9]+$/;
-        if (reg.test(ammount.value)) {
+      function ammountValidate2() {
+        var ammount = document.getElementById("ammount");
+        var cammount = document.getElementById("cammount");
+        var pdisplay = document.getElementById("display2");
+
+        if (ammount.value.trim() === " " || cammount.value.trim() === " ") {
+          pdisplay.innerHTML = "Amount Required";
+          pdisplay.style.color = "red";
+          return false;
+        } else if (ammount.value !== cammount.value) {
+          pdisplay.innerHTML = "Amounts do not match";
+          pdisplay.style.color = "red";
+          return false;
+        } else {
+          var reg = /^[0-9]+$/;
+          if (reg.test(ammount.value)) {
             pdisplay.innerHTML = "Valid";
             pdisplay.style.color = "green";
             return true;
-        } else {
+          } else {
             pdisplay.innerHTML = "Only numbers are allowed";
             pdisplay.style.color = "red";
             return false;
+          }
         }
-    }
-}
-function pinValidate() {
-    var name = document.getElementById("pin");
-    var udisplay = document.getElementById("errordisplay");
+      }
+      function pinValidate() {
+        var name = document.getElementById("pin");
+        var udisplay = document.getElementById("errordisplay");
 
-    if (name.value.trim() == " ") {
-        udisplay.innerHTML = "Pin Required";
-        udisplay.style.color = "red";
-        return false;
-    } else {
-        var reg = /^[0-9]+$/; // Only allow numbers
-        if (reg.test(name.value)) {
+        if (name.value.trim() == " ") {
+          udisplay.innerHTML = "Pin Required";
+          udisplay.style.color = "red";
+          return false;
+        } else {
+          var reg = /^[0-9]+$/; // Only allow numbers
+          if (reg.test(name.value)) {
             udisplay.innerHTML = " ";
             udisplay.style.color = "green";
             return true;
-        } else {
+          } else {
             udisplay.innerHTML = "Only numbers are allowed";
             udisplay.style.color = "red";
             return false;
+          }
         }
-    }
-}
+      }
     </script>
   </body>
 </html>

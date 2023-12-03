@@ -1,6 +1,5 @@
 package com.swastik.controlar;
 
-import com.swastik.other.Message;
 import com.swastik.model.BeneficiaryDao;
 import com.swastik.model.BeneficiaryDto;
 import jakarta.servlet.ServletException;
@@ -16,22 +15,20 @@ public class TransferControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         BeneficiaryDao bDao = new BeneficiaryDao();
         BeneficiaryDto bDto = new BeneficiaryDto();
-
-        System.out.println(request.getParameter("sohan") + "-----------");
-        System.out.println(request.getParameter("beneficiaryBank") + "-----------");
-        System.out.println(request.getParameter("beneficiaryAccNum") + "-----------");
-
-//        bDao.setName(request.getParameter("beneficiaryName"));
-//        bDao.setName(request.getParameter("beneficiaryBank"));
-//        bDao.setAccNum(request.getParameter("beneficiaryAccNum"));
-//        bDao.setIfsc(request.getParameter("beneficiaryifsc"));
-        // bDao.set(request.getParameter("limit"));
+//        bDao.setCustAccNum(request.getParameter(""));
+//        bDao.setBeneId(Integer.parseInt(request.getParameter("beneficiaryId")));
+        bDao.setName(request.getParameter("beneficiaryName"));
+        System.out.println(bDao.getName() + "-----------1");
+        bDao.setBank(request.getParameter("beneficiaryBank"));
+        System.out.println(bDao.getBank() + "-----------2");
+        bDao.setAccNum(request.getParameter("beneficiaryAccNum"));
+        System.out.println(bDao.getAccNum() + "-----------3");
+        bDao.setIfsc(request.getParameter("beneficiaryifsc"));
+        System.out.println(bDao.getIfsc() + "-----------4");
 //        ============================================================================
-        if (bDto.deleteBeneficiary(bDao)) {
-            Message message = new Message("Beneficiary Deleted Successful !!", "success", "alert-success");
-            response.sendRedirect("Customer/transfermoney.jsp");
-        } else {
-            Message message = new Message("Beneficiary Deleting Fail !!", "fail", "alert-success");
+        if (request.getParameter("operation").equals("Send")) {
+            response.sendRedirect("Customer/transfermoney2.jsp");
+        } else if (request.getParameter("operation").equals("Edit")) {
             response.sendRedirect("Customer/transfermoney.jsp");
         }
     }

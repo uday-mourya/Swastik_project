@@ -15,7 +15,7 @@ public class TransactionInformationDao {
     private String tranType;
     private String description;
     private String tranStatus;
-    private String receAccNum;
+    private int receId;
 
     public int getTranid() {
         return tranid;
@@ -73,12 +73,12 @@ public class TransactionInformationDao {
         this.tranStatus = tranStatus;
     }
 
-    public String getReceAccNum() {
-        return receAccNum;
+    public int getReceId() {
+        return receId;
     }
 
-    public void setReceAccNum(String receAccNum) {
-        this.receAccNum = receAccNum;
+    public void setReceAccNum(int receId) {
+        this.receId = receId;
     }
 
     public String getIfsc() {

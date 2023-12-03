@@ -126,10 +126,9 @@ ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.g
 
                                     <div class="ms-3">
                                         <p class="fw-bold mb-1" name="beneficiaryName"> 
-                                            <!--<input type="text" value="-->
-                                                   <%--<%= bdao.getName()%>--%>
-                                                   <!--" name="beneficiaryName" disabled>-->
-                                                   <%= bdao.getName() %>
+                                            <!--<input type="text" value="" name="beneficiaryId" style="display: none;">-->
+                                            <input type="text" value="<%= bdao.getName()%>" name="beneficiaryName">
+                                            
                                         </p>
                                         <p class="text-muted mb-0"></p>
                                     </div>
@@ -137,31 +136,31 @@ ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.g
                             </td>
                             <td>
                                 <p class="fw-normal mb-1" >
+                                  
+                                <p class="fw-normal mb-1" >
                                     <input type="text" value="<%= bdao.getBank()%>" name="beneficiaryBank">
                                 </p>
                             </td>
 
                             <td >
-                                <input type="text" value="<%=bdao.getAccNum()%>" name="beneficiaryAccNum" disabled></td>
+                                <input type="text" value="<%=bdao.getAccNum()%>" name="beneficiaryAccNum" ></td>
 
                             </td>
                             <td >
-                                <input type="text" value="<%=bdao.getIfsc()%>" name="beneficiaryifsc" disabled>
+                                <input type="text" value="<%=bdao.getIfsc()%>" name="beneficiaryifsc" >
 
                             </td>
                             <td>
                         <center>
-                            <input type="submit" class="btn btn-primary" value="Send" name="sendMoney">
-                            <!--<input type="submit" class="btn btn-danger" value="delete">-->
+                            <input type="submit" class="btn btn-primary" value="Send" name="operation">
+                            <input type="submit" class="btn btn-danger" value="Edit" name="operation">
                         </center>
                         </td>
                         </tr>
                         <%
                             }
                         %>
-                        <tr>
-                        <input type="text" value="sohan Maali amla indore" name="sohan" disabled >
-                        </tr>
+
                         <tr class="mx-3">
                             <td colspan="4" class="text-center">
                                 <!--<a href="Addbeneficiary.jsp" class="btn btn-primary">Add Beneficiary</a>-->

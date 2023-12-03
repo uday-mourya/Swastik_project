@@ -12,11 +12,9 @@ public class ChangePassWord extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
 
     @Override
