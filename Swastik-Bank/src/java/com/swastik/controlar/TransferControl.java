@@ -6,6 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class TransferControl extends HttpServlet {
@@ -13,20 +14,24 @@ public class TransferControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        BeneficiaryDao bDao = new BeneficiaryDao();
-        BeneficiaryDto bDto = new BeneficiaryDto();
-//        bDao.setCustAccNum(request.getParameter(""));
-//        bDao.setBeneId(Integer.parseInt(request.getParameter("beneficiaryId")));
-        bDao.setName(request.getParameter("beneficiaryName"));
-        System.out.println(bDao.getName() + "-----------1");
-        bDao.setBank(request.getParameter("beneficiaryBank"));
-        System.out.println(bDao.getBank() + "-----------2");
-        bDao.setAccNum(request.getParameter("beneficiaryAccNum"));
-        System.out.println(bDao.getAccNum() + "-----------3");
-        bDao.setIfsc(request.getParameter("beneficiaryifsc"));
-        System.out.println(bDao.getIfsc() + "-----------4");
+
+        BeneficiaryDao beneficiaryDao = new BeneficiaryDao();
+
+        HttpSession session = request.getSession();
+
+        beneficiaryDao.setBeneId(Integer.parseInt(request.getParameter("beneficiaryId")));
+
+        beneficiaryDao.setName(request.getParameter("beneficiaryName"));
+
+        beneficiaryDao.setBank(request.getParameter("beneficiaryBank"));
+
+        beneficiaryDao.setAccNum(request.getParameter("beneficiaryAccNum"));
+
+        beneficiaryDao.setIfsc(request.getParameter("beneficiaryifsc"));
+
 //        ============================================================================
         if (request.getParameter("operation").equals("Send")) {
+            session.setAttribute("beneficiaryDao", beneficiaryDao);
             response.sendRedirect("Customer/transfermoney2.jsp");
         } else if (request.getParameter("operation").equals("Edit")) {
             response.sendRedirect("Customer/transfermoney.jsp");

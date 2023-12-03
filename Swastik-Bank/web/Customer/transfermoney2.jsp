@@ -97,6 +97,7 @@
                                         id="ammount"
                                         type="text"
                                         class="form-control"
+                                        name="amount"
                                         />
                                     <span id="display" style="color: red; font-size: 14px"></span>
                                 </div>
@@ -125,6 +126,46 @@
                     <div class="row my-5">
                         <div class="col-sm-6 mx-auto">
                             <div class="form-group">
+                                <label class="col-sm-4 control-label">Transection Type *</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" name="tranType"> 
+                                        <option>Select Type </option>
+                                        <option value="NEFT">NEFT</option>
+                                        <option value="RTGS">RTGS</option>
+                                    </select>
+
+                                    <span
+                                        id="errordisplay"
+                                        style="color: red; font-size: 14px"
+                                        ></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 mx-auto">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Description *</label>
+                                <div class="col-sm-8">
+                                    <input
+
+                                        id="Description"
+                                        type="text"
+                                        class="form-control"
+                                        name="description"
+                                        />
+                                    <span
+                                        id="errordisplay"
+                                        style="color: red; font-size: 14px"
+                                        ></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 mx-auto">
+                            <div class="form-group">
                                 <label class="col-sm-4 control-label">Enter PIN *</label>
                                 <div class="col-sm-8">
                                     <input
@@ -132,7 +173,9 @@
                                         id="pin"
                                         type="text"
                                         class="form-control"
+                                        name="pass"
                                         />
+
                                     <span
                                         id="errordisplay"
                                         style="color: red; font-size: 14px"

@@ -12,22 +12,26 @@ import java.sql.SQLException;
  */
 public class MoneyTransactionDto {
 
-    public boolean sendMonyAccount(MoneyTransactionDao Tdao) {
+    public boolean sendMoneyInAccount(MoneyTransactionDao mDao) {
         boolean flag = false;
         Connection con = GetConnection.getConnectin();
 
         if (con != null) {
             try {
+                System.out.println("===================================================");
+                System.out.println(mDao.getReceiverId());
+                System.out.println(mDao.getAmount());
+                System.out.println(mDao.getTranType());
+                System.out.println(mDao.getDescription());
+                System.out.println(mDao.getTranStatus());
+                System.out.println(mDao.getPass());
+                System.out.println("===================================================");
+                MoneyTransactionDto.checkAccountExist(mDao);
+//                System.out.println(mDao.getName());
                 String query = "insert into transaction_information(Account_num, Receiver_Id, Amount, Tran_Type, Description, Tran_status) values(?, ?, ?, ?, ?, ?)";
 
                 PreparedStatement psmt = con.prepareStatement(query);
-                psmt.setInt(1, Tdao.getAccNum());
-                psmt.setInt(2, Tdao.getReceId());
-                psmt.setString(3, Tdao.getAmount());
-                psmt.setString(4, Tdao.getTranType());
-                psmt.setString(5, Tdao.getDescription());
-                psmt.setString(6, Tdao.getTranStatus());
-                flag = true;
+
             } catch (SQLException e) {
                 System.out.println(e);
             }
@@ -35,7 +39,7 @@ public class MoneyTransactionDto {
         return flag;
     }
 
-    public boolean checkAccountExist() {
+    private static boolean checkAccountExist(MoneyTransactionDao mDao) {
         boolean flag = false;
         Connection con = GetConnection.getConnectin();
 

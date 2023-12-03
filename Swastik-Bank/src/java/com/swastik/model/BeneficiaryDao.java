@@ -9,6 +9,10 @@ public class BeneficiaryDao {
     private int beneId;
     private String name;
     private int custAccNum;
+    private String Bank;
+    private String ifsc;
+    private String accNum; //benefaiciry account number
+    private String limit;
 
     public int getCustAccNum() {
         return custAccNum;
@@ -17,10 +21,6 @@ public class BeneficiaryDao {
     public void setCustAccNum(int custAccNum) {
         this.custAccNum = custAccNum;
     }
-    private String Bank;
-    private String ifsc;
-    private String accNum;
-    private String limit;
 
     public int getBeneId() {
         return beneId;

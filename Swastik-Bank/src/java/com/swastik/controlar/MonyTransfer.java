@@ -1,9 +1,13 @@
 package com.swastik.controlar;
 
+import com.swastik.model.BeneficiaryDao;
+import com.swastik.model.MoneyTransactionDao;
+import com.swastik.model.MoneyTransactionDto;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class MonyTransfer extends HttpServlet {
@@ -12,11 +16,26 @@ public class MonyTransfer extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            
-            if (true) {
+            HttpSession session = request.getSession();
 
+            BeneficiaryDao beneficiaryDao = (BeneficiaryDao) session.getAttribute("beneficiaryDao");
+            MoneyTransactionDto moneyDto = new MoneyTransactionDto();
+            MoneyTransactionDao mDao = new MoneyTransactionDao();
+
+            mDao.setReceiverId(beneficiaryDao.getBeneId());
+            mDao.setAmount(request.getParameter("amount"));
+            mDao.setTranType(request.getParameter("tranType"));
+            mDao.setDescription(request.getParameter("description"));
+            mDao.setReceiverId(beneficiaryDao.getBeneId());
+            mDao.setPass(request.getParameter("pass"));
+            //            mDao.getTranType(beneficiaryDao.get());
+            if (moneyDto.sendMoneyInAccount(mDao)) {
+                response.sendRedirect("Customer/transfermoney2.jsp");
+                //errot massage likha he
+            } else {
+                response.sendRedirect("Customer/transfermoney2.jsp");
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e);
         }
     }

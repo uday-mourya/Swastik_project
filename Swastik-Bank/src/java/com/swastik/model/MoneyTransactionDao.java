@@ -4,18 +4,18 @@ import java.security.Timestamp;
 
 /**
  *
- * @author Sohan_Maali
+ * @author Sohan_Maali FOR transaction_information
  */
 public class MoneyTransactionDao {
 
     private int tranid;
-    private int accNum;
+    private int receiverId; // benefaisery id number
     private String Amount;
     Timestamp tranDate;
     private String tranType;
     private String description;
     private String tranStatus;
-    private int receId;
+    private String pass;
 
     public int getTranid() {
         return tranid;
@@ -25,12 +25,12 @@ public class MoneyTransactionDao {
         this.tranid = tranid;
     }
 
-    public int getAccNum() {
-        return accNum;
+    public int getReceiverId() {
+        return receiverId;
     }
 
-    public void setAccNum(int accNum) {
-        this.accNum = accNum;
+    public void setReceiverId(int receiverId) {
+        this.receiverId = receiverId;
     }
 
     public String getAmount() {
@@ -73,20 +73,11 @@ public class MoneyTransactionDao {
         this.tranStatus = tranStatus;
     }
 
-    public int getReceId() {
-        return receId;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
-    public void setReceAccNum(int receId) {
-        this.receId = receId;
+    public String getPass() {
+        return this.pass;
     }
-
-    public String getIfsc() {
-        return Ifsc;
-    }
-
-    public void setIfsc(String Ifsc) {
-        this.Ifsc = Ifsc;
-    }
-    private String Ifsc;
 }

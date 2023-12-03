@@ -126,9 +126,11 @@ ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.g
 
                                     <div class="ms-3">
                                         <p class="fw-bold mb-1" name="beneficiaryName"> 
-                                            <input type="text" value="" name="beneficiaryId" style="display: none;">
+                                            <!--                                            <input type="text" value="
+                                            <%--<%= bdao.getBeneId()%>--%>
+                                            " name="beneficiaryId" >-->
                                             <input type="text" value="<%= bdao.getName()%>" name="beneficiaryName">
-                                            
+
                                         </p>
                                         <p class="text-muted mb-0"></p>
                                     </div>
@@ -136,7 +138,7 @@ ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.g
                             </td>
                             <td>
                                 <p class="fw-normal mb-1" >
-                                  
+
                                 <p class="fw-normal mb-1" >
                                     <input type="text" value="<%= bdao.getBank()%>" name="beneficiaryBank">
                                 </p>
@@ -156,6 +158,9 @@ ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.g
                             <input type="submit" class="btn btn-danger" value="Edit" name="operation">
                         </center>
                         </td>
+                        </tr>
+                        <tr>
+                        <input type="text" value="<%= bdao.getBeneId()%>" name="beneficiaryId" style="display: none;" >
                         </tr>
                         <%
                             }
@@ -197,5 +202,6 @@ ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.g
 
         <!-- Template Main JS File -->
         <script src="assets/js/main.js"></script>
+        <!-- <input type=""> -->
     </body>
 </html>

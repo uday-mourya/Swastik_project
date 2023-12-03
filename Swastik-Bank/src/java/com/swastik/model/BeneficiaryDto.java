@@ -37,6 +37,7 @@ public class BeneficiaryDto {
 
     public boolean getAllBeneficiary(ArrayList<BeneficiaryDao> beneficiaryDao) {
         boolean flag = false;
+        //Note Use
         Connection con = GetConnection.getConnectin();
 
         if (con != null) {
@@ -107,6 +108,32 @@ public class BeneficiaryDto {
                 if (psmt.executeUpdate() > 0) {
                     flag = true;
                 }
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return flag;
+    }
+
+    
+
+    public boolean sendMonyAccount(BeneficiaryDao beneficiaryDao) {
+        boolean flag = false;
+        //not use
+        Connection con = GetConnection.getConnectin();
+
+        if (con != null) {
+            try {
+                String query = "insert into transaction_information(Account_num, Receiver_Id, Amount, Tran_Type, Description, Tran_status) values(?, ?, ?, ?, ?, ?)";
+
+                PreparedStatement psmt = con.prepareStatement(query);
+//                psmt.setInt(1, Tdao.getAccNum());
+//                psmt.setInt(2, Tdao.getReceId());
+//                psmt.setString(3, Tdao.getAmount());
+//                psmt.setString(4, Tdao.getTranType());
+//                psmt.setString(5, Tdao.getDescription());
+//                psmt.setString(6, Tdao.getTranStatus());
+                flag = true;
             } catch (SQLException e) {
                 System.out.println(e);
             }
