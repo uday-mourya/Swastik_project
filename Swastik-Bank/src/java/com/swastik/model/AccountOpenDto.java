@@ -34,8 +34,8 @@ public class AccountOpenDto {
                 psmt.setString(12, cdao.getOccupation());
                 psmt.setString(13, cdao.getAddress());
                 psmt.setString(14, cdao.getCity());
-                psmt.setString(15, cdao.getPincode());
-                psmt.setString(16, cdao.getState());
+                psmt.setString(15, cdao.getDistric());
+                psmt.setString(16, cdao.getPincode());
                 psmt.setString(17, cdao.getState());
 
                 psmt.executeUpdate();

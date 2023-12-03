@@ -126,7 +126,7 @@ ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.g
 
                                     <div class="ms-3">
                                         <p class="fw-bold mb-1" name="beneficiaryName"> 
-                                            <!--<input type="text" value="" name="beneficiaryId" style="display: none;">-->
+                                            <input type="text" value="" name="beneficiaryId" style="display: none;">
                                             <input type="text" value="<%= bdao.getName()%>" name="beneficiaryName">
                                             
                                         </p>

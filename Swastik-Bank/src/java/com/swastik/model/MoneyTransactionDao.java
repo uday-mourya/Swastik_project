@@ -6,7 +6,7 @@ import java.security.Timestamp;
  *
  * @author Sohan_Maali
  */
-public class TransactionInformationDao {
+public class MoneyTransactionDao {
 
     private int tranid;
     private int accNum;

@@ -10,9 +10,9 @@ import java.sql.SQLException;
  * @author Sohan_Maali
  *
  */
-public class TransactionInformationDto {
+public class MoneyTransactionDto {
 
-    public boolean sendMonyAccount(TransactionInformationDao Tdao) {
+    public boolean sendMonyAccount(MoneyTransactionDao Tdao) {
         boolean flag = false;
         Connection con = GetConnection.getConnectin();
 

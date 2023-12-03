@@ -21,19 +21,14 @@ public class AddBeneficiary extends HttpServlet {
             BeneficiaryDto bDto = new BeneficiaryDto();
             AccountOpenDao clda = (AccountOpenDao) session.getAttribute("activeUser");
 
-            bDao.setCustAccNum(clda.getAccNum());
-            System.out.println(bDao.getCustAccNum() + "+++++++++++++++++++++++++++++");
-            bDao.setName(request.getParameter("bName"));
-            System.out.println(request.getParameter("bName"));
+            bDao.setCustAccNum(clda.getAccNum()); // Customer Account Number
 
-            bDao.setIfsc(request.getParameter("ifscCode"));
-            System.out.println(request.getParameter("ifscCode"));
+            bDao.setIfsc(request.getParameter("ifscCode"));  // Beneficiary IFSC
 
-            bDao.setAccNum(request.getParameter("accNum"));
+            bDao.setAccNum(request.getParameter("accNum")); // Beneficiary Account Number
             bDao.setBank(request.getParameter("bank"));
-            System.out.println(request.getParameter("bank"));
+
             bDao.setLimit(request.getParameter("limit"));
-            System.out.println(request.getParameter("limit"));
 
             if (bDto.addBeneficiary(bDao)) {
                 Message message = new Message("Beneficiary Added Successful !!", "success", "alert-success");

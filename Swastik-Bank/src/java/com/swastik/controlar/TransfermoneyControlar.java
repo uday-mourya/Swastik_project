@@ -1,5 +1,6 @@
 package com.swastik.controlar;
 
+import com.swastik.model.AccountOpenDao;
 import com.swastik.model.BeneficiaryDao;
 import com.swastik.model.BeneficiaryDto;
 import jakarta.servlet.ServletException;
@@ -16,11 +17,14 @@ public class TransfermoneyControlar extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            ArrayList<BeneficiaryDao> bDao = new ArrayList<>();
+            HttpSession session = request.getSession();
+            BeneficiaryDao bDao = new BeneficiaryDao(); // All Benifesiry list
             BeneficiaryDto bDto = new BeneficiaryDto();
-            if (bDto.getAllBeneficiary(bDao)) {
-                HttpSession session = request.getSession();
-                session.setAttribute("BeneficiaryDao", bDao);
+            AccountOpenDao cADao = (AccountOpenDao) session.getAttribute("activeUser");
+            ArrayList<BeneficiaryDao> beDao = bDto.getAllBeneficiary(cADao);
+            System.out.println(beDao + "++++++++++++++++++++++++++++----------------");
+            if (beDao != null) {
+                session.setAttribute("BeneficiaryDao", beDao);
                 response.sendRedirect("Customer/transfermoney.jsp");
             } else {
                 response.sendRedirect("Customer/CustomerDashboard.jsp");

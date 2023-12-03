@@ -65,6 +65,35 @@ public class BeneficiaryDto {
         return flag;
     }
 
+    public ArrayList<BeneficiaryDao> getAllBeneficiary(AccountOpenDao bnDao) {
+        ArrayList<BeneficiaryDao> beneficiaryDao = new ArrayList<>();
+        Connection con = GetConnection.getConnectin();
+
+        if (con != null) {
+            try {
+                String query = "select * from Beneficiary where Acc_num = ?";
+                PreparedStatement psmt = con.prepareStatement(query);
+                psmt.setInt(1, bnDao.getAccNum());
+//                psmt.setInt(1, setCustAccNum());
+
+                ResultSet set = psmt.executeQuery();
+                while (set.next()) {
+                    BeneficiaryDao bDao = new BeneficiaryDao();
+                    bDao.setBeneId(set.getInt("Beneficiary_Id"));
+                    bDao.setName(set.getString("Beneficiary_Name"));
+                    bDao.setBank(set.getString("Bank"));
+                    bDao.setIfsc(set.getString("ifsc"));
+                    bDao.setAccNum(set.getString("benefi_Acc_num"));
+                    bDao.setLimit(set.getString("Limit"));
+                    beneficiaryDao.add(bDao);
+                }
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return beneficiaryDao;
+    }
+
     public boolean deleteBeneficiary(BeneficiaryDao bDao) {
         boolean flag = false;
         Connection con = GetConnection.getConnectin();
