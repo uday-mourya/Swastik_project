@@ -3,6 +3,7 @@ package com.swastik.controlar;
 import com.swastik.model.AccountOpenDao;
 import com.swastik.model.AccountOpenDto;
 import com.swastik.other.Message;
+import com.swastik.service.MailServices;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -54,13 +55,16 @@ public class CustomerAccountOpen extends HttpServlet {
                 response.sendRedirect("View/CAccountOpean.jsp");
                 return;
             }
-            
 
             if (a && b) {
                 System.out.println("customer login");
-                response.sendRedirect("View/Login.jsp");
 //                HttpSession session = request.getSession();
+                MailServices mail = new MailServices();
+                mail.setUserMail(aoDao.getEmail());
+                mail.createAndSendEmail("Account varification in Swastik...", "Dear swastik user. ,\n Your Account Open Success your Account Number is " + aoDao.getAccNum());
+                mail.sendEmailMessage(mail);
                 session.setAttribute("AccountOpenDao", aoDao);
+                response.sendRedirect("View/Login.jsp");
             } else {
                 aoDto.deleteCustomer(aoDao);
                 Message message = new Message("Invalid details! Try again!!", "error", "alert-danger");

@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*" %>
+<%@ page import=" com.swastik.model.*" %>
+<%@ page import="com.swastik.controlar.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,10 +39,14 @@
         <link href="assets/css/style.css" rel="stylesheet" />
     </head>
     <body>
+
+        <%         
+            List<AccountOpenDao> d =AccountOpenDto.alldataCustomerr();
+        %>
         <!-- ======= Header ======= -->
         <header id="header" class="header fixed-top d-flex align-items-center">
             <div class="d-flex align-items-center justify-content-between">
-                <a href="index.html" class="logo d-flex align-items-center">
+                <a href="AdminDashBoard.jsp" class="logo d-flex align-items-center">
                     <img src="assets/img/logo.png" alt="" />
                     <span class="d-none d-lg-block">Swastik</span>
                 </a>
@@ -48,7 +55,7 @@
             <!-- End Logo -->
 
             <div class="search-bar">
-                <form
+<!--                <form
                     class="search-form d-flex align-items-center"
                     method="POST"
                     action="#"
@@ -62,7 +69,7 @@
                     <button type="submit" title="Search">
                         <i class="bi bi-search"></i>
                     </button>
-                </form>
+                </form>-->
             </div>
             <!-- End Search Bar -->
 
@@ -107,7 +114,7 @@
                             <li>
                                 <a
                                     class="dropdown-item d-flex align-items-center"
-                                    href="users-profile.html"
+                                    href="users-profile.jsp"
                                     >
                                     <i class="bi bi-person"></i>
                                     <span>My Profile</span>
@@ -141,7 +148,7 @@
         <aside id="sidebar" class="sidebar">
             <ul class="sidebar-nav" id="sidebar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="AdminDashBoard.jsp">
                         <i class="bi bi-grid"></i>
                         <span>Dashboard</span>
                     </a>
@@ -164,11 +171,12 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="#"> <i class="bi bi-circle"></i><span>Loan</span> </a>
+                            <a href="Loan-Table.jsp"> <i class="bi bi-circle"></i><span>Loan</span> </a>
                         </li>
                         <li>
-                            <a href=""> <i class="bi bi-circle"></i><span>Cash</span> </a>
-                        </li>
+                            <a href="Account-Table.jsp">
+                                <i class="bi bi-circle"></i><span>Account</span>
+                            </a>  </li>
                     </ul>
                 </li>
                 <!-- End Components Nav -->
@@ -190,16 +198,11 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="Customer-List.html">
+                            <a href="Customer-List.jsp">
                                 <i class="bi bi-circle"></i><span>Customer List</span>
                             </a>
                         </li>
 
-                        <li>
-                            <a href="#">
-                                <i class="bi bi-circle"></i><span>Customer Civil</span>
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <!-- --------Customer End----------- -->
@@ -220,12 +223,12 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="Employee-List.html">
+                            <a href="Employee-List.jsp">
                                 <i class="bi bi-circle"></i><span>Employee List</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="Registration.jsp">
                                 <i class="bi bi-circle"></i><span>Add Employee</span>
                             </a>
                         </li>
@@ -249,15 +252,11 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="forms-elements.html">
+                            <a href="forms-elements.jsp">
                                 <i class="bi bi-circle"></i><span>Loan Request</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="forms-elements.html">
-                                <i class="bi bi-circle"></i><span>Probleam Report</span>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
                 <!-- -----Request End------- -->
@@ -266,7 +265,7 @@
                 <!-- End Profile Page Nav -->
 
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="Review-And-Rating.html">
+                    <a class="nav-link collapsed" href="Review-And-Rating.jsp">
                         <i class="bi bi-question-circle"></i>
                         <span>Reaview</span>
                     </a>
@@ -279,7 +278,7 @@
                 <h1>Customer</h1>
                 <nav>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.jsp">Home</a></li>
                         <li class="breadcrumb-item">Components</li>
                         <li class="breadcrumb-item active">Customer</li>
                     </ol>
@@ -287,41 +286,79 @@
             </div>
             <!-- End Page Title -->
 
-            <section class="section">
-                <table class="table table-striped table-hover">
-                    <thead class="bg-light">
-                        <tr>
-                            <th>Name</th>
-                            <th>Account Status</th>
-                            <th>Amount</th>
-                            <th>Actions</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img
-                                        src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                                        alt=""
-                                        style="width: 45px; height: 45px"
-                                        class="rounded-circle"
-                                        />
-                                    <div class="ms-3">
-                                        <p class="fw-bold mb-1">name</p>
-                                        <p class="text-muted mb-0">12345678</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="fw-normal mb-1">Active</p>
-                            </td>
 
-                            <td>5000.00</td>
-                            <td>
-                                <a href="Footer.html" class="btn btn-primary">Active</a>
-                            </td>
-                        </tr>
-                    </thead>
-                </table>
+            <section class="section">
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Customer</h5>
+
+                                <!-- Table with stripped rows -->
+                                <table class="table align-middle mb-0 bg-white">
+                                    <thead class="bg-light">
+                                        <tr>
+                                            <th>Name</th> 
+                                            <th>Account Number</th> 
+                                            <th>Account Status</th>
+                                            <th>Amount</th>
+
+
+                                            <th colspan="2"><center>Actions</center></th>
+                                    </tr>
+                                    <%
+                                    if(!d.isEmpty()){
+                                    for(AccountOpenDao p : d){                    
+                
+                                    %>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img
+                                                        src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                                        alt=""
+                                                        style="width: 45px; height: 45px"
+                                                        class="rounded-circle"
+                                                        />
+                                                    <div class="ms-3">                              
+                                                        <p class="fw-bold mb-1"><%=p.getName()%></p>                               
+                                                    </div>
+                                                    <td>
+                                                        <p class="fw mb-1"><%=p.getAccountNumber()%></p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw- mb-1"><%=p.getAccountStatus()%></p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw- mb-1"><%=p.getCurrentBalance()%></p>
+                                                    </td>
+                                                </div>
+
+                                            <td>
+                                                <a href="Employee-Profile.jsp" class="btn btn-primary"
+                                                   >Edit</a
+                                                >
+                                                <a href="#" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <% }
+                                            }else{
+                                            out.print("kdkkdd");
+                                                }
+                                        %>   
+
+                                    </tbody>
+                                </table>
+
+                                <!-- End Table with stripped rows -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </section>
         </main>
         <!-- End #main -->

@@ -48,6 +48,22 @@
         <servlet-name>Loanapply</servlet-name>
         <servlet-class>com.swastik.controlar.Loanapply</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EmployeeLogin</servlet-name>
+        <servlet-class>com.swastik.controlar.EmployeeLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EmployeePassword</servlet-name>
+        <servlet-class>com.swastik.controlar.EmployeePassword</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManagerLoginControlar</servlet-name>
+        <servlet-class>com.swastik.controlar.ManagerLoginControlar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EmployeeServlet</servlet-name>
+        <servlet-class>com.swastik.controlar.EmployeeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>test</servlet-name>
         <url-pattern>/test</url-pattern>
@@ -95,5 +111,21 @@
     <servlet-mapping>
         <servlet-name>Loanapply</servlet-name>
         <url-pattern>/Loanapply</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmployeeLogin</servlet-name>
+        <url-pattern>/EmployeeLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmployeePassword</servlet-name>
+        <url-pattern>/EmployeePassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManagerLoginControlar</servlet-name>
+        <url-pattern>/ManagerLoginControlar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmployeeServlet</servlet-name>
+        <url-pattern>/EmployeeServlet</url-pattern>
     </servlet-mapping>
 </web-app>

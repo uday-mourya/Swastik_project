@@ -13,6 +13,10 @@ import jakarta.mail.internet.MimeMessage;
 public class MailServices {
 
     private String msgSubject = "";
+    private String msgText = "";
+    private String USER_NAME;   // Reasever Mail (User Mail)
+    private final String PASSSWORD = "dckl aaps fzca lwez";  //Password of the Goole(gmail) account
+    private final String SENDER = "sohanmaali4@gmail.com";  //From addresss
 
     public String getMsgSubject() {
         return msgSubject;
@@ -37,10 +41,14 @@ public class MailServices {
     public void setUSER_NAME(String USER_NAME) {
         this.USER_NAME = USER_NAME;
     }
-    private String msgText = "";
-    private String USER_NAME = "sohanmaali144@gmail.com";   // Reasever Mail (User Mail)
-    private final String PASSSWORD = "dckl aaps fzca lwez";  //Password of the Goole(gmail) account
-    private final String SENDER = "sohanmaali4@gmail.com";  //From addresss
+
+    public void setUserMail(String userMail) {
+        this.USER_NAME = userMail;
+    }
+
+    public void SetMsgText(String msgText) {
+        this.msgText = msgText;
+    }
 
     public static void main(String[] args) {
         MailServices email = new MailServices();
@@ -59,10 +67,10 @@ public class MailServices {
     public void createAndSendEmail(String msgSubject, String msgText) {
         this.msgSubject = msgSubject;
         this.msgText = msgText;
-        sendEmailMessage();
+//        sendEmailMessage();
     }
 
-    private void sendEmailMessage() {
+    public void sendEmailMessage(MailServices mail) {
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -80,11 +88,11 @@ public class MailServices {
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(SENDER)); //Set from address of the email
-            message.setContent(msgText, "text/html"); //set content type of the email
+            message.setContent(mail.msgText, "text/html"); //set content type of the email
 
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(USER_NAME));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(mail.getUSER_NAME()));
 
-            message.setSubject(msgSubject); //Set email message subject
+            message.setSubject(mail.msgSubject); //Set email message subject
             Transport.send(message); //Send email message
 
             System.out.println("sent email successfully!");

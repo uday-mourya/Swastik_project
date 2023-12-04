@@ -1,14 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.swastik.model;
 
-/**
- *
- * @author Sohan_Maali
- *
- */
 import com.swastik.service.GetConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoanapplyDto {
 
@@ -40,11 +42,36 @@ public class LoanapplyDto {
 
                 return rowsAffected > 0;
             } catch (SQLException e) {
-                System.out.println(e);
+                System.out.println("" + e);
+                // Handle the exception according to your application's requirements.
                 return false;
             }
         }
         return false;
     }
 
+    public static List<LoanapplyDao> alldataCustomerLoan() {
+        List<LoanapplyDao> l = new ArrayList<>();
+
+        Connection con = GetConnection.getConnectin();
+        if (con != null) {
+            System.out.println("ppppppp");
+            String sql = "SELECT loanrequest.LoanRequestid, account.customer_id, account.Account_Type, FROM loanrequest INNER JOIN account ON loanrequest.Acc_number = account. Account_Num";
+            try {
+                PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    LoanapplyDao e = new LoanapplyDao();
+
+                    e.setId(rs.getInt("LoanRequestid"));
+                    System.out.println(rs.getString("LoanRequestid"));
+
+                    l.add(e);
+                }
+            } catch (SQLException e) {
+                System.out.println("" + e);
+            }
+        }
+        return l;
+    }
 }

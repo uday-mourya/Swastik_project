@@ -106,6 +106,7 @@ Sohan_Maali --%>
             </style>
         </head>
         <body>
+            <%@include file="AllComponent/navbar.jsp" %>
             <div class="note">
                 <p>Form P-13</p>
             </div>

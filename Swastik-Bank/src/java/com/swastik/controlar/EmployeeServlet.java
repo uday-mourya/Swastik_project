@@ -1,63 +1,61 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
+
 package com.swastik.controlar;
 
-import com.swastik.model.ManagerInformationDao;
-import com.swastik.model.ManagerInformationDto;
-import java.io.IOException;
-import java.io.PrintWriter;
+import com.swastik.model.EmployeeInformationDao;
+import com.swastik.model.EmployeeInformationDto;
+//import com.swastik.model.ManagerInformationDao;
+//import com.swastik.model.ManagerInformationDto;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 
 /**
  *
  * @author abc
  */
-public class ManagerLoginController1 extends HttpServlet {
+public class EmployeeServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            System.out.println(""+email);
-            System.out.println(""+password);
+             String password =request.getParameter("password");
+            String name =request.getParameter("name");           
+            String email =request.getParameter("email");
+            String dob =request.getParameter("dob");
+            String salary =request.getParameter("salary");
+            String mobile =request.getParameter("phone");
+            String position =request.getParameter("position");
             
-           ManagerInformationDao dao=new ManagerInformationDao();
-           dao.setEmail(email);
-           dao.setPassword(password);
-           
-          ManagerInformationDto dto=new ManagerInformationDto();
-          boolean b=dto.login(dao);
+            System.out.println(request.getParameter("name"));
+            EmployeeInformationDao dao=new EmployeeInformationDao();
+            dao.setPassword(password);
+            dao.setName(name);           
+            dao.setEmail(email);
+            dao.setDob(dob);
+            dao.setSalary(salary);
+            dao.setMobile(mobile);
+            dao.setPosition(position);
+            
+           EmployeeInformationDto dto=new EmployeeInformationDto();
+            boolean b=dto.regist(dao);  
             System.out.println(b);
-          if(b)
-          {
-             HttpSession session=request.getSession();
-             session.setAttribute("dao", dao);
-            
-             response.sendRedirect("../Manager/index.jsp");
-          }
-          else
-          {
-              response.sendRedirect("../Manager/Login.jsp");
-          }       
-        
+            if(b)
+            {
+//                out.print("sssssssssss");
+                response.sendRedirect("Manager/Employee-List.jsp");
+            }
+            else
+            {
+//                out.print("nnnnnnnnn");
+                response.sendRedirect("Manager/Registration.jsp");
+            }
         }
     }
 

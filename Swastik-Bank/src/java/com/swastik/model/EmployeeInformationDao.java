@@ -11,6 +11,25 @@ public class EmployeeInformationDao implements Serializable {
     private String email;
     private String dob;
     private Timestamp doh;
+    private String oldPassword;
+    private String phone;
+    private String position;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getOldPassword() {
+        return oldPassword;
+    }
+
+    public void setOldPassword(String oldPassword) {
+        this.oldPassword = oldPassword;
+    }
 
     public String getDob() {
         return dob;
@@ -76,5 +95,15 @@ public class EmployeeInformationDao implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setPosition(String position) {
+
+        this.position = position;
+    }
+
+    public String getPosition() {
+
+        return this.position;
     }
 }

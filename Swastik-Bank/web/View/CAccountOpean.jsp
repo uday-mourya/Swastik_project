@@ -596,61 +596,10 @@ Author :Sohan_Maali
                 return true;
             }
 
-            // function passvalidate() {
-            //             var firstInput = document.getElementById("firstpass");
-            //             var secondInput = document.getElementById("secondpass");
-            //             var display = document.getElementById("passdisplay");
-            //             var display2 = document.getElementById("passdisplay2");
-
-            //             // Check if either input is empty
-            //             if (firstInput.value.trim() === "") {
-            //                 display.innerHTML = "Pan Number is required";
-            //                 display.style.color = "red";
-            //                 return false;
-            //             }
-
-            //             // Check if the first input contains only numbers
-            //             var reg = /^[A-Za-z]{5}\d{4}[A-Za-z]$/; // 5 characters, 4 digits, 1 character
-            //             if (!reg.test(firstInput.value)) {
-            //                 display.innerHTML = "Please enter the valid 10 digit Pan Number AAAAA1234A";
-            //                 display.style.color = "red";
-            //                 return false;
-            //             }
-            //             else {
-            //                 // Clear the first field's error message if it's valid
-            //                 display.innerHTML = "";
-            //             }
-
-            //             // Check if the second input is empty
-            //             if (secondInput.value.trim() === "") {
-            //                 display2.innerHTML = "Confirm Pan Number is required";
-            //                 display2.style.color = "red";
-            //                 return false;
-            //             }
-
-            //             // Check if both inputs contain only numbers
-            //             if (reg.test(firstInput.value) && reg.test(secondInput.value)) {
-            //                 // Check if the values are the same
-            //                 if (firstInput.value === secondInput.value) {
-            //                     display2.innerHTML = "Valid";
-            //                     display2.style.color = "green";
-            //                     return true;
-            //                 } else {
-            //                     display2.innerHTML = "Values do not match";
-            //                     display2.style.color = "red";
-            //                     return false;
-            //                 }
-            //             } else {
-            //                 display2.innerHTML = "Please enter the valid 10 digit Pan Number AAAAA1234A";
-            //                 display2.style.color = "red";
-            //                 return false;
-            //             }
-            //         }
-            //   jdjdj
         </script>
     </head>
     <body>
-        <%@include file="AllComponent/navbar.jsp" %>
+      <%@include file="AllComponent/navbar.jsp" %>
 
         <br /><br />
         <section class="section dashboard loan border my-5 ml-3 mr-3">

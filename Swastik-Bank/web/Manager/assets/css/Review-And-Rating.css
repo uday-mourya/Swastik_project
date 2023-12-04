@@ -1,25 +1,25 @@
 /* Custom CSS for the table */
 .container {
-    margin: 20px;
+  margin: 20px;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 table {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 th {
-    background-color: #007bff;
-    color: white;
+  background-color: #007bff;
+  color: white;
 }
 
 td {
-    text-align: center;
+  text-align: center;
 }
 
 /* Add more custom styles as needed */

@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*" %>
+<%@ page import=" com.swastik.model.*" %>
+<%@ page import="com.swastik.controlar.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,6 +33,12 @@
         <link href="assets/css/style.css" rel="stylesheet" />
     </head>
     <body>
+        <% 
+//            AccountOpenDto edto = new AccountOpenDto();
+//            List<AccountOpenDao> d =edto.alldataCustomer();
+//        
+            List<AccountInformationDao> d =AccountInformationDto.allAccount();
+        %>
         <!-- ======= Header ======= -->
         <header id="header" class="header fixed-top d-flex align-items-center">
             <div class="d-flex align-items-center justify-content-between">
@@ -101,7 +110,7 @@
                             <li>
                                 <a
                                     class="dropdown-item d-flex align-items-center"
-                                    href="users-profile.html"
+                                    href="users-profile.jsp"
                                     >
                                     <i class="bi bi-person"></i>
                                     <span>My Profile</span>
@@ -135,7 +144,7 @@
         <aside id="sidebar" class="sidebar">
             <ul class="sidebar-nav" id="sidebar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="index.jsp">
                         <i class="bi bi-grid"></i>
                         <span>Dashboard</span>
                     </a>
@@ -158,10 +167,12 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="#"> <i class="bi bi-circle"></i><span>Loan</span> </a>
+                            <a href="Loan-Table.jsp"> <i class="bi bi-circle"></i><span>Loan</span> </a>
                         </li>
                         <li>
-                            <a href=""> <i class="bi bi-circle"></i><span>Cash</span> </a>
+                            <a href="Account-Table.jsp">
+                                <i class="bi bi-circle"></i><span>Account</span>
+                            </a>
                         </li>
                     </ul>
                 </li>
@@ -184,16 +195,11 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="Customer-List.html">
+                            <a href="Customer-List.jsp">
                                 <i class="bi bi-circle"></i><span>Customer List</span>
                             </a>
                         </li>
 
-                        <li>
-                            <a href="#">
-                                <i class="bi bi-circle"></i><span>Customer Civil</span>
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <!-- --------Customer End----------- -->
@@ -214,12 +220,12 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="Employee-List.html">
+                            <a href="Employee-List.jsp">
                                 <i class="bi bi-circle"></i><span>Employee List</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="Registration.jsp">
                                 <i class="bi bi-circle"></i><span>Add Employee</span>
                             </a>
                         </li>
@@ -243,15 +249,11 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="forms-elements.html">
+                            <a href="forms-elements.jsp">
                                 <i class="bi bi-circle"></i><span>Loan Request</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="forms-elements.html">
-                                <i class="bi bi-circle"></i><span>Probleam Report</span>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
                 <!-- -----Request End------- -->
@@ -260,7 +262,7 @@
                 <!-- End Profile Page Nav -->
 
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="Review-And-Rating.html">
+                    <a class="nav-link collapsed" href="Review-And-Rating.jsp">
                         <i class="bi bi-question-circle"></i>
                         <span>Review</span>
                     </a>
@@ -274,7 +276,7 @@
                 <h1>Account Data Table</h1>
                 <nav>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.jsp">Home</a></li>
                         <li class="breadcrumb-item">Department</li>
                         <li class="breadcrumb-item active">Account</li>
                     </ol>
@@ -293,28 +295,34 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>S. N.</th>
-                                            <th>Account type</th>
+                                            <th>Customer ID</th>
+                                            <th>Account Number</th>
+                                            <th>Account Type</th>
                                             <th>Minimum Balance</th>
-                                            <th>Interest Rate</th>
+                                            <th>Branch ID</th>
                                             <th>Action</th>
                                         </tr>
+                                        <%
+                                        if(!d.isEmpty()){
+                                        for(AccountInformationDao p : d){                    
+                
+                                        %>
                                     </thead>
                                     <tbody>
+
                                         <tr>
-                                            <td>1.</td>
-                                            <td>Saving</td>
-                                            <td>100.00</td>
-                                            <td>1.5%</td>
-                                            <td><a href="#" class="edit-btn btn btn-primary">Edit</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.</td>
-                                            <td>Current Account</td>
+                                            <td><%=p.getCustomerId()%></td>
+                                            <td><%=p.getAccountNumber()%></td>
+                                            <td><%=p.getAccountType()%></td>
                                             <td>5000.00</td>
-                                            <td>1.5%</td>
+                                            <td><%=p.getBranchId()%></td>
                                             <td><a href="#" class="edit-btn btn btn-primary">Edit</a></td>
                                         </tr>
+                                        <% }
+                                           }else{
+                                           out.print("kdkkdd");
+                                               }
+                                        %>   
                                         <!-- Add more rows here -->
                                     </tbody>
                                 </table>

@@ -50,7 +50,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
               <li class="nav-item ms-4">
-                <a class="nav-link active text-white" id="top-nav" href="index.jsp"
+                <a class="nav-link active text-white" id="top-nav" href="../index.jsp"
                   >Home</a
                 >
               </li>
@@ -95,8 +95,8 @@
                   <li>
                     <a class="dropdown-item" href="Login.jsp">Customer</a>
                   </li>
-                  <li><a class="dropdown-item" href="#">Employee</a></li>
-                  <li><a class="dropdown-item" href="#">Admin</a></li>
+                  <li><a class="dropdown-item" href="Employee/EmployeeLogin.jsp">Employee</a></li>
+                  <li><a class="dropdown-item" href="../Manager/Login.jsp">Admin</a></li>
                   <!-- <li><hr class="dropdown-divider"></li> -->
                   <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                 </ul>

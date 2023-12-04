@@ -5,9 +5,9 @@ import java.io.Serializable;
 public class LoanInformationDao implements Serializable {
 
     private int loanId;
-    private int name;
-    private int intrest;
-    private int duration;
+    private String name;
+    private String intrest;
+    private String duration;
 
     public int getLoanId() {
         return loanId;
@@ -16,32 +16,31 @@ public class LoanInformationDao implements Serializable {
     public LoanInformationDao() {
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getIntrest() {
+    public String getIntrest() {
         return intrest;
     }
 
-    public void setIntrest(int intrest) {
+    public void setIntrest(String intrest) {
         this.intrest = intrest;
     }
 
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
     public void setLoanId(int loanId) {
         this.loanId = loanId;
     }
-
 }

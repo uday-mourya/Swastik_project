@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -194,6 +196,218 @@ public class AccountOpenDto {
         return flag;
     }
 
+    public static List<AccountOpenDao> alldataCustomer() {
+        List<AccountOpenDao> productList = new ArrayList<>();
+        Connection con = GetConnection.getConnectin();
+
+        if (con != null) {
+
+            try {
+                String sql = "SELECT * FROM account";
+                PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    int cusId = rs.getInt("cusId");
+                    String password = rs.getString("password");
+                    String name = rs.getString("name");
+                    String father = rs.getString("father");
+                    String mother = rs.getString("mother");
+                    String gender = rs.getString("gender");
+                    String dob = rs.getString("dob");
+                    String mobile = rs.getString("mobile");
+                    String email = rs.getString("email");
+                    String adhar = rs.getString("adhar");
+                    java.sql.Timestamp dateTime = rs.getTimestamp("dateTime");
+                    String pan = rs.getString("pan");
+                    String maritail = rs.getString("maritail");
+                    String occupation = rs.getString("occupation");
+                    String address = rs.getString("address");
+                    String city = rs.getString("city");
+                    String pincode = rs.getString("pincode");
+                    String state = rs.getString("state");
+                    String distric = rs.getString("distric");
+                    String image = rs.getString("image");
+
+                    System.out.println("" + distric);
+                    AccountOpenDao open = new AccountOpenDao();
+                    open.setCusId(cusId);
+                    open.setPassword(password);
+                    open.setName(name);
+                    open.setFather(father);
+                    open.setMother(mother);
+                    open.setGender(gender);
+                    open.setDob(dob);
+                    open.setMobile(mobile);
+                    open.setEmail(email);
+                    open.setAdhar(adhar);
+//                    open.setDateTime(dateTime);
+                    open.setPan(pan);
+                    open.setMaritail(maritail);
+                    open.setOccupation(occupation);
+                    open.setAddress(address);
+                    open.setCity(city);
+                    open.setPincode(pincode);
+                    open.setState(state);
+                    open.setDistric(distric);
+                    open.setImage(image);
+
+                    productList.add(open);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    con.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return productList;
+    }
+
+    public static List<AccountOpenDao> allCustomerdata() {
+        List<AccountOpenDao> l = new ArrayList<>();
+
+        Connection con = GetConnection.getConnectin();
+        if (con != null) {
+            System.out.println("jjjjjjjj");
+            String sql = "SELECT customer.name, account.Account_Num, account.Account_Status, account.Current_Balance FROM customer INNER JOIN account ON customer.customerid = account. customer_id";
+            try {
+                PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    AccountOpenDao e = new AccountOpenDao();
+                    System.out.println("jjkdkdkkkd");
+                    e.setName(rs.getString("name"));
+                    System.out.println(rs.getString("name"));
+//                    e.setAccountNumber(rs.getInt("Account_Num"));
+                    e.setAccNum(rs.getInt("Account_Num"));
+                    System.out.println(rs.getInt("Account_Num"));
+//                    e.setAccountStatus(rs.getString("Account_Status"));
+                    e.setAccStatus(rs.getString("Account_Status"));
+                    System.out.println(rs.getString("Account_Status"));
+//                    e.setCurrentBalance(rs.getFloat("Current_Balance"));
+                    e.setBalance(rs.getFloat("Current_Balance"));
+
+                    l.add(e);
+                }
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        } else {
+            System.out.println("connection not established");
+        }
+        return l;
+    }
+
+    public static List<AccountOpenDao> getCustomerData1(int customerId, int accountNumber) {
+        List<AccountOpenDao> customerData = new ArrayList<>();
+
+        Connection con = GetConnection.getConnectin();
+        if (con != null) {
+            String sql = "SELECT customer.name, account.Account_Num, account.Account_Status, account.Current_Balance FROM customer INNER JOIN account ON customer.customerid = account.customer_id";
+            try {
+                PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    AccountOpenDao e = new AccountOpenDao();
+                    System.out.println("jjkdkdkkkd");
+                    e.setName(rs.getString("name"));
+                    System.out.println(rs.getString("name"));
+                    e.setAccNum(rs.getInt("Account_Num"));
+                    System.out.println(rs.getInt("Account_Num"));
+                    e.setAccStatus(rs.getString("Account_Status"));
+                    System.out.println(rs.getString("Account_Status"));
+                    e.setBalance(rs.getFloat("Current_Balance"));
+
+                    customerData.add(e);
+                }
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        } else {
+            System.out.println("connection not established");
+        }
+
+        return customerData;
+    }
+
+    public static int getRowCount() {
+        int rowCount = 0;
+
+        Connection con = GetConnection.getConnectin();
+        if (con != null) {
+            try {
+                String sql = "SELECT COUNT(*) FROM customer";
+                PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+                    rowCount = rs.getInt(1);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error executing SQL query: " + e.getMessage());
+            }
+        }
+        return rowCount;
+
+    }
+
+    public static int getCountCustomer() {
+
+        Connection con = GetConnection.getConnectin();
+        int count = 0;
+        if (con != null) {
+            String sql = "select * from  customer";
+
+            try {
+
+                PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    count++;
+                }
+
+            } catch (SQLException e) {
+                System.out.println("" + e);
+            }
+        }
+        return count;
+    }
+
+    public static List<AccountOpenDao> alldataCustomerr() {
+        List<AccountOpenDao> l = new ArrayList<>();
+
+        Connection con = GetConnection.getConnectin();
+        if (con != null) {
+            System.out.println("jjjjjjjj");
+            String sql = "SELECT customer.name, account.Account_Num, account.Account_Status, account.Current_Balance FROM customer INNER JOIN account ON customer.customerid = account. customer_id";
+            try {
+                PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    AccountOpenDao e = new AccountOpenDao();
+                    System.out.println("jjkdkdkkkd");
+                    e.setName(rs.getString("name"));
+                    System.out.println(rs.getString("name"));
+                    e.setAccountNumber(rs.getInt("Account_Num"));
+                    System.out.println(rs.getInt("Account_Num"));
+                    e.setAccountStatus(rs.getString("Account_Status"));
+                    System.out.println(rs.getString("Account_Status"));
+                    e.setCurrentBalance(rs.getFloat("Current_Balance"));
+
+                    l.add(e);
+                }
+            } catch (SQLException e) {
+                System.out.println("" + e);
+            }
+        } else {
+            System.out.println("connection not established");
+        }
+        return l;
+    }
 //    public boolean customerLoginProcess(AccountOpenDao cdao) {
 //        Connection con = GetConnection.getConnectin();
 //        boolean flag = false;

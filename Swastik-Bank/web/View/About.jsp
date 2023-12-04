@@ -13,7 +13,7 @@
         <<link rel="stylesheet" href="AllComponent/style.css"/>
     </head>
     <body>
-        <%@include file="AllComponent/navbar.jsp" %>
+        <<%@include file="AllComponent/navbar.jsp" %>
         
         <section id="about" class="about-section-padding mt-5">
         <div class="container">

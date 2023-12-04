@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index
-    Created on : 30-Nov-2023, 4:31:38 pm
-    Author     : abc
+    Document   : AdminNabBar
+    Created on : 04-Dec-2023, 12:08:02 am
+    Author     : Sohan_Maali
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -52,7 +52,7 @@
             class="header fixed-top d-flex align-items-center"
             >
             <div class="d-flex align-items-center justify-content-between">
-                <a href="index.html" class="logo d-flex align-items-center">
+                <a href="AdminDashBoard.jsp" class="logo d-flex align-items-center">
                     <img src="assets/img/Logo_New-3.png" alt="" />
                 </a>
                 <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -119,7 +119,7 @@
                             <li>
                                 <a
                                     class="dropdown-item d-flex align-items-center"
-                                    href="users-profile.html"
+                                    href="users-profile.jsp"
                                     >
                                     <i class="bi bi-person"></i>
                                     <span>My Profile</span>
@@ -153,7 +153,7 @@
         <aside id="sidebar" class="sidebar">
             <ul class="sidebar-nav" id="sidebar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="AdminDashBoard.jsp">
                         <i class="bi bi-grid"></i>
                         <span>Dashboard</span>
                     </a>
@@ -176,12 +176,12 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="Loan-Table.html">
+                            <a href="Loan-Table.jsp">
                                 <i class="bi bi-circle"></i><span>Loan</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Account-Table.html">
+                            <a href="Account-Table.jsp">
                                 <i class="bi bi-circle"></i><span>Account</span>
                             </a>
                         </li>
@@ -206,7 +206,7 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="Customer-List.html">
+                            <a href="Customer-List.jsp">
                                 <i class="bi bi-circle"></i><span>Customer List</span>
                             </a>
                         </li>
@@ -236,7 +236,7 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="Employee-List.html">
+                            <a href="Employee-List.jsp">
                                 <i class="bi bi-circle"></i><span>Employee List</span>
                             </a>
                         </li>
@@ -265,12 +265,12 @@
                         data-bs-parent="#sidebar-nav"
                         >
                         <li>
-                            <a href="forms-elements.html">
+                            <a href="forms-elements.jsp">
                                 <i class="bi bi-circle"></i><span>Loan Request</span>
                             </a>
                         </li>
                         <li>
-                            <a href="forms-elements.html">
+                            <a href="forms-elements.jsp">
                                 <i class="bi bi-circle"></i><span>Probleam Report</span>
                             </a>
                         </li>
@@ -282,7 +282,7 @@
                 <!-- End Profile Page Nav -->
 
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="Review-And-Rating.html">
+                    <a class="nav-link collapsed" href="Review-And-Rating.jsp">
                         <i class="bi bi-question-circle"></i>
                         <span>Review</span>
                     </a>
@@ -291,156 +291,5 @@
         </aside>
         <!-- End Sidebar-->
 
-        <main id="main" class="main">
-            <div class="pagetitle">
-                <h1>Dashboard</h1>
-                <nav>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol>
-                </nav>
-            </div>
-            <!-- End Page Title -->
-
-            <section class="section dashboard">
-                <div class="row">
-                    <!-- Sales Card -->
-                    <div class="col-xxl-4 col-md-6">
-                        <div class="card info-card sales-card">
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"
-                                   ><i class="bi bi-three-dots"></i
-                                    ></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">Total Employee</h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div
-                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
-                                        >
-                                        <i class="fa-solid fa-users"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6>145</h6>
-                                        <!-- <span class="text-success small pt-1 fw-bold">12%</span>
-                                        <span class="text-muted small pt-2 ps-1">increase</span> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Sales Card -->
-
-                    <!-- Revenue Card -->
-                    <div class="col-xxl-4 col-md-6">
-                        <div class="card info-card revenue-card">
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"
-                                   ><i class="bi bi-three-dots"></i
-                                    ></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">Total Customers</h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div
-                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
-                                        >
-                                        <i class="fa-solid fa-user-group"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6>1000</h6>
-                                        <!-- <span class="text-success small pt-1 fw-bold">8%</span>
-                                        <span class="text-muted small pt-2 ps-1">increase</span> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Revenue Card -->
-
-                    <!-- Customers Card -->
-                    <div class="col-xxl-4 col-xl-12">
-                        <div class="card info-card customers-card">
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"
-                                   ><i class="bi bi-three-dots"></i
-                                    ></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">Total Amount in Bank</h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div
-                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
-                                        >
-                                        <i class="fa-solid fa-money-bill"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6>1501555.00</h6>
-                                        <!-- <span class="text-danger small pt-1 fw-bold">12%</span>
-                                        <span class="text-muted small pt-2 ps-1">decrease</span> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Customers Card -->
-                </div>
-
-
-                <!-- ======= Footer ======= -->
-                <footer id="footer" class="footer">
-                    <div class="copyright">
-                        &copy; Copyright <strong><span>Tech Nerds</span></strong
-                        >. All Rights Reserved
-                    </div>
-                    <div class="credits">Designed by <a href="#">Sohan</a></div>
-                </footer>
-                <!-- End Footer -->
-
-                <a
-                    href="#"
-                    class="back-to-top d-flex align-items-center justify-content-center"
-                    ><i class="bi bi-arrow-up-short"></i
-                    ></a>
-
-                <!-- Vendor JS Files -->
-                <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-                <!-- Template Main JS File -->
-                <script src="assets/js/main.js"></script>
-                </body>
-                </html>
+    </body>
+</html>
