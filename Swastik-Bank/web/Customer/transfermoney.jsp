@@ -102,79 +102,61 @@ ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.g
 
             <!-- E-governance -->
             <section class="section">
-                <form action="../TransferControl" method="post">
-                    <table class="table table-striped table-hover border">
-                        <thead class="bg-light">
-                            <tr>
-                        <h4 class="text-center my-3 mb-4">Transfer Money</h4>
-                        </tr>
+                <!--<form action="../TransferControl" method="post">-->
+                <table class="table table-striped table-hover border">
+                    <thead class="bg-light">
                         <tr>
-                            <th>Beneficiary Name</th>
-                            <th>Bank Name</th>
-                            <th>Account Number</th>
-                            <th>IFSC Code</th>
-                            <th colspan="2"><center>Action</center></th>
-                        <!--<th><input type="text" value="sohannsdcbh" name="sohan" disabled></th>-->
+                    <h4 class="text-center my-3 mb-4">Transfer Money</h4>
+                    </tr>
+                    <tr>
+                        <th>Beneficiary Id</th>
+                        <th>Beneficiary Name</th>
+                        <th>Bank Name</th>
+                        <th>Account Number</th>
+                        <th>IFSC Code</th>
+                        <th colspan="2"><center>Action</center></th>
+                    <!--<th><input type="text" value="sohannsdcbh" name="sohan" disabled></th>-->
 
-                        </tr>
-                        <tr>
-                            <%
-                                              for(BeneficiaryDao bdao: beneficiaryDao) {
-                            %>
-                            <td>
-                                <div class="d-flex align-items-center">
-
-                                    <div class="ms-3">
-                                        <p class="fw-bold mb-1" name="beneficiaryName"> 
-                                            <!--                                            <input type="text" value="
-                                            <%--<%= bdao.getBeneId()%>--%>
-                                            " name="beneficiaryId" >-->
-                                            <input type="text" value="<%= bdao.getName()%>" name="beneficiaryName">
-
-                                        </p>
-                                        <p class="text-muted mb-0"></p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="fw-normal mb-1" >
-
-                                <p class="fw-normal mb-1" >
-                                    <input type="text" value="<%= bdao.getBank()%>" name="beneficiaryBank">
-                                </p>
-                            </td>
-
-                            <td >
-                                <input type="text" value="<%=bdao.getAccNum()%>" name="beneficiaryAccNum" ></td>
-
-                            </td>
-                            <td >
-                                <input type="text" value="<%=bdao.getIfsc()%>" name="beneficiaryifsc" >
-
-                            </td>
-                            <td>
-                        <center>
-                            <input type="submit" class="btn btn-primary" value="Send" name="operation">
-                            <input type="submit" class="btn btn-danger" value="Edit" name="operation">
-                        </center>
+                    </tr>
+                    <%
+                          for(BeneficiaryDao bdao: beneficiaryDao)
+                                      {
+                    %>
+                    <tr>
+                        <td>
+                            <input class="form-control" type="text" value="<%= bdao.getBeneId()%>" name="beneficiaryId" readonly>
                         </td>
-                        </tr>
-                        <tr>
-                        <input type="text" value="<%= bdao.getBeneId()%>" name="beneficiaryId" style="display: none;" >
-                        </tr>
-                        <%
-                            }
-                        %>
+                        <td>
+                            <input class="form-control" type="text" value="<%= bdao.getName()%>" name="beneficiaryName" readonly>
+                        </td>
+                        <td>
+                            <input class="form-control" type="text" value="<%= bdao.getBank()%>" name="beneficiaryBank" readonly>
 
-                        <tr class="mx-3">
-                            <td colspan="4" class="text-center">
-                                <!--<a href="Addbeneficiary.jsp" class="btn btn-primary">Add Beneficiary</a>-->
-                            </td>
-                        </tr>
-                        </thead>
+                        </td>
 
-                    </table>
-                </form>
+                        <td >
+                            <input class="form-control" type="text" value="<%=bdao.getAccNum()%>" name="beneficiaryAccNum" readonly></td>
+
+                        </td>
+                        <td >
+                            <input class="form-control" type="text" value="<%=bdao.getIfsc()%>" name="beneficiaryifsc" readonly >
+
+                        </td>
+                        <td>
+                    <center>
+
+                        <td><a type="button" class="btn btn-secondary" data-toggle="modal" data-target="#transfermoney2" href="transfermoney2.jsp?beniId=<%= bdao.getBeneId()%>">Send</a></td>
+                        <td><a type="button" class="btn btn-secondary" data-toggle="modal" data-target="#transfermoney" href="#?beniId=<%= bdao.getBeneId()%>">Edit</a></td>
+                    </center>
+                    </td>
+                    </tr>
+                    <%
+                        }
+                    %>
+                    </thead>
+
+                </table>
+                <!--</form>-->
             </section>
             <!-- shhshend -->
         </main>

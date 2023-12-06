@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.swastik.model.BeneficiaryDao"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -85,21 +88,72 @@
 
             <section class="section dashboard my-5 ml-3">
                 <h2 class="text-center mb-4">Transfer Money</h2>
-
+                <%
+              ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.getAttribute("BeneficiaryDao");
+                
+                  for(BeneficiaryDao bdao: beneficiaryDao){
+                        if(bdao.getBeneId()==Integer.parseInt(request.getParameter("beniId"))){
+                %>
                 <form class="form-horizontal" action="../MonyTransfer" method="post" onsubmit="return allvalidate()" >
                     <div class="row">
                         <div class="col-sm-6 mx-auto">
                             <div class="form-group">
+                                <label class="col-sm-4 control-label">Name</label>
+                                <div class="col-sm-8">
+                                    <!------------------------only for get value on server side------------------------------>
+                                    <input
+
+                                        value="<%= bdao.getBeneId()%>"
+                                        id="id"
+                                        type="hidden"
+                                        class="form-control"
+                                        name="beniId"
+                                        />
+                                    <!------------------------------------------------------>
+                                    <input
+                                        readonly
+                                        value="<%= bdao.getName()%>"
+                                        id="ammount"
+                                        type="text"
+                                        class="form-control"
+                                        name="beneficiaryName"
+                                        />
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mx-auto">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Account Number</label>
+                                <div class="col-sm-8">
+                                    <input
+                                        readonly
+                                        value="<%=bdao.getAccNum()%>"
+                                        id="cammount"
+                                        type="text"
+                                        name="beneficiaryAccount"
+                                        class="form-control"
+                                        />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6 mx-auto">
+                            <div class="form-group">
+
                                 <label class="col-sm-4 control-label">Enter Amount *</label>
                                 <div class="col-sm-8">
+
                                     <input
                                         onkeyup="amountValidate()"
                                         id="ammount"
                                         type="text"
                                         class="form-control"
-                                        name="amount"
+
                                         />
-                                    <span id="display" style="color: red; font-size: 14px"></span>
                                 </div>
                             </div>
                         </div>
@@ -113,6 +167,7 @@
                                         id="cammount"
                                         type="text"
                                         class="form-control"
+                                        name="amount"
                                         />
                                     <span
                                         id="display2"
@@ -137,7 +192,8 @@
                                     <span
                                         id="errordisplay"
                                         style="color: red; font-size: 14px"
-                                        ></span>
+                                        >
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -194,6 +250,9 @@
                         </div>
                     </div>
                 </form>
+                <%
+                    break;
+                    }}%>
             </section>
             <!-- shhshend -->
         </main>

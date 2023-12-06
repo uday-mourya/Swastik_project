@@ -30,12 +30,12 @@ public class TransferControl extends HttpServlet {
         beneficiaryDao.setIfsc(request.getParameter("beneficiaryifsc"));
 
 //        ============================================================================
-        if (request.getParameter("operation").equals("Send")) {
-            session.setAttribute("beneficiaryDao", beneficiaryDao);
-            response.sendRedirect("Customer/transfermoney2.jsp");
-        } else if (request.getParameter("operation").equals("Edit")) {
-            response.sendRedirect("Customer/transfermoney.jsp");
-        }
+//        if (request.getParameter("operation").equals("Send")) {
+//            session.setAttribute("beneficiaryDao", beneficiaryDao);
+//            response.sendRedirect("Customer/transfermoney2.jsp");
+//        } else if (request.getParameter("operation").equals("Edit")) {
+//            response.sendRedirect("Customer/transfermoney.jsp");
+//        }
     }
 
     @Override
