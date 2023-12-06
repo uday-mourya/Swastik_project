@@ -22,7 +22,7 @@ public class AddBeneficiary extends HttpServlet {
             AccountOpenDao clda = (AccountOpenDao) session.getAttribute("activeUser");
 
             bDao.setCustAccNum(clda.getAccNum()); // Customer Account Number
-
+            bDao.setName(request.getParameter("bName"));
             bDao.setIfsc(request.getParameter("ifscCode"));  // Beneficiary IFSC
 
             bDao.setAccNum(request.getParameter("accNum")); // Beneficiary Account Number

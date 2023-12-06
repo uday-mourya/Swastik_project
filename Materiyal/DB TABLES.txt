@@ -135,18 +135,18 @@ CREATE TABLE `Report` (
   
   CREATE TABLE `Transaction_Information` (
   `Transaction_id` int NOT NULL,
-  `Account_num` int NOT NULL,
+  `sender_id` int NOT NULL,
   `Receiver_Id` int NOT NULL,
   `Amount` varchar(25) NOT NULL,
   `Tran_Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Tran_Type` varchar(10) NOT NULL,
-  `Description` varchar(10) NOT NULL,
+  `Description` varchar(100) NOT NULL,
   `Tran_status` varchar(10) NOT NULL,
    PRIMARY KEY (`Transaction_id`),
   KEY `Receiver_Id_idx` (`Receiver_Id`),
-  KEY `Account_num_idx` (`Account_num`),
+  KEY `sender_idx` (`sender_id`),
   CONSTRAINT `Receiver_Id` FOREIGN KEY (`Receiver_Id`) REFERENCES `Beneficiary` (`Beneficiary_Id`),
-  CONSTRAINT `Account_num` FOREIGN KEY (`Account_num`) REFERENCES `Account` (`Account_Num`)
+  CONSTRAINT `sender_id` FOREIGN KEY (`sender_id`) REFERENCES `customer` (`customerid`)
   ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 

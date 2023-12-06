@@ -109,6 +109,14 @@
                                         class="form-control"
                                         name="beniId"
                                         />
+                                    <input
+
+                                        value="<%= bdao.getAccNum()%>"
+                                        id="id"
+                                        type="hidden"
+                                        class="form-control"
+                                        name="beniacc"
+                                        />
                                     <!------------------------------------------------------>
                                     <input
                                         readonly
@@ -227,7 +235,7 @@
                                     <input
 
                                         id="pin"
-                                        type="text"
+                                        type="password"
                                         class="form-control"
                                         name="pass"
                                         />
@@ -253,6 +261,7 @@
                 <%
                     break;
                     }}%>
+                <%@include file="../Components/alert_message.jsp" %>
             </section>
             <!-- shhshend -->
         </main>

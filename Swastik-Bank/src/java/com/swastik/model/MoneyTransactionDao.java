@@ -1,7 +1,6 @@
 package com.swastik.model;
 
-import java.security.Timestamp;
-
+//import java.security.Timestamp;
 /**
  *
  * @author Sohan_Maali FOR transaction_information
@@ -9,9 +8,37 @@ import java.security.Timestamp;
 public class MoneyTransactionDao {
 
     private int tranid;
+    private int senderId;
+
+    public int getSenderId() {
+        return senderId;
+    }
+
+    public void setSenderId(int senderId) {
+        this.senderId = senderId;
+    }
+
     private int receiverId; // benefaisery id number
     private String Amount;
-    Timestamp tranDate;
+    private String senderAmount;
+    private String reciverAcc;
+
+    public String getReciverAcc() {
+        return reciverAcc;
+    }
+
+    public void setReciverAcc(String reciverAcc) {
+        this.reciverAcc = reciverAcc;
+    }
+
+    public String getSenderAmount() {
+        return senderAmount;
+    }
+
+    public void setSenderAmount(String senderAmount) {
+        this.senderAmount = senderAmount;
+    }
+    private String tranDate;
     private String tranType;
     private String description;
     private String tranStatus;
@@ -41,11 +68,11 @@ public class MoneyTransactionDao {
         this.Amount = Amount;
     }
 
-    public Timestamp getTranDate() {
+    public String getTranDate() {
         return tranDate;
     }
 
-    public void setTranDate(Timestamp tranDate) {
+    public void setTranDate(String tranDate) {
         this.tranDate = tranDate;
     }
 
