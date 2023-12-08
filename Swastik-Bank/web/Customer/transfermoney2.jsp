@@ -92,7 +92,7 @@
               ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.getAttribute("BeneficiaryDao");
                 
                   for(BeneficiaryDao bdao: beneficiaryDao){
-                        if(bdao.getBeneId()==Integer.parseInt(request.getParameter("beniId"))){
+                        if(bdao.getAccNum().equals(request.getParameter("beneficiaryAccNum"))){
                 %>
                 <form class="form-horizontal" action="../MonyTransfer" method="post" onsubmit="return allvalidate()" >
                     <div class="row">
@@ -101,14 +101,6 @@
                                 <label class="col-sm-4 control-label">Name</label>
                                 <div class="col-sm-8">
                                     <!------------------------only for get value on server side------------------------------>
-                                    <input
-
-                                        value="<%= bdao.getBeneId()%>"
-                                        id="id"
-                                        type="hidden"
-                                        class="form-control"
-                                        name="beniId"
-                                        />
                                     <input
 
                                         value="<%= bdao.getAccNum()%>"

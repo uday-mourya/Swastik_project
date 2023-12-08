@@ -1,36 +1,36 @@
 package com.swastik.controlar;
 
 import com.swastik.model.AccountOpenDao;
-import com.swastik.model.BeneficiaryDao;
-import com.swastik.model.BeneficiaryDto;
+import com.swastik.model.MoneyTransactionDao;
+import com.swastik.model.MoneyTransactionDto;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.PrintWriter;
+import java.util.List;
 
-public class TransfermoneyControlar extends HttpServlet {
+public class TransactionHistory extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try {
+        try (PrintWriter out = response.getWriter()) {
             HttpSession session = request.getSession();
-            // All Benifesiry list
-            BeneficiaryDto bDto = new BeneficiaryDto();
-            AccountOpenDao cADao = (AccountOpenDao) session.getAttribute("activeUser");
-            ArrayList<BeneficiaryDao> beDao = bDto.getAllBeneficiary(cADao);
-//            System.out.println(beDao + "++++++++++++++++++++++++++++----------------");
-            if (beDao != null) {
-                session.setAttribute("BeneficiaryDao", beDao);
-                response.sendRedirect("Customer/transfermoney.jsp");
+            session.getAttribute("");
+            MoneyTransactionDto mDto = new MoneyTransactionDto();
+            //            MoneyTransactionDao mDao = new MoneyTransactionDao();
+            AccountOpenDao accODao = (AccountOpenDao) session.getAttribute("activeUser");
+
+            List<MoneyTransactionDao> mDao = mDto.getTransactionHistory(accODao.getAccNum());
+            if (mDao != null) {
+                session.setAttribute("MoneyTransactionDao", mDao);
+                response.sendRedirect("Customer/Transactionhistory.jsp");
             } else {
-                response.sendRedirect("Customer/CustomerDashboard.jsp");
+                response.sendRedirect("Customer/Transactionhistory.jsp");
             }
-        } catch (IOException e) {
-            System.out.println(e);
         }
     }
 

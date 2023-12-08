@@ -261,7 +261,7 @@
                 </li>
 
                 <li>
-                    <a href="Transactionhistory.jsp">
+                    <a href="../TransactionHistory">
                         <i class="bi bi-circle"></i><span>Transaction History</span>
                     </a>
                 </li>

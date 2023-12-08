@@ -14,67 +14,70 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class MonyTransfer extends HttpServlet {
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
             HttpSession session = request.getSession();
             AccountOpenDao accDao = (AccountOpenDao) session.getAttribute("activeUser");
-
+            
             MoneyTransactionDto moneyDto = new MoneyTransactionDto();
             MoneyTransactionDao mDao = new MoneyTransactionDao();
-            mDao.setSenderId(accDao.getCustomerId());
-            mDao.setReceiverId(Integer.parseInt(request.getParameter("beniId")));
+            mDao.setSenderAcc(accDao.getAccNum());
+            mDao.setReciverAcc(request.getParameter("beniacc"));
             mDao.setAmount(request.getParameter("amount"));
             // Assuming accDao.getBalance() returns a double value
             double balance = accDao.getBalance();
             String balanceString = Double.toString(balance);
             mDao.setSenderAmount(balanceString);
-
+            
             mDao.setTranType(request.getParameter("tranType"));
             mDao.setDescription(request.getParameter("description"));
             mDao.setPass(request.getParameter("pass"));
             mDao.setReciverAcc(request.getParameter("beniacc"));
-
-            String beniId = request.getParameter("beniId");
+            
+            String beneficiaryAccNum = request.getParameter("beneficiaryAccNum");
             if (!accDao.getPassword().equals(request.getParameter("pass"))) {
                 Message message = new Message("Invalide Pin ! Try again!!", "error", "alert-danger");
                 session.setAttribute("message", message);
-                response.sendRedirect("Customer/transfermoney2.jsp?beniId=" + beniId);
+                response.sendRedirect("Customer/transfermoney2.jsp?beniId=" + beneficiaryAccNum);
             }
             if (accDao.getBalance() <= (Double.parseDouble(mDao.getAmount()))) {
                 Message message = new Message(" Insufficient Balance! Try again!!", "error", "alert-danger");
                 session.setAttribute("message", message);
-                response.sendRedirect("Customer/transfermoney2.jsp?beniId=" + beniId);
+                response.sendRedirect("Customer/transfermoney2.jsp?beniId=" + beneficiaryAccNum);
 //                response.sendRedirect("Customer/transfermoney2.jsp");
                 //Ensfesent balance in account
 //                return;
             } else if (moneyDto.performMoneyTransfer(mDao)) {
                 Message message = new Message(" Amount Transfer Success! Thankyou For Trancsaction", "error", "alert-danger");
                 session.setAttribute("message", message);
-                response.sendRedirect("Customer/transfermoney2.jsp?beniId=" + beniId);
+                accDao.setBalance(accDao.getBalance() - (Double.parseDouble(mDao.getAmount())));
+                response.sendRedirect("Customer/transfermoney2.jsp?beniId=" + beneficiaryAccNum);
                 //errot massage likha he
             } else {
+                Message message = new Message(" Amount Transfer Success! Thankyou For Trancsaction", "error", "alert-danger");
+                session.setAttribute("message", message);
                 response.sendRedirect("Customer/transfermoney2.jsp");
             }
         } catch (IOException e) {
             System.out.println(e);
         }
     }
-
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
+    
     @Override
     public String getServletInfo() {
         return "Short description";

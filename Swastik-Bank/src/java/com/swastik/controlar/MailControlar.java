@@ -15,8 +15,8 @@ public class MailControlar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             MailServices email = new MailServices();
-            int otp = MailServices.otpGenerat();
-            email.createAndSendEmail("Account varification in Swastik...", " Dear swastik user. ,\n the one time OTP to reset your password at (swastik Account) is " + otp + ".\n \n This OTP will expire in 5 minutes. ");
+//            int otp = MailServices.otpGenerat();
+            email.createAndSendEmail("Account varification in Swastik...", " Dear swastik user. ,\n the one time OTP to reset your password at (swastik Account) is " + 5566 + ".\n \n This OTP will expire in 5 minutes. ");
         }
     }
 

@@ -64,6 +64,14 @@
         <servlet-name>EmployeeServlet</servlet-name>
         <servlet-class>com.swastik.controlar.EmployeeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EmployeeRegister</servlet-name>
+        <servlet-class>com.swastik.controlar.EmployeeRegister</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TransactionHistory</servlet-name>
+        <servlet-class>com.swastik.controlar.TransactionHistory</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>test</servlet-name>
         <url-pattern>/test</url-pattern>
@@ -127,5 +135,13 @@
     <servlet-mapping>
         <servlet-name>EmployeeServlet</servlet-name>
         <url-pattern>/EmployeeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmployeeRegister</servlet-name>
+        <url-pattern>/EmployeeRegister</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TransactionHistory</servlet-name>
+        <url-pattern>/TransactionHistory</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -15,26 +15,35 @@ import java.util.List;
  */
 public class MoneyTransactionDto {
 
-    public boolean TransactionHistory(MoneyTransactionDao mDao) {
+    public boolean senderTransactionHistory(MoneyTransactionDao mDao) {
         boolean flag = false;
         Connection con = GetConnection.getConnectin();
 
         if (con != null) {
             try {
-                String query = "insert into transaction_information(sender_id, Receiver_Id, Amount, Tran_Type, Description, Tran_status) values(?, ?, ?, ?, ?, ?)";
+                String query = "insert into transaction_information(sender_Acc, Receiver_Acc_num, Amount, Tran_Type, Description, Tran_status) values(?, ?, ?, ?, ?, ?)";
                 PreparedStatement psmt = con.prepareStatement(query);
-                psmt.setInt(1, mDao.getSenderId());
-                psmt.setInt(2, mDao.getReceiverId());
+                psmt.setInt(1, mDao.getSenderAcc());
+                System.out.println(mDao.getSenderAcc());
+
+                psmt.setString(2, mDao.getReciverAcc());
+                System.out.println(mDao.getReciverAcc());
+
                 psmt.setString(3, mDao.getAmount());
+                System.out.println(mDao.getAmount());
+
                 psmt.setString(4, mDao.getTranType());
+                System.out.println(mDao.getTranType());
                 psmt.setString(5, mDao.getDescription());
+                System.out.println(mDao.getDescription());
+
                 psmt.setString(6, mDao.getTranStatus());
+                System.out.println(mDao.getTranStatus());
                 if (psmt.executeUpdate() > 0) {
                     flag = true;
-                    System.out.println("or kya hal chal he");
                 }
             } catch (SQLException e) {
-                System.out.println(e);
+                System.out.println(e + "////////////////////////");
             }
         }
         return flag;
@@ -47,7 +56,7 @@ public class MoneyTransactionDto {
         boolean b = this.setMoneySender(mDao);
         if (a && b) {
             mDao.setTranStatus("success");
-            flag = TransactionHistory(mDao);
+            flag = senderTransactionHistory(mDao);
         }
         return flag;
     }
@@ -73,7 +82,7 @@ public class MoneyTransactionDto {
                 System.out.println(e);
             }
         }
-        System.out.println(flag);
+        System.out.println(flag + "nm,mnbnnb nm");
         return flag;
     }
 
@@ -84,14 +93,15 @@ public class MoneyTransactionDto {
 
         if (con != null) {
             try {
-                String query = "UPDATE account SET Current_Balance = ? WHERE customer_id = ? ";
+                String query = "UPDATE account SET Current_Balance = ? WHERE Account_Num = ? ";
                 PreparedStatement psmt = con.prepareStatement(query);
                 double amountResult = Double.parseDouble(mDao.getSenderAmount()) - Double.parseDouble(mDao.getAmount());
                 String amount = String.valueOf(amountResult);
                 psmt.setString(1, amount);
-                psmt.setInt(2, mDao.getSenderId());
+                psmt.setInt(2, mDao.getSenderAcc());
                 if (psmt.executeUpdate() > 0) {
                     flag = true;
+
                 }
             } catch (SQLException e) {
                 System.out.println(e + "sender");
@@ -120,42 +130,36 @@ public class MoneyTransactionDto {
         return amount;
     }
 
-    public List<MoneyTransactionDao> getTransactionHistory(AccountOpenDao dao) {
+    public List<MoneyTransactionDao> getTransactionHistory(int acc) {
         List<MoneyTransactionDao> list = new ArrayList<>();
         Connection con = GetConnection.getConnectin();
 
         if (con != null) {
             try {
-                String query = "SELECT * FROM transaction_information WHERE sender_id = ? ";
+                String query = "SELECT * FROM transaction_information WHERE sender_Acc = ? or Receiver_Acc_num = ? ";
                 PreparedStatement psmt = con.prepareStatement(query);
-                psmt.setInt(1, dao.getCustomerId());
+                psmt.setInt(1, acc);
+                psmt.setInt(2, acc);
                 ResultSet set = psmt.executeQuery();
                 while (set.next()) {
                     System.out.println("==============================================================");
                     MoneyTransactionDao mDao = new MoneyTransactionDao();
+
                     mDao.setTranid(set.getInt("Transaction_id"));
-                    System.out.println(set.getInt("Transaction_id"));
 
-                    mDao.setSenderId(set.getInt("sender_id"));
-                    System.out.println(set.getInt("sender_id"));
+                    mDao.setSenderAcc(set.getInt("sender_Acc"));
 
-                    mDao.setReceiverId(set.getInt("Receiver_Id"));
-                    System.out.println(set.getInt("Receiver_Id"));
+                    mDao.setReciverAcc(set.getString("Receiver_Acc_num"));
 
                     mDao.setAmount(set.getString("Amount"));
-                    System.out.println(set.getString("Amount"));
 
                     mDao.setTranDate(set.getString("Tran_Date"));
-                    System.out.println(set.getString("Tran_Date"));
 
                     mDao.setTranType(set.getString("Tran_Type"));
-                    System.out.println(set.getString("Tran_Type"));
 
                     mDao.setDescription(set.getString("Description"));
-                    System.out.println(set.getString("Description"));
 
                     mDao.setTranStatus(set.getString("Tran_status"));
-                    System.out.println(set.getString("Tran_status"));
                     list.add(mDao);
                     System.out.println("==============================================================");
                 }

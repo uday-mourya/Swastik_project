@@ -15,12 +15,31 @@ public class EmployeeInformationDao implements Serializable {
     private String phone;
     private String position;
 
+    private String adhar;
+    private String pancard;
+
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getAdhar() {
+        return adhar;
+    }
+
+    public void setAdhar(String adhar) {
+        this.adhar = adhar;
+    }
+
+    public String getPancard() {
+        return pancard;
+    }
+
+    public void setPancard(String pancard) {
+        this.pancard = pancard;
     }
 
     public String getOldPassword() {

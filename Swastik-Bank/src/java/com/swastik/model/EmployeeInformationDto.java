@@ -1,4 +1,3 @@
-
 package com.swastik.model;
 
 import java.sql.Connection;
@@ -168,7 +167,7 @@ public class EmployeeInformationDto {
 //            System.out.println(dao.getName());
                 }
 
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 System.out.println("" + e);
             }
         } else {
@@ -200,4 +199,34 @@ public class EmployeeInformationDto {
 
     }
 
+    public boolean EmployeeInformation(EmployeeInformationDao edao) {
+        boolean b = false;
+        Connection con = GetConnection.getConnectin();
+        if (con != null) {
+            try {
+                String sql = "insert into employeerequest(fullname,email,password,phone,adhar,pancard,dob)values(?,?,?,?,?,?,?)";
+                PreparedStatement ps = con.prepareStatement(sql);
+
+                ps.setString(1, edao.getName());
+
+                ps.setString(2, edao.getEmail());
+                ps.setString(3, edao.getPassword());
+                ps.setString(4, edao.getPhone());
+                ps.setString(5, edao.getAdhar());
+                ps.setString(6, edao.getPancard());
+//               ps.setString(7, edao.getImage());
+                ps.setString(7, edao.getDob());
+                System.out.println("" + edao.getDob());
+
+                if (ps.executeUpdate() > 0) {
+
+                    b = true;
+                }
+
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return b;
+    }
 }

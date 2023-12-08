@@ -8,20 +8,24 @@ package com.swastik.model;
 public class MoneyTransactionDao {
 
     private int tranid;
-    private int senderId;
-
-    public int getSenderId() {
-        return senderId;
-    }
-
-    public void setSenderId(int senderId) {
-        this.senderId = senderId;
-    }
-
+    private int senderAcc;
     private int receiverId; // benefaisery id number
     private String Amount;
     private String senderAmount;
     private String reciverAcc;
+    private String tranDate;
+    private String tranType;
+    private String description;
+    private String tranStatus;
+    private String pass;
+
+    public int getSenderAcc() {
+        return senderAcc;
+    }
+
+    public void setSenderAcc(int senderAcc) {
+        this.senderAcc = senderAcc;
+    }
 
     public String getReciverAcc() {
         return reciverAcc;
@@ -38,11 +42,6 @@ public class MoneyTransactionDao {
     public void setSenderAmount(String senderAmount) {
         this.senderAmount = senderAmount;
     }
-    private String tranDate;
-    private String tranType;
-    private String description;
-    private String tranStatus;
-    private String pass;
 
     public int getTranid() {
         return tranid;

@@ -5,10 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.swastik.model.AccountOpenDao"%>
 <% 
     response.setHeader("Cache-Control", "No-Cache");
 response.setHeader("Cache-Control", "No-Store");
-if(session.getAttribute("activeUser")!=null){
+ AccountOpenDao userDao =  (AccountOpenDao) session.getAttribute("activeUser");
+if(userDao!=null){
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,6 +78,40 @@ if(session.getAttribute("activeUser")!=null){
             {
                 color: orange;
             }
+
+
+
+
+
+
+
+            /*==========================================================*/
+            pagetitle {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .balance-button {
+                margin-top: -30px;
+                background-color: #4CAF50; /* Green background color */
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .balance-display {
+                display: none;
+                margin-left: 680px;
+                margin-top: -15px;
+            }
+            .balance-container{
+                /*position-ri*/
+            }
+
+            /*==========================================================*/
         </style>
     </head>
     <body>
@@ -90,11 +126,60 @@ if(session.getAttribute("activeUser")!=null){
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item active">Dashboard</li>
+                        <strong><div id="balanceDisplay" class="balance-display ">Account Balance :  <%= userDao.getBalance()%></div> </strong>  
+                        <button id="balanceButton" class="balance-button ms-auto" onclick="toggleBalance()">Show Balance</button>
                     </ol>
                 </nav>
             </div>
             <!-- End Page Title -->
 
+            <section class="section dashboard">
+                <h3>Banking Services</h3>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between">
+                            <a href="#"  class="icon-color">
+                                <div class="box box-custom col-4 col-md-2 mx-3 ml-3">
+                                    <i class="fa fa-compact-disc fa-3x mt-3"></i>
+                                    <p>Quick MR Plus</p>
+                                </div>
+                            </a>
+                            <a href="#"  class="icon-color">
+                                <div class="box box-custom col-4 col-md-2 mx-3 ml-3">
+                                    <i class="fa fa-compact-disc fa-3x mt-3"></i>
+                                    <p>ICIC MR Plus</p>
+                                </div>
+                            </a>
+                            <a href="#"  class="icon-color">
+                                <div class="box box-custom col-4 col-md-2 mx-3 ml-3">
+                                    <i class="fas fa-credit-card fa-3x mt-3"></i>
+                                    <p>Credit Card Icon</p>
+                                </div>
+                            </a>
+
+                            <a href="#"  class="icon-color">
+                                <div class="box box-custom col-4 col-md-2 mx-3 ml-3">
+                                    <i class="fa fa-mobile fa-3x mt-3"></i>
+                                    <p class="my-2">M ATM Card</p>
+                                </div>
+                            </a>
+                            <a href="#"  class="icon-color">
+                                <div class="box box-custom col-4 col-md-2 mx-3 ml-3">
+                                    <i class="fa fa-mobile fa-3x mt-3"></i>
+                                    <p class="my-2">mATM-MP63</p>
+                                </div>
+                            </a>
+                            <a href="#"  class="icon-color">
+                                <div class="box box-custom col-4 col-md-2 mx-3 ml-3">
+                                    <i class="fa fa-mobile fa-3x mt-3"></i>
+                                    <p class="my-2">mATM-MP63</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="section dashboard">
                 <h3>Banking Services</h3>
 
@@ -413,7 +498,25 @@ if(session.getAttribute("activeUser")!=null){
 
         <!-- Template Main JS File -->
         <script src="assets/js/main.js"></script>
+        <script>
+                            function toggleBalance() {
+                                var balanceDisplay = document.getElementById('balanceDisplay');
+                                var balanceButton = document.getElementById('balanceButton');
+
+                                if (balanceDisplay.style.display === 'none') {
+                                    // Show balance
+                                    balanceDisplay.style.display = 'block';
+                                    balanceButton.innerHTML = 'Hide Balance';
+                                } else {
+                                    // Hide balance
+                                    balanceDisplay.style.display = 'none';
+                                    balanceButton.innerHTML = 'Show Balance';
+                                }
+                            }
+        </script>
+
     </body>
+
 </html>
 
 <%

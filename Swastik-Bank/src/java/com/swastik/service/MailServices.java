@@ -1,7 +1,6 @@
 package com.swastik.service;
 
 import java.util.Properties;
-import java.util.Scanner;
 import jakarta.mail.Message;
 import jakarta.mail.MessagingException;
 import jakarta.mail.PasswordAuthentication;
@@ -15,8 +14,8 @@ public class MailServices {
     private String msgSubject = "";
     private String msgText = "";
     private String USER_NAME;   // Reasever Mail (User Mail)
-    private final String PASSSWORD = "dckl aaps fzca lwez";  //Password of the Goole(gmail) account
-    private final String SENDER = "sohanmaali4@gmail.com";  //From addresss
+    private final String PASSSWORD = "lhkz flyx wslj eacl";  //Password of the Goole(gmail) account
+    private final String SENDER = "sohaninfobeans4@gmail.com";  //From addresss
 
     public String getMsgSubject() {
         return msgSubject;
@@ -48,20 +47,6 @@ public class MailServices {
 
     public void SetMsgText(String msgText) {
         this.msgText = msgText;
-    }
-
-    public static void main(String[] args) {
-        MailServices email = new MailServices();
-        //Sending test email
-        int otp = otpGenerat();
-        Scanner sc = new Scanner(System.in);
-        email.createAndSendEmail("Account varification in Swastik...", " Dear swastik user. ,\n the one time OTP to reset your password at (swastik Account) is " + otp + ".\n \n This OTP will expire in 5 minutes. ");
-        int fillOtp = sc.nextInt();
-        if (otp == fillOtp) {
-            System.out.println("Registration Seccsess");
-        } else {
-            System.out.println("Registration Fail");
-        }
     }
 
     public void createAndSendEmail(String msgSubject, String msgText) {
@@ -101,11 +86,5 @@ public class MailServices {
 
             System.out.println(e);
         }
-    }
-
-    public static int otpGenerat() {
-        int random = (int) (Math.random() * 999999);
-        System.out.println("rendom num is: " + random);
-        return random;
     }
 }

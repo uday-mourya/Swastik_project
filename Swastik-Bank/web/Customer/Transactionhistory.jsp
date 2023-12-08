@@ -9,10 +9,9 @@
 <%@page import="java.util.List"%>
 <%@page import="com.swastik.model.*"%>
 <%
-    AccountOpenDao customerDao=(AccountOpenDao) session.getAttribute("activeUser");
-  MoneyTransactionDto mDto = new MoneyTransactionDto();
- List<MoneyTransactionDao> tranDao;
-tranDao= mDto.getTransactionHistory(customerDao);
+    List<MoneyTransactionDao> customerDao=(List<MoneyTransactionDao>) session.getAttribute("MoneyTransactionDao");
+    if(customerDao!=null)
+    {
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -106,19 +105,22 @@ tranDao= mDto.getTransactionHistory(customerDao);
                 <h4>Transaction History</h4>
             </div>
             <!-- End Page Title -->
-            <div class="row p-4">
-                <div class="col-md-5">
-                    <input type="date" class="form-control" placeholder="starting date" aria-label="Starting date">
-                </div>
-                <div class="col-md-5">
-                    <input type="date" class="form-control" placeholder="current date" aria-label="Current date" id="dateInput" min="<?php echo date('Y-m-d'); ?>" onchange="updateMaxDate()">
+            <form action="" method="post">
 
-                </div>
-                <div class="col-md-2">
-                    <button type="button" class="btn btn-primary">Search</button>
-                </div>
-            </div>
+                <div class="row p-4">
+                    <div class="col-md-5">
+                        <!--<input type="date" class="form-control" placeholder="starting date" aria-label="Starting date">-->
+                        <input type="date" class="form-control" id="dateInput2" max="" onchange="validateDate2()">
+                    </div>
+                    <div class="col-md-5">
+                        <input type="date" class="form-control" id="dateInput" max="" onchange="validateDate()">
 
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
             <section class="section">
                 <table class="table table-striped table-hover border">
                     <thead class="bg-light">
@@ -134,8 +136,8 @@ tranDao= mDto.getTransactionHistory(customerDao);
                         <th>Status</th>
                     </tr>
                     <%
-                                 for(MoneyTransactionDao bdao: tranDao)
-                                             {
+                                 for(MoneyTransactionDao bdao: customerDao)
+                                 {
                     %>
                     <tr>
                         <td >
@@ -190,29 +192,33 @@ tranDao= mDto.getTransactionHistory(customerDao);
 
         <!-- Template Main JS File -->
         <script src="assets/js/main.js"></script>
-        <script>
-                      function updateMaxDate() {
-                          var today = new Date();
-                          var dd = today.getDate() + 1; // Get tomorrow's date
-                          var mm = today.getMonth() + 1; // January is 0!
-                          var yyyy = today.getFullYear();
-
-                          if (dd < 10) {
-                              dd = '0' + dd;
-                          }
-
-                          if (mm < 10) {
-                              mm = '0' + mm;
-                          }
-
-                          var tomorrow = yyyy + '-' + mm + '-' + dd;
-                          document.getElementById('dateInput').max = tomorrow;
-                      }
-        </script>
     </body>
+    <script>
+                            // Function to set the max attribute of the date input to today's date
+                            function setMaxDate() {
+                                var currentDate = new Date().toISOString().split('T')[0];
+                                document.getElementById('dateInput').max = currentDate;
+                            }
+
+                            // Function to validate the selected date
+                            function validateDate() {
+                                var selectedDate = document.getElementById('dateInput').value;
+                                var currentDate = new Date().toISOString().split('T')[0];
+
+                                if (selectedDate > currentDate) {
+                                    document.getElementById('dateInput').value = ''; // Clear the input value
+                                }
+                            }
+
+                            // Set the max date when the page loads
+                            window.onload = setMaxDate;
+//    ======================================================================                   
+
+    </script>
 </html>
 <%
-    //}
+ }
 //else
-{
+{ 
+//response.sendRedirect("../index.jsp");
 }%>
