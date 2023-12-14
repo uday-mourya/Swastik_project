@@ -121,6 +121,8 @@ public class AccountOpenDto {
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setString(1, cdao.getEmail());
                 psmt.setString(2, cdao.getPassword());
+                System.out.println(cdao.getEmail());
+                System.out.println(cdao.getPassword());
                 ResultSet set = psmt.executeQuery();
                 while (set.next()) {
 
@@ -148,11 +150,13 @@ public class AccountOpenDto {
                     cdao.setAccStatus(set.getString("Account_Status"));
 
                     flag = true;
+                    System.out.println(flag);
                 }
             } catch (SQLException e) {
                 System.out.println(e);
             }
         }
+        System.out.println(flag);
         return flag;
     }
 
@@ -434,4 +438,250 @@ public class AccountOpenDto {
 //        }
 //        return flag;
 //    }
+     public ArrayList<AccountOpenDao> getCustomerInformation() {
+        ArrayList<AccountOpenDao> accountopendao = new ArrayList<>();
+        Connection con = GetConnection.getConnectin();
+
+        if (con != null) {
+            try {
+//                System.out.println("id"+anDao.getCustomerId());sssssssss
+//             String sql= "SELECT customer.*,account.Account_Num,account.Account_Type,account.Current_Balance,branch.Branchid,branch.ifsc,branch.Branch_name,branch.Branch_Address FROM customer JOIN account ON customer.customerid = account.customer_id JOIN branch ON account.Branch_id = branch.Branchid WHERE customer.customerid = your_customerid"; 
+               String sql="SELECT customer.*, account.Account_Num, account.Account_Type, account.Current_Balance, branch.Branchid, branch.ifsc, branch.Branch_name, branch.Branch_Address FROM customer JOIN account ON customer.customerid = account.customer_id JOIN branch ON account.Branch_id = branch.Branchid";
+  //               String sql="SELECT customer.*, account.Account_Num, account.Account_Type, account.Current_Balance, branch.Branchid, branch.ifsc, branch.Branch_name, branch.Branch_Address FROM customer JOIN account ON customer.customerid = account.customer_id JOIN branch ON account.Branch_id = branch.Branchid WHERE customer.customerid = ?";
+                PreparedStatement psmt = con.prepareStatement(sql);
+               // psmt.setInt(1, anDao.getAccNum());
+               
+//                psmt.setInt(1, setCustAccNum());
+
+                ResultSet set = psmt.executeQuery();
+                while (set.next()) {
+                    AccountOpenDao aDao = new AccountOpenDao();
+                    
+                
+                    
+                   aDao.setCustomerId(set.getInt("customerId"));
+                   System.out.println(set.getInt("customerId"));
+                    aDao.setPassword(set.getString("password"));
+                    System.out.println(set.getString("password"));
+                    aDao.setName(set.getString("name"));
+                    System.out.println(set.getString("name"));
+                    aDao.setFather(set.getString("father"));
+                     System.out.println(set.getString("father"));
+                    aDao.setMother(set.getString("mother"));
+                     System.out.println(set.getString("mother"));
+                    aDao.setGender(set.getString("gender"));
+                    aDao.setDob(set.getString("dob"));
+                    aDao.setMobile(set.getString("phone"));
+                    aDao.setEmail(set.getString("email"));
+                    aDao.setAdhar(set.getString("adhar"));
+//                  aDao.setDateTime(set.getTimestamp("time"));
+//                  java.sql.Timestamp aDao.setRegiDate(set.getTimestamp("registerdate"));
+                    aDao.setPan(set.getString("pan"));
+                    aDao.setMaritail(set.getString("maritail"));
+                    aDao.setOccupation(set.getString("occupation"));
+                    aDao.setAddress(set.getString("address"));
+                    aDao.setCity(set.getString("city"));
+                    aDao.setDistric(set.getString("distric"));
+                    aDao.setPincode(set.getString("pincode"));
+                    aDao.setState(set.getString("state"));
+                    
+//                    aDao.setImage(set.getString("image"));
+                   aDao.setAccNum(set.getInt("Account_Num"));
+                   aDao.setAccType(set.getString("Account_Type"));
+                   aDao.setCurrentBalance(set.getInt("Current_Balance"));
+                   aDao.setBranchId(set.getInt("Branchid"));
+                   aDao.setAccStatus("Account_Status");
+                
+//                   aDao.setBranchId(set.getInt("Branchid"));
+                   
+                   
+                    accountopendao.add(aDao);
+                }
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return accountopendao;
+    }
+
+
+    public ArrayList<AccountOpenDao> getCustomerInformation1(int customerId ) {
+        ArrayList<AccountOpenDao> accountopendao1 = new ArrayList<>();
+        Connection con = GetConnection.getConnectin();
+
+        if (con != null) {
+            try {
+//                System.out.println("id"+anDao.getCustomerId());sssssssss
+            String sql= "SELECT customer.*,account.Account_Num,account.Account_Type,account.Current_Balance,branch.Branchid,branch.ifsc,branch.Branch_name,branch.Branch_Address FROM customer JOIN account ON customer.customerid = account.customer_id JOIN branch ON account.Branch_id = branch.Branchid WHERE customer.customerid = ?"; 
+  //             String sql="SELECT customer.*, account.Account_Num, account.Account_Type, account.Current_Balance, branch.Branchid, branch.ifsc, branch.Branch_name, branch.Branch_Address FROM customer JOIN account ON customer.customerid = account.customer_id JOIN branch ON account.Branch_id = branch.Branchid";
+  //               String sql="SELECT customer.*, account.Account_Num, account.Account_Type, account.Current_Balance, branch.Branchid, branch.ifsc, branch.Branch_name, branch.Branch_Address FROM customer JOIN account ON customer.customerid = account.customer_id JOIN branch ON account.Branch_id = branch.Branchid WHERE customer.customerid = ?";
+                PreparedStatement psmt = con.prepareStatement(sql);
+                psmt.setInt(1,customerId);
+               
+//                psmt.setInt(1, setCustAccNum());
+
+                ResultSet set = psmt.executeQuery();
+                while (set.next()) {
+                    AccountOpenDao aDao = new AccountOpenDao();
+                    
+                
+                    
+                   aDao.setCustomerId(set.getInt("customerId"));
+                   System.out.println(set.getInt("customerId"));
+                    aDao.setPassword(set.getString("password"));
+                    System.out.println(set.getString("password"));
+                    aDao.setName(set.getString("name"));
+                    System.out.println(set.getString("name"));
+                    aDao.setFather(set.getString("father"));
+                     System.out.println(set.getString("father"));
+                    aDao.setMother(set.getString("mother"));
+                     System.out.println(set.getString("mother"));
+                    aDao.setGender(set.getString("gender"));
+                    aDao.setDob(set.getString("dob"));
+                    aDao.setMobile(set.getString("phone"));
+                    aDao.setEmail(set.getString("email"));
+                    aDao.setAdhar(set.getString("adhar"));
+//                  aDao.setDateTime(set.getTimestamp("time"));
+//                  java.sql.Timestamp aDao.setRegiDate(set.getTimestamp("registerdate"));
+                    aDao.setPan(set.getString("pan"));
+                    aDao.setMaritail(set.getString("maritail"));
+                    aDao.setOccupation(set.getString("occupation"));
+                    aDao.setAddress(set.getString("address"));
+                    aDao.setCity(set.getString("city"));
+                    aDao.setDistric(set.getString("distric"));
+                    aDao.setPincode(set.getString("pincode"));
+                    aDao.setState(set.getString("state"));
+                    
+//                    aDao.setImage(set.getString("image"));
+                   aDao.setAccNum(set.getInt("Account_Num"));
+                   aDao.setAccType(set.getString("Account_Type"));
+                   aDao.setCurrentBalance(set.getInt("Current_Balance"));
+                   aDao.setBranchId(set.getInt("Branchid"));
+                   aDao.setAccStatus("Account_Status");
+                
+//                   aDao.setBranchId(set.getInt("Branchid"));
+                   
+                   
+                    accountopendao1.add(aDao);
+                }
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return accountopendao1;
+    }
+
+         public ArrayList<AccountOpenDao> GetOldData(int Account_Num ) {
+        ArrayList<AccountOpenDao> getolgdata = new ArrayList<>();
+        Connection con = GetConnection.getConnectin();
+
+        if (con != null) {
+            try {
+//                System.out.println("id"+anDao.getCustomerId());sssssssss
+            String sql= "SELECT customer.*,account.Account_Num,account.Account_Type,account.Current_Balance,branch.Branchid,branch.ifsc,branch.Branch_name,branch.Branch_Address FROM customer JOIN account ON customer.customerid = account.customer_id JOIN branch ON account.Branch_id = branch.Branchid WHERE account.Account_Num = ?"; 
+  //             String sql="SELECT customer.*, account.Account_Num, account.Account_Type, account.Current_Balance, branch.Branchid, branch.ifsc, branch.Branch_name, branch.Branch_Address FROM customer JOIN account ON customer.customerid = account.customer_id JOIN branch ON account.Branch_id = branch.Branchid";
+  //               String sql="SELECT customer.*, account.Account_Num, account.Account_Type, account.Current_Balance, branch.Branchid, branch.ifsc, branch.Branch_name, branch.Branch_Address FROM customer JOIN account ON customer.customerid = account.customer_id JOIN branch ON account.Branch_id = branch.Branchid WHERE customer.customerid = ?";
+                PreparedStatement psmt = con.prepareStatement(sql);
+                psmt.setInt(1,Account_Num);
+               
+//                psmt.setInt(1, setCustAccNum());
+
+                ResultSet set = psmt.executeQuery();
+                while (set.next()) {
+                    AccountOpenDao aDao = new AccountOpenDao();
+                    
+                
+                    
+                   aDao.setCustomerId(set.getInt("customerId"));
+                   System.out.println(set.getInt("customerId"));
+                    aDao.setPassword(set.getString("password"));
+                    System.out.println(set.getString("password"));
+                    aDao.setName(set.getString("name"));
+                    System.out.println(set.getString("name"));
+                    aDao.setFather(set.getString("father"));
+                     System.out.println(set.getString("father"));
+                    aDao.setMother(set.getString("mother"));
+                     System.out.println(set.getString("mother"));
+                    aDao.setGender(set.getString("gender"));
+                    aDao.setDob(set.getString("dob"));
+                    aDao.setMobile(set.getString("phone"));
+                    aDao.setEmail(set.getString("email"));
+                    aDao.setAdhar(set.getString("adhar"));
+//                  aDao.setDateTime(set.getTimestamp("time"));
+//                  java.sql.Timestamp aDao.setRegiDate(set.getTimestamp("registerdate"));
+                    aDao.setPan(set.getString("pan"));
+                    aDao.setMaritail(set.getString("maritail"));
+                    aDao.setOccupation(set.getString("occupation"));
+                    aDao.setAddress(set.getString("address"));
+                    aDao.setCity(set.getString("city"));
+                    aDao.setDistric(set.getString("distric"));
+                    aDao.setPincode(set.getString("pincode"));
+                    aDao.setState(set.getString("state"));
+                    
+//                    aDao.setImage(set.getString("image"));
+                   aDao.setAccNum(set.getInt("Account_Num"));
+                   aDao.setAccType(set.getString("Account_Type"));
+                   aDao.setCurrentBalance(set.getInt("Current_Balance"));
+                   aDao.setBranchId(set.getInt("Branchid"));
+                   aDao.setAccStatus("Account_Status");
+                
+//                   aDao.setBranchId(set.getInt("Branchid"));
+                   
+                   
+                    getolgdata.add(aDao);
+                }
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return getolgdata;
+    }
+         public boolean UpdateEmployeeInfo( AccountOpenDao adao) {
+   // int rowsAffected = 0;
+   boolean flag=false;
+     Connection con = GetConnection.getConnectin();
+
+    if (con != null) {
+        try {
+//            String sql =" UPDATE customer c JOIN UpdationRequest u ON c.customerid = u.Acc_number SET c.name = u.Name,c.father = u.Father_Name,c.mother = u.Mother_Name,c.gender = u.Gender,c.dob = u.DOB, c.maritail = u.marital,c.email = u.Email, c.phone = u.Mobile,c.address = u.address, c.city = u.city,c.distric = u.district,c.pincode = u.pincode,c.state = u.stateWHERE c.customerid = u.Acc_number";
+       // String sql = "UPDATE customer c JOIN UpdationRequest u ON c.customerid = u.Acc_number SET c.name = ?, c.father = ?, c.mother = ?,c.phone = ?, c.address = ? WHERE c.customerid = u.Acc_number";
+         String sql = "UPDATE customer SET name = ?, father = ?, mother = ?, phone = ?, address = ? WHERE customerid = ?";
+
+            PreparedStatement psmt = con.prepareStatement(sql);
+
+            // Set parameters for the prepared statement
+                psmt.setString(1, adao.getName());
+                psmt.setString(2, adao.getFather());
+                psmt.setString(3, adao.getMother());
+                psmt.setString(4, adao.getMobile());
+                psmt.setString(5, adao.getAddress());
+                psmt.setInt(6, adao.getAccNum());
+                System.out.println("hgk" + adao.getName());
+                     if (psmt.executeUpdate() > 0) {
+                    flag = true;
+                }
+            // Execute the update query
+//            rowsAffected = psmt.executeUpdate();
+//                flag=true;
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            // Close resources
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+    }
+        return flag;
+    
+}
+
+
+    
+    
+    
 }

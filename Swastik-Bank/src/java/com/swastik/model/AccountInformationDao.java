@@ -2,7 +2,7 @@ package com.swastik.model;
 
 import java.io.Serializable;
 
-public class AccountInformationDao implements Serializable {
+public class AccountInformationDao extends BranchDao {
 
     private int AccountNumber;
     private int customerId;

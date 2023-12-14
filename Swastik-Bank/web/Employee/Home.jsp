@@ -141,7 +141,7 @@
             </div>
                   <%
                     if(!d.isEmpty()){
-                    for(AccountOpenDao p : d){                    
+               //     for(AccountOpenDao p : d){                    
                 
                     %>
          
@@ -173,7 +173,7 @@
             </div>
           
               <% }
-                        }else{
+                        else{
                         out.print("kdkkdd");
                             }
                         %>   
@@ -243,7 +243,7 @@
                   <i class="fa-solid fa-user-group"></i>
                 </div>
                 <div class="ps-3">
-                  <h6><%= LoanRequest %></h6>
+                  <h6>0</h6>
                   <!-- <span class="text-success small pt-1 fw-bold">8%</span>
                   <span class="text-muted small pt-2 ps-1">increase</span> -->
                 </div>
@@ -280,7 +280,7 @@
                   <i class="fa-solid fa-user-group"></i>
                 </div>
                 <div class="ps-3">
-                  <h6>20</h6>
+                  <h6>0</h6>
                   <!-- <span class="text-success small pt-1 fw-bold">8%</span>
                   <span class="text-muted small pt-2 ps-1">increase</span> -->
                 </div>

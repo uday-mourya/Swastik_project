@@ -148,12 +148,12 @@
                                 <div class="col-sm-8">
 
                                     <input
-                                        onkeyup="amountValidate()"
-                                        id="ammount"
+                                        onkeyup="validateNumberFields()" id="firstamm"
                                         type="text"
                                         class="form-control"
 
                                         />
+                                     <span id="displayacc" style="color:red; font-size: 14px;"></span>
                                 </div>
                             </div>
                         </div>
@@ -163,12 +163,12 @@
                                 <label class="col-sm-4 control-label">Confirm Amount *</label>
                                 <div class="col-sm-8">
                                     <input
-                                        onkeyup="ammountValidate2()"
-                                        id="cammount"
+                                       onkeyup="validateNumberFields()" id="secondamm"
                                         type="text"
                                         class="form-control"
                                         name="amount"
                                         />
+                                    <span id="display2acc" style="color:red; font-size: 14px;"></span>
                                     <span
                                         id="display2"
                                         style="color: red; font-size: 14px"
@@ -181,7 +181,7 @@
                     <div class="row my-5">
                         <div class="col-sm-6 mx-auto">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">Transection Type *</label>
+                                <label class="col-sm-4 control-label">Transaction Type *</label>
                                 <div class="col-sm-8">
                                     <select class="form-control" name="tranType"> 
                                         <option>Select Type </option>
@@ -283,128 +283,55 @@
         <script src="assets/js/main.js"></script>
 
         <script>
-//======================================================================================
-                                            function allValidate() {
-                                                var amountValidation = amountValidate();
-                                                var amountValidation2 = amountValidate2();
-                                                var pinValidation = pinValidate();
+            function validateNumberFields() {
+                var firstInput = document.getElementById("firstamm");
+                var secondInput = document.getElementById("secondamm");
+                var display = document.getElementById("displayacc");
+                var display2 = document.getElementById("display2acc");
 
-                                                var display1 = document.getElementById("display1");
-                                                var pdisplay = document.getElementById("pdisplay");
+                // Check if either input is empty
+                if (firstInput.value.trim() === "") {
+                    display.innerHTML = "First field is required";
+                    display.style.color = "red";
+                    return false;
+                }
 
-                                                if (!amountValidation) {
-                                                    if (!amountValidation2) {
-                                                        display1.innerHTML = "Second amount is required";
-                                                    }
+                // Check if the first input contains only numbers
+                var reg = /^[0-9]+$/;
+                if (!reg.test(firstInput.value)) {
+                    display.innerHTML = "Only numbers are allowed in the Account Number";
+                    display.style.color = "red";
+                    return false;
+                } else {
+                    // Clear the first field's error message if it's valid
+                    display.innerHTML = "";
+                }
 
-                                                    if (!pinValidation) {
-                                                        pdisplay.innerHTML = "PIN is required";
-                                                    }
+                // Check if the second input is empty
+                if (secondInput.value.trim() === "") {
+                    display2.innerHTML = "Second field is required";
+                    display2.style.color = "red";
+                    return false;
+                }
 
-                                                    return false;
-                                                }
-
-                                                if (!amountValidation2 && !pinValidation) {
-                                                    pdisplay.innerHTML = "Input is required";
-                                                    return false;
-                                                }
-
-                                                return true;
-                                            }
-//======================================================================================
-//                                            function allValidate() {
-//                                                var amountValidation = amountValidate();
-//                                                var amountValidation2 = amountValidate2();
-//                                                var pinValidation = pinValidate();
-//                                                var errordisplay = document.getElementById("errordisplay");
-////                                                var display = document.getElementById("display");
-//                                                var display1 = document.getElementById("display1");
-//                                                var pdisplay = document.getElementById("pdisplay"); // Assuming this is the password display
-//
-//                                                if (amountValidation == false) {
-//                                                    if (amountValidation2 == false) {
-//                                                        display1.innerHTML = "Input is required";
-//                                                    }
-//                                                    if (pinValidation == false) {
-//                                                        errordisplay.innerHTML = "Input is required";
-//                                                    }
-//                                                    return false;
-//                                                } else if (amountValidation2 == false) {
-//                                                    if (pinValidation == false) {
-//                                                        pdisplay.innerHTML = "Input is required";
-//                                                    }
-//                                                    return false;
-//                                                } else {
-//                                                    return true;
-//                                                }
-//                                            }
-
-                                            function amountValidate() {
-                                                var inputField = document.getElementById("ammount");
-                                                var display = document.getElementById("display");
-                                                if (inputField.value.trim() === " ") {
-                                                    display.innerHTML = "Input is required";
-                                                    display.style.color = "red";
-                                                    return false;
-                                                } else {
-                                                    var reg = /^[0-9]+$/;
-                                                    if (reg.test(inputField.value)) {
-                                                        display.innerHTML = " ";
-                                                        display.style.color = "green";
-                                                        return true;
-                                                    } else {
-                                                        display.innerHTML = "Only numbers are allowed";
-                                                        display.style.color = "red";
-                                                        return false;
-                                                    }
-                                                }
-                                            }
-
-                                            function ammountValidate2() {
-                                                var ammount = document.getElementById("ammount");
-                                                var cammount = document.getElementById("cammount");
-                                                var pdisplay = document.getElementById("display2");
-                                                if (ammount.value.trim() === " " || cammount.value.trim() === " ") {
-                                                    pdisplay.innerHTML = "Amount Required";
-                                                    pdisplay.style.color = "red";
-                                                    return false;
-                                                } else if (ammount.value !== cammount.value) {
-                                                    pdisplay.innerHTML = "Amounts do not match";
-                                                    pdisplay.style.color = "red";
-                                                    return false;
-                                                } else {
-                                                    var reg = /^[0-9]+$/;
-                                                    if (reg.test(ammount.value)) {
-                                                        pdisplay.innerHTML = "Valid";
-                                                        pdisplay.style.color = "green";
-                                                        return true;
-                                                    } else {
-                                                        pdisplay.innerHTML = "Only numbers are allowed";
-                                                        pdisplay.style.color = "red";
-                                                        return false;
-                                                    }
-                                                }
-                                            }
-                                            function pinValidate() {
-                                                var name = document.getElementById("pin");
-                                                var udisplay = document.getElementById("errordisplay");
-                                                if (name.value.trim() == " ") {
-                                                    udisplay.innerHTML = "Pin Required";
-                                                    udisplay.style.color = "red";
-                                                    return false;
-                                                } else {
-                                                    var reg = /^[0-9]+$/; // Only allow numbers
-                                                    if (reg.test(name.value)) {
-                                                        udisplay.innerHTML = " ";
-                                                        udisplay.style.color = "green";
-                                                        return true;
-                                                    } else {
-                                                        udisplay.innerHTML = "Only numbers are allowed";
-                                                        udisplay.style.color = "red";
-                                                        return false;
-                                                    }
-                                                }
-                                            }
+                // Check if both inputs contain only numbers
+                if (reg.test(firstInput.value) && reg.test(secondInput.value)) {
+                    // Check if the values are the same
+                    if (firstInput.value === secondInput.value) {
+                        display2.innerHTML = "Valid";
+                        display2.style.color = "green";
+                        return true;
+                    } else {
+                        display2.innerHTML = "Ammount Number and Confirm Ammount Number do not match";
+                        display2.style.color = "red";
+                        return false;
+                    }
+                } else {
+                    display2.innerHTML = "Only numbers are allowed in the Account Number";
+                    display2.style.color = "red";
+                    return false;
+                }
+            }
         </script>
     </body>
 </html>

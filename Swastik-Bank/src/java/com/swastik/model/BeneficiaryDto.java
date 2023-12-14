@@ -18,7 +18,7 @@ public class BeneficiaryDto {
         Connection con = GetConnection.getConnectin();
         if (con != null) {
             try {
-                String query = "INSERT INTO Beneficiary (Acc_num, Beneficiary_Name, Bank, `ifsc`,`Limit`,benefi_Acc_num)VALUES (?, ?, ?, ?, ?, ?)";
+                String query = "INSERT INTO Beneficiary (Acc_num, Beneficiary_Name, Bank, `ifsc`,`Limit`,Account_Num)VALUES (?, ?, ?, ?, ?,?)";
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setInt(1, bDao.getCustAccNum());
                 psmt.setString(2, bDao.getName());
@@ -34,7 +34,8 @@ public class BeneficiaryDto {
         }
         return flag;
     }
-
+    
+   
     public boolean getAllBeneficiary(ArrayList<BeneficiaryDao> beneficiaryDao) {
         boolean flag = false;
         //Note Use
@@ -54,7 +55,7 @@ public class BeneficiaryDto {
                     bDao.setName(set.getString("Beneficiary_Name"));
                     bDao.setBank(set.getString("Bank"));
                     bDao.setIfsc(set.getString("ifsc"));
-                    bDao.setAccNum(set.getString("benefi_Acc_num"));
+                    bDao.setAccNum(set.getString("Account_Num"));
                     bDao.setLimit(set.getString("Limit"));
                     beneficiaryDao.add(bDao);
                     flag = true;
@@ -84,7 +85,7 @@ public class BeneficiaryDto {
                     bDao.setName(set.getString("Beneficiary_Name"));
                     bDao.setBank(set.getString("Bank"));
                     bDao.setIfsc(set.getString("ifsc"));
-                    bDao.setAccNum(set.getString("benefi_Acc_num"));
+                    bDao.setAccNum(set.getString("Account_Num"));
                     bDao.setLimit(set.getString("Limit"));
                     beneficiaryDao.add(bDao);
                 }
@@ -100,10 +101,10 @@ public class BeneficiaryDto {
         Connection con = GetConnection.getConnectin();
         if (con != null) {
             try {
-                String query = "DELETE FROM Beneficiary WHERE Account_Num = ? AND Beneficiary_Id = ?";
+                String query = "DELETE FROM Beneficiary WHERE Acc_num = ?";
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setString(1, bDao.getAccNum());
-                psmt.setInt(2, bDao.getBeneId());
+//                psmt.setInt(2, bDao.getBeneId());
 
                 if (psmt.executeUpdate() > 0) {
                     flag = true;

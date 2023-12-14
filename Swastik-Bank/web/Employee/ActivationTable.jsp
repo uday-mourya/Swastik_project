@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*" %>
+<%@ page import=" com.swastik.model.*" %>
+<%@ page import="com.swastik.controlar.*" %>
+<%@page import="java.util.ArrayList"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,6 +54,12 @@
        width:60px;
         background-color:#9F1945;
       }
+      .btn1{
+      height:30px;
+       width:100px;
+        background-color:#9F1945;
+        color:white;
+      }
       #btn2{
         color: white;
         text-decoration:none;
@@ -58,6 +69,12 @@
   </style>
 
   <body>
+      
+     <%
+    ActivationRequestDto adto = new ActivationRequestDto();
+    ArrayList<ActivationRequestDao> activerequest = adto.ActivationRequest();
+%>
+
   <%@include file="head.jsp"%>
               
     <div id="headings">
@@ -78,7 +95,15 @@
               <th>Customer id</th>
               <th>Active Status</th>
               <th>Actions</th>
-            </tr>
+               </tr>
+                <%
+                          
+              if (activerequest != null && !activerequest.isEmpty()) {
+                          for(ActivationRequestDao adao: activerequest)
+                         {
+                    %>
+               
+           
             <tr>
               <td>
                 <div class="d-flex align-items-center">
@@ -89,98 +114,42 @@
                     class="rounded-circle"
                   />
                   <div class="ms-3">
-                    <p class="fw-bold mb-1">Praveen</p>
+                    <p class="fw-bold mb-1"><%= adao.getName() %></p>
                     <p class="text-muted mb-0"></p>
                   </div>
                 </div>
               </td>
             
 
-              <td>****4739</td>
+              <td><%= adao.getCustomerId() %></td>
               <td>Active</td>
               <td>
-                <button type="button" class="btn btn-link btn-sm btn-rounded" id="btn1">
-                <a href="TransactionRecord.jsp" id="btn2">view</a>
+<!--                <button type="button" class="btn btn-link btn-sm btn-rounded" id="btn1">
+              <a href="" id="btn2">Active</a>
+                </button>-->
+                   <button type="button" class="btn btn-link btn-sm btn-rounded">
+                <a href""><button class="btn1" onclick="activate()">Activate</button></a>
+                      <button type="button" onclick="deactivate()" class="btn btn-link btn-sm btn-rounded">
+                <a href""><button class="btn1" >DeActivate</button></a>
+<!--                       
+
+                </button>
+                   <button type="button" class="btn btn-link btn-sm btn-rounded" id="btn1">
+                 <a href="" id="btn2">DeActive</a>
                 </button>
               </td>
             </tr>
 
-            <tr>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <img
-                      src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                      alt=""
-                      style="width: 45px; height: 45px"
-                      class="rounded-circle"
-                    />
-                    <div class="ms-3">
-                      <p class="fw-bold mb-1">shreya</p>
-                      <p class="text-muted mb-0"></p>
-                    </div>
-                  </div>
-                </td>
-  
-                <td>***9378</td>
-                <td>Block</td>
-                <td>
-                  <button type="button" class="btn btn-link btn-sm btn-rounded" id="btn1">
-                    <a href="TransactionRecord.jsp" id="btn2">view</a>
-                  </button>
-                </td>
-              </tr>
-          </thead>
-          <tr>
-            <td>
-              <div class="d-flex align-items-center">
-                <img
-                  src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                  alt=""
-                  style="width: 45px; height: 45px"
-                  class="rounded-circle"
-                />
-                <div class="ms-3">
-                  <p class="fw-bold mb-1">Siya</p>
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-            </td>
-           
 
-            <td>***9378</td>
-            <td>Active</td>
-            <td>
-              <button type="button" class="btn btn-link btn-sm btn-rounded" id="btn1">
-                <a href="UpdationRecord.jsp" id="btn2">view</a>
-              </button>
-            </td>
-          </tr>
-      </thead>
-      <tr>
-        <td>
-          <div class="d-flex align-items-center">
-            <img
-              src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-            />
-            <div class="ms-3">
-              <p class="fw-bold mb-1">Riya</p>
-              <p class="text-muted mb-0"></p>
-            </div>
-          </div>
-        </td>
-       
-
-        <td>***9378</td>
-        <td>Block</td>
-        <td>
-          <button type="button" class="btn btn-link btn-sm btn-rounded " id="btn1">
-         <a href="TransactionRecord.jsp" id="btn2">view</a>
-          </button>
-        </td>
-      </tr>
+                 <%
+      }
+   } else {
+%>
+      <p>No data found!</p>
+<%
+   }
+%>
+     
   </thead>
 
 

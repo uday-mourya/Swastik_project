@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.swastik.model.*"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,10 +57,23 @@
   </head>
 
   <body>
+       <%
+          int a=Integer.parseInt(request.getParameter("accountnum"));
+          AccountOpenDto adto=new AccountOpenDto();
+    ArrayList<TransactionInformationDao> transactioninfo  =adto.EmployeTransaction1(a);
+    
+   %>
     <%@include file="head.jsp"%>
 
   <div id="headings">
     <span>Dashboard / Customer / Tracsaction Record / view</span>
+              </tr>
+        <%
+                          
+              if (transactioninfo != null && !transactioninfo.isEmpty()) {
+                          for(TransactionInformationDao tdao: transactioninfo)
+                         {
+                    %>
   </div>
 
     <div class="container border p-20 " id="for">
@@ -66,44 +82,44 @@
         <div class="col-md-4">
           <label for="inputEmail4" class="form-label"><b>Name</b></label><br>
           <!-- <input type="email" class="form-control" id="inputEmail4"> -->
-          <label>Soniya Kardam</label>
+          <label><%= tdao.getName() %></label>
         </div>
         <div class="col-md-4">
           <label for="inputPassword4" class="form-label"><b>Father Names</b></label><br>
           <!-- <input type="password" class="form-control" id="inputPassword4"> -->
-          <label>Hemant Kardam</label>
+          <label><%= tdao.getFather() %></label>
         </div>
         <div class="col-md-4">
             <label for="inputPassword4" class="form-label"><b>Mother Name</b></label><br>
             <!-- <input type="password" class="form-control" id="inputPassword4"> -->
-            <label>shivanya Kardam</label>
+            <label><%= tdao.getMother() %></label>
           </div>
         <div class=" col-md-4">
           <label for="inputAddress" class="form-label"><b>Dateof Birth</b></label><br>
          
-          <label>09/02/2001</label>
+          <label><%= tdao.getDob() %></label>
         </div>
         <div class="col-md-4">
           <label for="inputAddress2" class="form-label"> <b> Gender</b></label><br>
-          <label>sFemale</label>
+          <label><%= tdao.getGender() %></label>
          
         
         </div>
         <div class="col-md-4">
           <label for="inputCity" class="form-label"><b>Mobile Number</b></label><br>
          
-           <label>98463648258</label>
+           <label><%= tdao.getMobile() %></label>
         </div>
         <div class="col-md-4">
             <label for="inputCity" class="form-label"><b>Email-id</b></label><br>
            
-             <label>shivanyaKardam@gmail.com</label>
+             <label><%= tdao.getEmail() %></label>
           </div>
 
           <div class="col-md-4">
             <label for="inputCity" class="form-label"><b>Address</b></label><br>
             <!-- <input type="text" class="form-control" id="inputCity"> -->
-            <label>Bhawarkua Indore (M.P)</label>
+            <label><%= tdao.getAddress() %></label>
             </div>
             
                 <div class="col-md-4">

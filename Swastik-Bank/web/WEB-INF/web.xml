@@ -72,6 +72,42 @@
         <servlet-name>TransactionHistory</servlet-name>
         <servlet-class>com.swastik.controlar.TransactionHistory</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loan3</servlet-name>
+        <servlet-class>com.swastik.controlar.loan3</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>loantypecontroller</servlet-name>
+        <servlet-class>com.swastik.controlar.loantypecontroller</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Loantypecontroller</servlet-name>
+        <servlet-class>com.swastik.controlar.Loantypecontroller</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdationServlet</servlet-name>
+        <servlet-class>com.swastik.controlar.UpdationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Reportservlet</servlet-name>
+        <servlet-class>com.swastik.controlar.Reportservlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Unblockservlet</servlet-name>
+        <servlet-class>com.swastik.controlar.Unblockservlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EmployeeTransactionRecord</servlet-name>
+        <servlet-class>com.swastik.controlar.EmployeeTransactionRecord</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deletebeneficiarysevlet</servlet-name>
+        <servlet-class>deletebeneficiarysevlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deletebeneficiaryservlet</servlet-name>
+        <servlet-class>com.swastik.controlar.deletebeneficiaryservlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>test</servlet-name>
         <url-pattern>/test</url-pattern>
@@ -143,5 +179,41 @@
     <servlet-mapping>
         <servlet-name>TransactionHistory</servlet-name>
         <url-pattern>/TransactionHistory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loan3</servlet-name>
+        <url-pattern>/loan3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loantypecontroller</servlet-name>
+        <url-pattern>/loantypecontroller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Loantypecontroller</servlet-name>
+        <url-pattern>/Loantypecontroller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdationServlet</servlet-name>
+        <url-pattern>/UpdationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Reportservlet</servlet-name>
+        <url-pattern>/Reportservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Unblockservlet</servlet-name>
+        <url-pattern>/Unblockservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmployeeTransactionRecord</servlet-name>
+        <url-pattern>/EmployeeTransactionRecord</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deletebeneficiarysevlet</servlet-name>
+        <url-pattern>/deletebeneficiarysevlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deletebeneficiaryservlet</servlet-name>
+        <url-pattern>/deletebeneficiaryservlet</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*" %>
+<%@ page import=" com.swastik.model.*" %>
+<%@ page import="com.swastik.controlar.*" %>
+<%@page import="java.util.ArrayList"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,7 +46,7 @@
   </head>
   <style>
     .section{
-      margin-top:80px; 
+      margin-top:60px; 
       width:60rem; 
       margin-left:20rem;
 
@@ -50,6 +55,14 @@
         margin-top:70px;
          margin-left:320px;
       }
+/*      #cont{
+          margin-top:-200px;
+      }*/
+
+        .footer{
+/*      width:50vw;*/
+      margin-left:-100px;
+    }
     @media only screen and (max-width: 360px) {
       .section{
       margin-top:80px; 
@@ -76,19 +89,49 @@
   </style>
 
   <body>
+      <%
+          int a=Integer.parseInt(request.getParameter("accountno"));
+          EmployeeUpdateDto edto=new EmployeeUpdateDto();
+    ArrayList<EmployeeUpdateDao> updation1  =edto.UpdationRequest1(a);
+    %>
+  
    <%@include file="head.jsp"%>
+     
+    <%
+          int b=Integer.parseInt(request.getParameter("accountno"));
+          AccountOpenDto adto=new AccountOpenDto();
+    ArrayList<AccountOpenDao> getolgdata  =adto.GetOldData(b);
+    
+   %>
+                    
+                    <div class="container" id="cont">
 <div id="headings">
   <span>Dashboard / Request / UpdateRequest</span>
 </div>
     <section class="section">
-        <table class="table table-striped table-hover">
+       <form action="../EmployeeRecordUpdate" method="post">
+        <table class="table  table-hover">
           <thead class="bg-light">
             <tr>
                 <h4 id="up"><center><b >Update Request</b></center></h4>
               <th>option</th>
               <th>Old</th>
               <th>New</th>
+                 <%
+                          
+              if (updation1 != null && !updation1.isEmpty()) {
+                          for(EmployeeUpdateDao edao: updation1)
+                         {
+                    %>
+                    
+                    
              
+                                    <%
+
+                            if (getolgdata != null && !getolgdata.isEmpty()) {
+                                        for(AccountOpenDao Adao: getolgdata)
+                                       {
+                                  %>
             </tr>
             <tr>
               <td>
@@ -102,10 +145,10 @@
               </td>
               <td>
               
-               Shreya
+               <%= Adao.getName() %>
               </td>
            
-              <td>    </td>
+              <td>  <input type="text" readonly style="border:none;" name="name" value="<%= edao.getName() %>"></td>
               
               <td>
                
@@ -124,12 +167,12 @@
                 </td>
                 <td>
                  
-                 Ram
+        <%= Adao.getFather() %>
                 </td>
   
              
                
-                <td> </td>
+                <td>  <input readonly type="text" style="border:none;" name="fname" value="<%= edao.getFather_Name() %>"></td>
             
                 <td>
                  
@@ -146,14 +189,14 @@
               </div>
             </td>
             <td>
-            Radhika
+       <%= Adao.getMother() %>
             </td>
 
           
-            <td></td>
+            <td>  <input type="text" readonly style="border:none;" name="moher" value="<%= edao.getMother_Name() %>"></td> 
           
             <td>
-              
+             
             
             </td>
           </tr>
@@ -168,11 +211,11 @@
           </div>
         </td>
         <td>
-         94746398685
+       <%= Adao.getMobile() %>
         </td>
 
       
-        <td></td>
+        <td>  <input readonly type="text" style="border:none;" name="mobile" value="<%= edao.getMobile() %>"></td>
       
         <td>
          
@@ -189,14 +232,14 @@
           </div>
         </td>
         <td>
-        74,Bhawarkua,Indore(M.P)
+    <%= Adao.getAddress() %>
         </td>
 
        
-        <td></td>
+        <td>  <input readonly style="border:none;" name="address" value="<%= edao.getAddress() %>"></td>
      
         <td>
-         
+        
         </td>
       </tr>
 
@@ -211,9 +254,9 @@
           </div>
         </td>
         <td>
-          Deepa
+       Sunil 
         </td>
-        <td></td>
+        <td> <input readonly type="text" style="border:none;" name="Noname" value="<%= edao.getNominee_name() %>"></td>
         <td></td>
         <tr>
           <td>
@@ -226,9 +269,9 @@
             </div>
           </td>
           <td>
-            ****34648474
+       	977645678
           </td>
-          <td></td>
+          <td><input readonly type="text" style="border:none;" name="Noadhar" value="<%= edao.getNominee_Adhar() %>"></td>
           <td></td>
           <tr>
             <td>
@@ -240,12 +283,12 @@
               </div>
             </td>
             <td>
-           9354253744
+       9842537363
             </td>
     
   
         
-        <td></td>
+            <td><input readonly type="text" style="border:none;" name="Nomobile" value="<%= edao.getNominee_mobile() %>"></td>
         <td>
         
         </td>
@@ -254,30 +297,35 @@
       <tr>
         <td>
         
-            <div class="ms-3">
-              <p class="fw-bold mb-1"> Nominee Address</Address></p>
-              <p class="text-muted mb-0"></p>
-            </div>
-          </div>
-        </td>
-        <td>
-        80,Bhawarkua,Indore(M.P)
-        </td>
+      
+               <%
+           }
+             } else {
+            %>
+              <p>No data found!</p>
+            <%
+                  }
+            %>
+            
+                  <%
+           }
+             } else {
+            %>
+              <p>No data found!</p>
+            <%
+                  }
+            %>
 
-       
-        <td></td>
-       
-        <td>
-          
-        </td>
-      </tr>
+        
+   
   </thead>
-  <td><center><button style="background-color:#9F1945 ; color:white ; margin-left:60px;">Update</button></center></td><td></td><td></td>
+      <td><center><button type="submit" style="background-color:#9F1945 ; color:white ; margin-left:60px;">Update</button></center></td><td></td><td></td>
      <td><button type="button" class="btn btn-link btn-sm btn-rounded text-white">
                   </button></td>
 
         </thead> 
         </table>
+        </form>
         <footer id="footer" class="footer">
           <div class="copyright">
               &copy; Copyright <strong><span>Tech Nerds</span></strong>
@@ -285,7 +333,7 @@
           </div>
           <div class="credits">Designed by <a href="#">Soniya Kardam</a></div>
         </footer>
-
-       
+    </section>
+                    </div>
       </body>
       </html>

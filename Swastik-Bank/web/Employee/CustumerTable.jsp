@@ -8,6 +8,8 @@
 <%@page import="java.util.*" %>
 <%@ page import=" com.swastik.model.*" %>
 <%@ page import="com.swastik.controlar.*" %>
+<%@page import="java.util.ArrayList"%>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -211,24 +213,12 @@
   </head>
 
   <body>
+        <%
+          AccountOpenDto adto=new AccountOpenDto();
+    ArrayList<AccountOpenDao> accountopendao  =adto.getCustomerInformation();
     
-         <% 
-        List<AccountOpenDao> customerData = null;
-
-        // Check if form is submitted
-        if (request.getParameter("customerId") != null && request.getParameter("accountNumber") != null) {
-            // Get customer ID and account number from the form
-           // Assuming customerId and accountNumber are integers
-int customerId = Integer.parseInt(request.getParameter("customerId"));
-int accountNumber = Integer.parseInt(request.getParameter("accountNumber"));
-
-            // Fetch data based on customer ID and account number
-            customerData = AccountOpenDto.getCustomerData1(customerId, accountNumber);
-        } else {
-            // If form is not submitted, fetch all customer data
-            customerData = AccountOpenDto.allCustomerdata();
-        }
-    %>
+   %>
+  
     <%@include file="head.jsp"%>
        
      
@@ -236,11 +226,11 @@ int accountNumber = Integer.parseInt(request.getParameter("accountNumber"));
       <span>Dashboard / Customer / Customer</span>
     </div>
  
-<!--<div class="row border p-4" id="box1" >-->
-<!--    <form>
-  <div class="col-md-5">
+<!--<div class="row border p-4" id="box1" >
+    <form action="../Employee/CustomerInfomation">-->
+<!--  <div class="col-md-5">
       <p class="6">Customer id:</p>
-     <input onkeyup="Idvalidate()" id="amount" name="customerId" type="text" class="form-control" id="input1">
+     <input onkeyup="Idvalidate()" id="amount" type="text" class="form-control" id="input1">
      <span id="displayid" style="color:red; font-size: 14px;">*</span><br><br>
    
 
@@ -249,13 +239,13 @@ int accountNumber = Integer.parseInt(request.getParameter("accountNumber"));
   </div> 
   <div class="col-md-5">
       <p class="6">Account no:</p>
-    <input onkeyup="Idvalidate1()" id="amount1" type="text" name="accountNumber" class="form-control" id="input2">
+    <input onkeyup="Idvalidate1()" id="amount1" type="text" class="form-control" id="input2">
        <span id="displayid1" style="color:red; font-size: 14px;">*</span>
-      <button  id="search">Search</button>
+      <button  id="search">Search</button>-->
    
       
 
-  </pre><br>
+<!--  </pre><br>
        <span class="" id="date1">Previous date</span>
         <span id="dat">Current date</span><br>
         <input type="date" class="form-control" placeholder="starting date" id="First" aria-label="First name"/>
@@ -263,8 +253,8 @@ int accountNumber = Integer.parseInt(request.getParameter("accountNumber"));
     <input type="date" class="form-control" placeholder="current date" id="second" aria-label="Last name"/> 
      <button  id="search">Search</button>
   </div>-->
-    </form>
-     </div>
+<!--    </form>
+     </div>-->
    
  <!-- <button  id="search" style="background-color: #194086; margin-top:50px; color:white;  ;width:100px; height: 30px;">Search</button> -->
 </div>
@@ -278,9 +268,13 @@ int accountNumber = Integer.parseInt(request.getParameter("accountNumber"));
               <th>Amount</th>
               <th>Actions</th>
                </tr>
-           <% if (!customerData.isEmpty()) {
-                    for (AccountOpenDao p : customerData) { %>
-           
+        <%
+                          
+              if (accountopendao != null && !accountopendao.isEmpty()) {
+                          for(AccountOpenDao bdao: accountopendao)
+                         {
+                    %>
+               
             <tr>
               <td>
                 <div class="d-flex align-items-center">
@@ -291,36 +285,45 @@ int accountNumber = Integer.parseInt(request.getParameter("accountNumber"));
                     class="rounded-circle"
                   />
                   <div class="ms-3">
-                    <p class="fw-bold mb-1"><%= p.getName() %></p>
+                    <p class="fw-bold mb-1"><%= bdao.getName() %></p>
                     <p class="text-muted mb-0"></p>
                   </div>
                 </div>
               </td>
               <td>
-                <p class="fw-normal mb-1"><%= p.getAccountNumber() %></p>
+                <p class="fw-normal mb-1"><%= bdao.getAccNum() %></p>
               </td>
 
-              <td><%= p.getCurrentBalance() %></td>
+              <td><%= bdao.getBalance() %></td>
            
               <td>
+<!--                  <a href="../CustomerRecord?id="class="btn btn-danger">View</a>-->
                 <button type="button" class="btn btn-link btn-sm btn-rounded">
-                <a href="Profile3.jsp"><button class="btn1">view</button></a>
+                <a href="Profile3.jsp?customerid=<%= bdao.getCustomerId() %>"><button class="btn1">view</button></a>
+<!--                     <a href="#?customerid="><button class="btn1">view</button></a>-->
+
                 </button>
               </td>
               
+<!--                    <td><a type="button" class="btn btn-secondary" class="btn1" href="#?getCusId=">View</a></td>-->
+                
 
             </tr>
-                <% }
-                } else { %>
-              
-<!--          </thead>-->
-            <tr>
-                        <td colspan="4">No records found.</td>
-                    </tr>
-                <% } %>
-            <!--</tbody>-->
+               <%
+      }
+   } else {
+%>
+      <p>No data found!</p>
+<%
+   }
+%>
+     
+          </thead>
+             
+             
       
         </table>
+                     
               
       </section>
 </body>

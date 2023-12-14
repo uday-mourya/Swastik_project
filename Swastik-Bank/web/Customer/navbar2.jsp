@@ -88,7 +88,6 @@
                             %>
                         </h6>
 
-
                         <!-- <span>Manager</span> -->
                     </li>
                     <li>
@@ -186,12 +185,12 @@
                 data-bs-parent="#sidebar-nav"
                 >
                 <li>
-                    <a href="documentupdate.jsp">
+                    <a href="documentupdate2.jsp">
                         <i class="bi bi-circle"></i><span>Document Update Request</span>
                     </a>
                 </li>
                 <li>
-                    <a href="loanform.jsp">
+                    <a href="../Loantypecontroller">
                         <i class="bi bi-circle"></i><span>Loan Apply Request</span>
                     </a>
                 </li>
@@ -265,6 +264,11 @@
                         <i class="bi bi-circle"></i><span>Transaction History</span>
                     </a>
                 </li>
+                <li>
+              <a href="report.jsp">
+                <i class="bi bi-circle"></i><span>Problem Report </span>
+              </a>
+            </li>
             </ul>
         </li>
         <li class="nav-item">
@@ -283,10 +287,10 @@
                 data-bs-parent="#sidebar-nav"
                 >
                 <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Feedback</span>
-                    </a>
-                </li>
+              <a href="feedback.jsp">
+                <i class="bi bi-circle"></i><span>Review & Feedback</span>
+              </a>
+            </li>
 
 
             </ul>
@@ -297,10 +301,10 @@
         <!-- End F.A.Q Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="Contact-us.jsp">
-                <i class="bi bi-envelope"></i>
-                <span>Contact</span>
-            </a>
+          <a class="nav-link collapsed" href="Contact-us2.jsp">
+            <i class="bi bi-envelope"></i>
+            <span>Contact</span>
+          </a>
         </li>
 
         </li>

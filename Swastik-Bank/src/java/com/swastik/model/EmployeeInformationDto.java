@@ -26,7 +26,7 @@ public class EmployeeInformationDto {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                edao.setName(rs.getString("name"));
+                edao.setFullname(rs.getString("name"));
                 edao.setDob(rs.getString("dob"));
                 edao.setPhone("phone");
                 edao.setEmail("email");
@@ -96,7 +96,7 @@ public class EmployeeInformationDto {
                     EmployeeInformationDao em = new EmployeeInformationDao();
                     em.setEmployeeId(id); // Set int directly
                     em.setPassword(password);
-                    em.setName(name);
+                    em.setFullname(name);
                     em.setEmail(email);
                     em.setDob(dob);
                     em.setPhone(phone);
@@ -157,7 +157,7 @@ public class EmployeeInformationDto {
                     EmployeeInformationDao e = new EmployeeInformationDao();
                     e.setEmployeeId(rs.getInt("Employeeid"));
                     e.setPassword(rs.getString("password"));
-                    e.setName(rs.getString("name"));
+                    e.setFullname(rs.getString("name"));
                     e.setEmail(rs.getString("email"));
                     e.setDob(rs.getString("dob"));
                     e.setSalary(rs.getString("salary"));
@@ -207,7 +207,7 @@ public class EmployeeInformationDto {
                 String sql = "insert into employeerequest(fullname,email,password,phone,adhar,pancard,dob)values(?,?,?,?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
 
-                ps.setString(1, edao.getName());
+                ps.setString(1, edao.getFullname());
 
                 ps.setString(2, edao.getEmail());
                 ps.setString(3, edao.getPassword());
@@ -230,3 +230,21 @@ public class EmployeeInformationDto {
         return b;
     }
 }
+    
+   
+    
+
+   
+
+     
+  
+
+
+
+
+
+
+
+
+
+

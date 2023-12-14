@@ -113,7 +113,7 @@ ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.g
                         <th>Bank Name</th>
                         <th>Account Number</th>
                         <th>IFSC Code</th>
-                        <th colspan="2"><center>Action</center></th>
+                        <th colspan="3" class="text-center"><center>Action</center></th>
                     <!--<th><input type="text" value="sohannsdcbh" name="sohan" disabled></th>-->
 
                     </tr>
@@ -140,11 +140,15 @@ ArrayList<BeneficiaryDao> beneficiaryDao  = (ArrayList<BeneficiaryDao>)session.g
 
                         </td>
                         <td>
-                    <center>
+                        <td>
 
                         <a type="button" class="btn btn-secondary" data-toggle="modal" data-target="#transfermoney2" href="transfermoney2.jsp?beneficiaryAccNum=<%= bdao.getAccNum()%>">Send</a>
-                        <a type="button" class="btn btn-secondary" data-toggle="modal" data-target="#transfermoney" href="#?beniId=<%= bdao.getAccNum()%>">Edit</a>
-                    </center>
+                        </td>
+<!--                        <a type="button" class="btn btn-secondary" data-toggle="modal" data-target="#transfermoney" href="editbeneficiary.jsp?beniId=<%= bdao.getAccNum()%>">Edit</a>-->
+                        <td>
+                        <a type="button" class="btn btn-secondary" data-toggle="modal" data-target="#transfermoney" href="deletebeneficiaryservlet?accNum=<%= bdao.getAccNum()%>">Delete</a>
+                        </td>
+                    
                     </td>
                     </tr>
                     <%

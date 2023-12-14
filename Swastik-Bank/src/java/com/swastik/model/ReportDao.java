@@ -9,10 +9,14 @@ import java.security.Timestamp;
 public class ReportDao {
 
     private int reportId;
-    private int custId;
+  private int accNumber;
     private String reportType;
-    private Timestamp Report_date;
 
+     private String reportMessage;
+    private String reportStatus;
+    private String reportSolution;
+    
+      private Timestamp Report_date;
     public int getReportId() {
         return reportId;
     }
@@ -21,12 +25,12 @@ public class ReportDao {
         this.reportId = reportId;
     }
 
-    public int getCustId() {
-        return custId;
+    public int getAccNumber() {
+        return accNumber;
     }
 
-    public void setCustId(int custId) {
-        this.custId = custId;
+    public void setAccNumber(int accNumber) {
+        this.accNumber = accNumber;
     }
 
     public String getReportType() {
@@ -52,6 +56,13 @@ public class ReportDao {
     public void setReportStatus(String reportStatus) {
         this.reportStatus = reportStatus;
     }
+    public String getReportMessage() {
+        return reportMessage;
+    }
+
+    public void setReportMessage(String reportMessage) {
+        this.reportMessage = reportMessage;
+    }
 
     public String getReportSolution() {
         return reportSolution;
@@ -60,6 +71,5 @@ public class ReportDao {
     public void setReportSolution(String reportSolution) {
         this.reportSolution = reportSolution;
     }
-    private String reportStatus;
-    private String reportSolution;
+    
 }

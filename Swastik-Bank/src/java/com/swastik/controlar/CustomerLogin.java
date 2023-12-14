@@ -23,7 +23,8 @@ public class CustomerLogin extends HttpServlet {
             boolean b = ClDto.customerLogin(ClDao);
 
             HttpSession session = request.getSession();
-           
+            System.out.println(request.getParameter("gmail"));
+            System.out.println(request.getParameter("password"));
 
 //            if (request.getParameter("loginbtn") != null && request.getParameter("loginbtn").equals("Login")) {
                 if (b) {

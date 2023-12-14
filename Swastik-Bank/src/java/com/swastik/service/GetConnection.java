@@ -11,7 +11,7 @@ public class GetConnection {
         String url = "jdbc:mysql://localhost:3306/Swastik";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(url, "root", "root");
+            con = DriverManager.getConnection(url, "root", "udaysql@350");
 
         } catch (ClassNotFoundException | SQLException e) {
         }

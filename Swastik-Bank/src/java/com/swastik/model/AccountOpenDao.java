@@ -3,7 +3,7 @@ package com.swastik.model;
 import java.io.Serializable;
 import java.security.Timestamp;
 
-public class AccountOpenDao  extends AccountInformationDao implements Serializable {
+public class AccountOpenDao extends AccountInformationDao {
 
     private int customerId;
     private String password;

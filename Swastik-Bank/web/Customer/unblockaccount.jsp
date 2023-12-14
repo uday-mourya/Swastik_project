@@ -1,10 +1,3 @@
-<%-- 
-    Document   : unblockaccount
-    Created on : Nov 27, 2023, 7:26:00â€¯PM
-    Author     : dell
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -66,11 +59,96 @@
         }
 
     </style>
+    <script>
+        function inputvalidate() {
+            var name = document.getElementById("pan");
+            var udisplay = document.getElementById("display");
 
+            if (name.value.trim() == "") {
+                udisplay.innerHTML = "Pan Number Required";
+                udisplay.style.color = "red";
+                return false;
+            } else {
+                var reg = /^[A-Za-z]{5}\d{4}[A-Za-z]$/; // 5 characters, 4 digits, 1 character
+                if (reg.test(name.value)) {
+                    udisplay.innerHTML = "";
+                    udisplay.style.color = "green";
+                    return true;
+                } else {
+                    udisplay.innerHTML = "Please enter the valid pattern";
+                    udisplay.style.color = "red";
+                    return false;
+                }
+            }
+        }
+
+        function inputvalidate2() {
+            var name = document.getElementById("aadhar");
+            var udisplay = document.getElementById("display2");
+
+            if (name.value.trim() == "") {
+                udisplay.innerHTML = "Aadhar Number Required";
+                udisplay.style.color = "red";
+                return false;
+            } else {
+                var reg = /^\d{12}$/; // Exactly 12 digits
+                if (reg.test(name.value)) {
+                    udisplay.innerHTML = "";
+                    udisplay.style.color = "green";
+                    return true;
+                } else {
+                    udisplay.innerHTML = "Please enter exactly 12 digits";
+                    udisplay.style.color = "red";
+                    return false;
+                }
+            }
+        }
+        function Movalidate()
+        {
+            var mobile = document.getElementById("mobile");
+            var mdisplay = document.getElementById("mdisplay");
+            if (mobile.value.trim() == "") {
+                mdisplay.innerHTML = "Mobile Number Required";
+                mdisplay.style.color = "red";
+                return false;
+            } else {
+                var reg = /^[6789][0-9]{9}/;
+                if (reg.test(mobile.value)) {
+                    mdisplay.innerHTML = "Valid";
+                    mdisplay.style.color = "Green";
+                    return true;
+                } else {
+                    mdisplay.innerHTML = "Number should start with 6, 7, 8, or 9 and have 10 digits";
+                    mdisplay.style.color = "red";
+                    return false;
+                }
+                 }
+                }
+        function validateEmail() {
+            var emailInput = document.getElementById("email");
+            var emailDisplay = document.getElementById("edisplay");
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailInput.value.trim() === "") {
+                emailDisplay.innerHTML = "Email is required";
+                emailDisplay.style.color = "red";
+                return false;
+            } else if (!emailPattern.test(emailInput.value)) {
+                emailDisplay.innerHTML = "Invalid email format";
+                emailDisplay.style.color = "red";
+                return false;
+            } else {
+                emailDisplay.innerHTML = "";
+                return true;
+            }
+        }
+
+
+    </script>
     <body>
         <!-- ======= Header ======= -->        
         <%@include file="navbar2.jsp" %>
-        <!-- End Sidebar-->
+        <!-- End Sidebar-->  
         <main id="main" class="main">
             <div class="pagetitle">
                 <h1>Dashboard</h1>
@@ -83,53 +161,33 @@
             </div>
             <!-- End Page Title -->
 
-
-
             <!-- E-governance -->
             <section class="section dashboard my-3 ml-3 ">
                 <div class="container border p-20 mb-4" >
                     <h4 class="text-center my-3 mb-4"></h4>
-                    <form class="row g-3 mb-3">
+                    <form class="row g-3 mb-3" action="../Unblockservlet">
                         <h4 class="text-center my-3 mb-4">Unblock Account Request </h4>
-                        <!-- <div class="col-md-12">
-                            <div class="form-group">
-                              <label class="control-label col-sm-2">Enter Pan Number</label>
-                              <div class="col-sm-12">
-                                
-                                <input type="text" class="form-control">
-                              </div>
-                            </div>
-                          </div> -->
-
+                        <%@include file="../Components/alert_message.jsp" %>
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Enter Pan Number</label>
-                            <input type="email" class="form-control" id="inputEmail4">
+                            <label for="inputEmail4" class="form-label">Enter Pan Number <font face="Lato" color="red">*</font></label>
+                            <input onkeyup="inputvalidate()" id="pan" type="text" class="form-control" id="inputEmail4" name="pannumber">
+                            <span id="display" style="color:red; font-size: 14px;"></span>
                         </div>
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Enter Aadhar Number</label>
-                            <input type="email" class="form-control" id="inputEmail4">
+                            <label for="inputEmail4" class="form-label">Enter Aadhar Number <font face="Lato" color="red">*</font></label>
+                            <input onkeyup="inputvalidate2()" id="aadhar" type="text" class="form-control" id="inputEmail4" name="adharnumber">
+                            <span id="display2" style="color:red; font-size: 14px;"></span>
                         </div>
 
-
-                        <!-- <div class="col-md-6">
-                          <label for="inputState" class="form-label">Select Bank</label>
-                          <select id="inputState" class="form-select">
-                            <option selected>Choose</option>
-                            <option>PNB</option>
-                            <option>Bank Of Baroda</option>
-                            <option>ICIC BANK</option>
-                            <option>HDFC BANK</option>
-                          </select>
-                        </div> -->
-
-
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Enter Mobile </label>
-                            <input type="email" class="form-control" id="inputEmail4">
+                            <label for="inputEmail4" class="form-label">Enter Mobile <font face="Lato" color="red">*</font> </label>
+                            <input onkeyup="Movalidate()" id="mobile" type="text" class="form-control" id="inputEmail4" name="mobile">
+                            <span id="mdisplay" style="color:red; font-size: 14px;"></span>
                         </div>
                         <div class="col-md-6">
-                            <label for="inputPassword4" class="form-label">Enter Email Number</label>
-                            <input type="password" class="form-control" id="inputPassword4">
+                            <label for="inputPassword4" class="form-label">Enter Email Number <font face="Lato" color="red">*</font></label>
+                            <input onkeyup="validateEmail()" id="email" type="email" class="form-control" id="inputPassword4" name="email">
+                            <span id="edisplay" style="color:red; font-size: 14px;"></span>
                         </div>
                         <div class=" justify-content-center col-md-6 my-5">
 
@@ -140,7 +198,7 @@
                             <input type="password" class="form-control" id="inputPassword4">
                         </div>
                         <div class="text-center my-3">
-                            <button class="btn btn-primary waves-effect waves-light " id="btn-submit">Request</button>
+                            <button class="btn btn-danger waves-effect waves-light " id="btn-submit">Request</button>
                         </div>
                     </form>
                 </div>
@@ -149,7 +207,6 @@
 
         </main>
         <!-- End #main -->
-
         <!-- ======= Footer ======= -->
         <%@include file="footer.jsp" %>
         <!-- End Footer -->
@@ -174,4 +231,3 @@
         <script src="assets/js/main.js"></script>
     </body>
 </html>
-

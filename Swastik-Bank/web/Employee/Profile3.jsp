@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.swastik.model.*"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,9 +44,9 @@
     <style>
         #for{
             /* margin-top:200px; */
-            height: 600px;
-            width:900px;
-            margin-left: 400px;
+            height: 400px;
+            width:800px;
+            margin-left: 500px;
             margin-top: 110px;
             margin-top:20px;
         }
@@ -74,37 +77,51 @@
   </head>
 
   <body>
+      <%
+          int a=Integer.parseInt(request.getParameter("customerid"));
+          AccountOpenDto adto=new AccountOpenDto();
+    ArrayList<AccountOpenDao> accountopendao  =adto.getCustomerInformation1(a);
+    
+   %>
+     
    <%@include file="head.jsp"%>
     <div id="headings">
       <span>Dashboard / Customer / view</span>
     </div>
-
+     <%
+                          
+              if (accountopendao != null && !accountopendao.isEmpty()) {
+                          for(AccountOpenDao bdao: accountopendao)
+                         {
+                    %>
+        
     <div class="container  p-20 " id="for">
+       
         <h4 class="text-center"><b>Customer</b></h4>
     <form class="row g-3">
         <div class="col-md-4">
           <label for="inputEmail4" class="form-label"><b>Name</b></label><br>
           <!-- <input type="email" class="form-control" id="inputEmail4"> -->
-          <label>Soniya Kardam</label>
+          <label><%= bdao.getName() %></label>
         </div>
         <div class="col-md-4">
           <label for="inputPassword4" class="form-label"><b>Father Names</b></label><br>
           <!-- <input type="password" class="form-control" id="inputPassword4"> -->
-          <label>Hemant Kardam</label>
+          <label><%= bdao.getFather() %></label>
         </div>
         <div class="col-md-4">
             <label for="inputPassword4" class="form-label"><b>Mother Name</b></label><br>
             <!-- <input type="password" class="form-control" id="inputPassword4"> -->
-            <label>shivanya Kardam</label>
+            <label><%= bdao.getMother() %></label>
           </div>
         <div class=" col-md-4">
           <label for="inputAddress" class="form-label"><b>Dateof Birth</b></label><br>
           <!-- <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"> -->
-          <label>09/02/2001</label>
+          <label><%= bdao.getDob() %></label>
         </div>
         <div class="col-md-4">
           <label for="inputAddress2" class="form-label"> <b> Gender</b></label><br>
-          <label>sFemale</label>
+          <label><%= bdao.getGender() %></label>
           <!-- Male     <input type="text" placeholder="">    Female    <input type="text" > -->
         <!-- <input type="text" placeholder="" > -->
         
@@ -113,27 +130,27 @@
           <label for="inputCity" class="form-label"><b>Mobile Number</b></label><br>
           <!-- <input type="text" class="form-control" id="inputCity">
            -->
-           <label>98463648258</label>
+           <label><%= bdao.getMobile() %></label>
         </div>
         <div class="col-md-4">
             <label for="inputCity" class="form-label"><b>Email-id</b></label><br>
             <!-- <input type="text" class="form-control" id="inputCity">
              -->
-             <label>shivanyaKardam@gmail.com</label>
+             <label><%= bdao.getEmail() %></label>
           </div>
 
           <div class="col-md-4">
             <label for="inputCity" class="form-label"><b>Address</b></label><br>
             <!-- <input type="text" class="form-control" id="inputCity"> -->
-            <label>Bhawarkua Indore (M.P)</label>
+            <label><%= bdao.getAddress() %></label>
             </div>
             
                 <div class="col-md-4">
                     <label for="inputCity" class="form-label"><b>City </b></label><br>
-                    <!-- <input type="text" class="form-control" id="inputCity">
+<!--                     <input type="text" class="form-control" id="inputCity">-->
                       
-                   -->
-                   <label>shivanya Kardam</label>
+                   
+                   <label><%= bdao.getCity()%></label>
                 
             </div>
                 <!-- <--  <div class="col-md-4">
@@ -144,16 +161,16 @@
          
         <div class="col-md-4">
           <label for="inputState" class="form-label"><b>State</b></label><br>
-          <label>Madhya Pradesh</label>
+          <label><%= bdao.getState()%></label>
           <!-- <select id="inputState" class="form-select" aria-placeholder="State"> -->
             <!-- <option selected>Choose...</option>
             <option>...</option>
           </select> -->
         </div>
          <div class="col-md-4">
-            <label for="inputState" class="form-label"><b>Country</b></label><br>
-            <label>India</label>
-            <!-- <select id="inputState" class="form-select" aria-placeholder="Country"> -->
+            <label for="inputState" class="form-label"><b>District</b></label><br>
+            <label><%= bdao.getDistric()%></label>
+<!--             <select id="inputState" class="form-select" aria-placeholder="Country"> -->
 
               <!-- <option selected>Choose...</option>
               <option>...</option>
@@ -163,27 +180,27 @@
           <div class="col-md-4">
             <label for="inputCity" class="form-label"><b>Adhar.no</b></label><br>
             <!-- <input type="text" class="form-control" id="inputCity"> -->
-            <label>********9465</label>
+            <label><%= bdao.getAdhar()%></label>
             
   </div>
 
   <div class="col-md-4">
     <label for="inputCity" class="form-label"><b>PanCard.no</b></label><br>
     
-    <label>******4749&44</label>
+    <label><%= bdao.getPan()%></label>
     
 </div>
 
 <div class="col-md-4">
     <label for="inputCity" class="form-label"><b>Ocupation</b></label><br>
     
-    <label>STudent</label>
+    <label><%= bdao.getOccupation()%></label>
     
 </div>
 <div class="col-md-4">
     <label for="inputState" class="form-label"><b>Marital-Status</b></label><br>
    
-    <label>Unmarried</label>
+    <label><%= bdao.getMaritail()%></label>
     
   </div>
 
@@ -197,16 +214,24 @@
 <div class="col-md-4">
     <label for="inputCity" class="form-label"><b>Nominee Adhar no.</b></label><br>
    
-    <label>shivanya Kardam</label>
+    <label>56894</label>
     
 </div>
 <div class="col-md-4">
     <label for="inputCity" class="form-label"><b>Nominee Address</b></label><br>
    
     <label>Bhawarkuaindore</label>
+     
     
 </div>
-
+           <%
+      }
+   } else {
+%>
+      <p>No data found!</p>
+<%
+   }
+%>
 
       </form>
       

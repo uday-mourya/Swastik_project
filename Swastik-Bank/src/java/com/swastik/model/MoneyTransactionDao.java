@@ -18,6 +18,15 @@ public class MoneyTransactionDao {
     private String description;
     private String tranStatus;
     private String pass;
+    private String endDate;
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
 
     public int getSenderAcc() {
         return senderAcc;

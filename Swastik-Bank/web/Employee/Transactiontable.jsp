@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import=" com.swastik.model.*" %>
+<%@ page import="com.swastik.controlar.*" %>
+
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -179,24 +183,32 @@
   </head>
 
   <body>
+ 
+     
    <%@include file="head.jsp"%>
+   
+  
     <div id="headings">
       <span>Dashboard / Customer / Tracsaction Record</span>
     </div>
+       <form action="../EmployeeTransactionRecord" method="post">
 <div class="row border p-4" id="box1" >
-  <div class="col-md-5">
-      <p class="6">Customer id:</p>
-      <input onkeyup="Idvalidate()" id="amount" type="text" class="form-control">
+ 
+ <!-- <div class="col-md-5">
+      <p class="6">Transaction id:</p>
+      <input onkeyup="Idvalidate()"  name="transactionid" id="amount" type="text" class="form-control">
    <span id="displayid" style="color:red; font-size: 14px;">*</span>
-  </div>
-     
+   </div> -->
   <div class="col-md-5">
       <p class="6">Account no:</p>
-       <input onkeyup="Idvalidate1()" id="amount1" type="text" class="form-control">
-       <span id="displayid1" style="color:red; font-size: 14px;">*</span><br>
-      <button  id="search">Search</button>
+      <input onkeyup="Idvalidate1()" id="amount1" name="accountno" type="text" class="form-control">
+     <span id="displayid1" style="color:red; font-size: 14px;">*</span><br>
+      <button  id="search">Search</button>  
     </div>
+      
   </div>
+  </form>
+ 
 
 
     <script src="script.js"></script>
@@ -211,6 +223,9 @@
               <th>Amount</th>
               <th>Actions</th>
             </tr>
+           
+             
+           
             <tr>
               <td>
                 <div class="d-flex align-items-center">
@@ -221,22 +236,23 @@
                     class="rounded-circle"
                   />
                   <div class="ms-3">
-                    <p class="fw-bold mb-1">name</p>
+                    <p class="fw-bold mb-1">Taniya Kardam</p>
                     <p class="text-muted mb-0"></p>
                   </div>
                 </div>
               </td>
               <td>
-                <p class="fw-normal mb-1">*******6475</p>
+                <p class="fw-normal mb-1">9</p>
               </td>
 
-              <td>5000.00</td>
+              <td>500</td>
               <td>
                 <button type="button" class="btn btn-link btn-sm btn-rounded">
-                <a href="TransactionRecord.jsp"><button class="btn1">view</button></a>
+                <a href="TransactionRecord.jsp?accountnum="><button class="btn1">view</button></a>
                 </button>
               </td>
             </tr>
+                      
 
             <tr>
                 <td>
@@ -248,16 +264,16 @@
                       class="rounded-circle"
                     />
                     <div class="ms-3">
-                      <p class="fw-bold mb-1">name</p>
+                      <p class="fw-bold mb-1">Indrija Kardam</p>
                       <p class="text-muted mb-0"></p>
                     </div>
                   </div>
                 </td>
                 <td>
-                  <p class="fw-normal mb-1">*****97377</p>
+                      <p class="fw-normal mb-1">10</p>
                 </td>
   
-                <td>10000.00</td>
+                <td>1100.00</td>
                 <td>
                   <button type="button" class="btn btn-link btn-sm btn-rounded">
                     <a href="TransactionRecord.jsp"><button class="btn1">view</button></a>

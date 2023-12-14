@@ -5,7 +5,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /*
@@ -21,7 +24,7 @@ public class MoneyTransactionDto {
 
         if (con != null) {
             try {
-                String query = "insert into transaction_information(sender_Acc, Receiver_Acc_num, Amount, Tran_Type, Description, Tran_status) values(?, ?, ?, ?, ?, ?)";
+                String query = "insert into transaction_information(sender_id, Receiver_Id, Amount, Tran_Type, Description, Tran_status) values(?, ?, ?, ?, ?, ?)";
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setInt(1, mDao.getSenderAcc());
                 System.out.println(mDao.getSenderAcc());
@@ -136,7 +139,7 @@ public class MoneyTransactionDto {
 
         if (con != null) {
             try {
-                String query = "SELECT * FROM transaction_information WHERE sender_Acc = ? or Receiver_Acc_num = ? ";
+                String query = "SELECT * FROM transaction_information WHERE sender_id = ? or Receiver_id = ? ";
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setInt(1, acc);
                 psmt.setInt(2, acc);
@@ -147,9 +150,9 @@ public class MoneyTransactionDto {
 
                     mDao.setTranid(set.getInt("Transaction_id"));
 
-                    mDao.setSenderAcc(set.getInt("sender_Acc"));
+                    mDao.setSenderAcc(set.getInt("sender_id"));
 
-                    mDao.setReciverAcc(set.getString("Receiver_Acc_num"));
+                    mDao.setReciverAcc(set.getString("Receiver_id"));
 
                     mDao.setAmount(set.getString("Amount"));
 
@@ -170,6 +173,56 @@ public class MoneyTransactionDto {
         }
 
         return list;
+    }
+
+    public List<MoneyTransactionDao> searchTransactionsByDate(int acc, String dateString, String dateEnd) throws SQLException {
+        List<MoneyTransactionDao> transactions = new ArrayList<>();
+        Connection con = GetConnection.getConnectin();
+        if (con != null) {
+//            String sql = "SELECT * FROM transaction_information WHERE sender_Acc = ? AND Tran_Date BETWEEN ? AND ?";
+
+            String sql = "SELECT * FROM transaction_information WHERE sender_Acc LIKE ? AND Tran_Date BETWEEN ? AND ?";
+            try {
+                PreparedStatement psmt = con.prepareStatement(sql);
+                // Convert the input date string to java.util.Date
+//                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+                System.out.println(dateString);
+                System.out.println(dateEnd);
+
+                psmt.setInt(1, acc);
+                psmt.setString(2, dateString);
+                psmt.setString(3, dateEnd);
+
+                ResultSet set = psmt.executeQuery();
+                while (set.next()) {
+                    MoneyTransactionDao mDao = new MoneyTransactionDao();
+
+                    mDao.setTranid(set.getInt("Transaction_id"));
+
+                    mDao.setSenderAcc(set.getInt("sender_Acc"));
+
+                    mDao.setReciverAcc(set.getString("Receiver_Acc_num"));
+
+                    mDao.setAmount(set.getString("Amount"));
+
+                    mDao.setTranDate(set.getString("Tran_Date"));
+
+                    mDao.setTranType(set.getString("Tran_Type"));
+
+                    mDao.setDescription(set.getString("Description"));
+
+                    mDao.setTranStatus(set.getString("Tran_status"));
+
+                    transactions.add(mDao);
+                }
+
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+
+        return transactions;
     }
 
 }

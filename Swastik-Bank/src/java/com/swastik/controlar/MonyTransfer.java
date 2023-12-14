@@ -25,7 +25,7 @@ public class MonyTransfer extends HttpServlet {
             MoneyTransactionDto moneyDto = new MoneyTransactionDto();
             MoneyTransactionDao mDao = new MoneyTransactionDao();
             mDao.setSenderAcc(accDao.getAccNum());
-            mDao.setReciverAcc(request.getParameter("beniacc"));
+            mDao.setReciverAcc(request.getParameter("beneficiaryAccount"));
             mDao.setAmount(request.getParameter("amount"));
             // Assuming accDao.getBalance() returns a double value
             double balance = accDao.getBalance();
@@ -35,15 +35,23 @@ public class MonyTransfer extends HttpServlet {
             mDao.setTranType(request.getParameter("tranType"));
             mDao.setDescription(request.getParameter("description"));
             mDao.setPass(request.getParameter("pass"));
-            mDao.setReciverAcc(request.getParameter("beniacc"));
+//            mDao.setReciverAcc(request.getParameter("beniacc"));
             
             String beneficiaryAccNum = request.getParameter("beneficiaryAccNum");
-            if (!accDao.getPassword().equals(request.getParameter("pass"))) {
-                Message message = new Message("Invalide Pin ! Try again!!", "error", "alert-danger");
+            
+            
+            System.out.println(accDao.getPassword()+"hxhhhhxhxh");
+            
+            
+            
+            if (!accDao.getPassword().trim().equalsIgnoreCase(request.getParameter("pass").trim())) {
+                Message message = new Message("Invalid Pin! Try again!!", "error", "alert-danger");
                 session.setAttribute("message", message);
                 response.sendRedirect("Customer/transfermoney2.jsp?beniId=" + beneficiaryAccNum);
-            }
-            if (accDao.getBalance() <= (Double.parseDouble(mDao.getAmount()))) {
+               
+            }        
+            
+            else if (accDao.getBalance() <= (Double.parseDouble(mDao.getAmount()))) {
                 Message message = new Message(" Insufficient Balance! Try again!!", "error", "alert-danger");
                 session.setAttribute("message", message);
                 response.sendRedirect("Customer/transfermoney2.jsp?beniId=" + beneficiaryAccNum);
@@ -51,13 +59,13 @@ public class MonyTransfer extends HttpServlet {
                 //Ensfesent balance in account
 //                return;
             } else if (moneyDto.performMoneyTransfer(mDao)) {
-                Message message = new Message(" Amount Transfer Success! Thankyou For Trancsaction", "error", "alert-danger");
+                Message message = new Message(" Amount Transfer Success! Thankyou For Trancsaction", "error", "alert-success");
                 session.setAttribute("message", message);
                 accDao.setBalance(accDao.getBalance() - (Double.parseDouble(mDao.getAmount())));
                 response.sendRedirect("Customer/transfermoney2.jsp?beniId=" + beneficiaryAccNum);
                 //errot massage likha he
             } else {
-                Message message = new Message(" Amount Transfer Success! Thankyou For Trancsaction", "error", "alert-danger");
+                Message message = new Message(" Amount Transfer Success! Thankyou For Trancsaction", "error", "alert-success");
                 session.setAttribute("message", message);
                 response.sendRedirect("Customer/transfermoney2.jsp");
             }

@@ -104,8 +104,8 @@ if(userDao!=null){
 
             .balance-display {
                 display: none;
-                margin-left: 680px;
-                margin-top: -15px;
+                margin-left: 600px;
+                margin-top: -28px;
             }
             .balance-container{
                 /*position-ri*/

@@ -35,7 +35,7 @@ public class AddBeneficiary extends HttpServlet {
                 session.setAttribute("message", message);
                 response.sendRedirect("Customer/Addbeneficiary.jsp");
             } else {
-                Message message = new Message("Beneficiary Adding Fail !!", "fail", "alert-success");
+                Message message = new Message("Beneficiary Adding Fail !!", "fail", "alert-danger");
                 session.setAttribute("message", message);
                 response.sendRedirect("Customer/Addbeneficiary.jsp");
             }

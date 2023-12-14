@@ -9,10 +9,17 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.swastik.model.EmployeeInformationDao" %>
 <%@ page import="com.swastik.model.EmployeeInformationDto" %>
+<%@page import= "jakarta.servlet.http.HttpSession"%>
 <%
    EmployeeInformationDto employeDto = new EmployeeInformationDto();
    List<EmployeeInformationDao> productList = employeDto.getAllProducts();
-%>
+   
+//      HttpSession session = request.getSession();
+//   EmployeeInformationDao loggedInUser = (EmployeeInformationDao) session.getAttribute("loggedInUser");
+//
+//   if (loggedInUser == null) {
+//       response.sendRedirect("index.jsp");
+//%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,31 +77,35 @@
           method="POST"
           action="#"
         >
-          <input
+<!--          <input
             type="text"
             name="query"
             placeholder="Search"
             title="Enter search keyword"
-          />
-          <button type="submit" title="Search">
+          />-->
+       
+<!--          <button type="submit" title="Search">
             <i class="bi bi-search"></i>
-          </button>
+          </button>-->
+           
         </form>
       </div>
       <!-- End Search Bar -->
+       
 
       <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
           <li class="nav-item d-block d-lg-none">
-            <a class="nav-link nav-icon search-bar-toggle" href="#">
+<!--            <a class="nav-link nav-icon search-bar-toggle" href="#">
               <i class="bi bi-search"></i>
-            </a>
+            </a>-->
           </li>
-          <!-- </ul>
-          </nav> -->
+<!--           <div>
+              <button>Logout</button>
+          </div>-->
                             <%
 if (!productList.isEmpty()) {
-    for (int i = 0; i < productList.size(); i++) {
+   for (int i = 0; i < productList.size(); i++) {
         EmployeeInformationDao product = productList.get(i);
 %>
           <li class="nav-item dropdown pe-3">
@@ -108,30 +119,29 @@ if (!productList.isEmpty()) {
                 alt="Profile"
                 class="rounded-circle"
               />
-              <span class="d-none d-md-block dropdown-toggle ps-2" style="color: white;">
-                
-                  <%= product.getName() %></span>
-               </a
-            ><!-- End Profile Iamge Icon -->
+              <span class="d-none d-md-block dropdown-toggle ps-2" style="color: white;"
+                >
+<!--                  Soniya Kardam</span
+              > </a
+            >-->
+            
+            <!-- End Profile Iamge Icon -->
 
             <ul
               class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
             >
               <li class="dropdown-header">
-            <h6><%= product.getName() %></h6>
+ 
+      
+        
+       
+       
+        <!-- Add more fields as needed -->
+
+<!--                <h6>Name :-Soniya Kardam</h6>-->
                 <!-- <span>Employee</span> -->
-                <span><b>id :  </b><%= product. getEmployeeId() %></span></li>
-              <li><center><a href="../Employee/users-profile.jsp">Profile</a></center></li>
-           
-                <%
-    }
-} else {
-%>
-    <p>User not found or login failed.</p>
-<%
-}
-%>
-              
+                <span><b>id :  </b><%= product. getEmployeeId() %></span>
+           </li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
@@ -146,19 +156,19 @@ if (!productList.isEmpty()) {
                 </a>
               </li>
               <li>
-                <hr class="dropdown-divider" />
+                <hr class="dropdown-divider"/>
               </li>
 
               <li>
                 <hr class="dropdown-divider" />
               </li>
-
               <li>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a class="dropdown-item d-flex align-items-center" href="index.jsp">
                   <i class="bi bi-box-arrow-right"></i>
                   <span>Sign Out</span>
                 </a>
               </li>
+             
             </ul>
             <!-- End Profile Dropdown Items -->
           </li>
@@ -166,6 +176,15 @@ if (!productList.isEmpty()) {
         </ul>
       </nav>
       <!-- End Icons Navigation -->
+                   <%
+    }
+} else {
+%>
+    <p>User not found or login failed.</p>
+<%
+}
+%>
+      
     </header>
           
     <!-- ======= Sidebar ======= -->
@@ -225,7 +244,7 @@ if (!productList.isEmpty()) {
             data-bs-parent="#sidebar-nav"
           >
             <li>
-              <a href="UpdateRecord.jsp">
+              <a href="UpdateTable.jsp">
                 <i class="bi bi-circle"></i><span> Updation Request</span>
               </a>
             </li>
@@ -286,11 +305,4 @@ if (!productList.isEmpty()) {
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
    </body>
-</html> 
-
-
-   
-
-    
-
-   
+</html>
